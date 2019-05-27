@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get 'test' => 'test#index'
+  get '/' => 'test#index'
 end
