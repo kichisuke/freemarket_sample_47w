@@ -37,7 +37,6 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-# Basic認証のためにこの記載が必要！
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
