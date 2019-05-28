@@ -1,10 +1,13 @@
 .header
-  .header-innner
+  .header-inner
     .header-top
       .header-top__logo
-        %a href: '#'
-          = image_tag 'mercari_logo_horizontal.png', alt: 'mercari', class: 'mercari-logo'
+        %h1
+          = link_to do
+            = image_tag 'logo.png', alt: 'mercari', class: 'header-top__logo--size'
       .header-top__form
+        %form.top-form
+          %input.serch-form{name: 'keyword', placeholder: '何かお探しですか？', type: 'search', value: ''}
     .header-nav
       .header-nav__left
       .header-nav__right
