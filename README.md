@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
+|nickname|string|null: false, index: true|
 |email|integer|null: false, unique: true|
 |password|string|null: false, unique: true|
 |family_name|string|null: false|
@@ -27,7 +27,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |postal_code|string|null: false|
-|prefectures|string|null: false|
+|prefectures|string|null: false, index: true|
 |city|string|null: false|
 |street_address|string|null: false|
 |building|string||
@@ -67,8 +67,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|price|integer|null: false|
+|name|string|null: false, index: true|
+|price|integer|null: false, index: true|
 |text|text||
 |product_status|string|null: false|
 |delivery_charge|integer|null: false|
@@ -126,7 +126,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 
 ### Association
 - has_many :items
@@ -136,7 +136,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|index: true|
 
 ### Association
 - has_many :items
@@ -146,7 +146,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|index: true|
 
 ### Association
 - has_many :items
