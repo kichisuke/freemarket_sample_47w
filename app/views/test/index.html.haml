@@ -14,7 +14,8 @@
         %ul.nav-list
           %li.category
             %a.category__link{href: '#'}
-              ▼カテゴリーから探す
+              = fa_icon "list-ul", class: 'category-icon'
+              カテゴリーから探す
             %ul.nav-parent
               %li.nav-children
                 %a.nav-children__link{href: '#'}
@@ -27,7 +28,8 @@
                   ベビー・キッズ
           %li.brand
             %a.brand__link{href: '#'}
-              ▼ブランドから探す
+              = fa_icon "tag", class: 'brand-icon'
+              ブランドから探す
             %ul.nav-parent
               %li.nav-children
                 %a.nav-children__link{href: '#'}
@@ -40,6 +42,26 @@
                   ルイヴィトン
       .header-nav__right
         .nav-login
+          %ul.logined-list
+            %li.notification
+              %a.notification__link{href: '#'}
+                = fa_icon "bell", class: 'notification-icon'
+                お知らせ
+            %li.todo
+              %a.todo__link{href: '#'}
+                = fa_icon "check", class: 'todo-icon'
+                やることリスト
+                .todo__count
+                  3
+            %li.myPage
+              %a.myPage__link{href: '#'}
+                = image_tag 'member_photo_noimage_thumb.png', alt: 'my page', class: 'myPage-icon'
+                マイページ
+
+
+
+        /
+          if user_signed_in?文で分ける
           %ul.nav-login__list
             %li.register
               %a.register__link{href: '#'}
@@ -47,3 +69,4 @@
             %li.login
               %a.login__link{href: '#'}
                 ログイン
+

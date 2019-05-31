@@ -61,10 +61,14 @@
             padding: 15px 0;
             &__link {
               display: block;
+              .category-icon {
+                color: #ea352d;
+              }
             }
             .nav-parent {
             	position: absolute;
               top: 50px;
+              width: 224px;
               .nav-children {
                 display: block;
                 cursor: pointer;
@@ -78,12 +82,17 @@
           .brand{
             display: inline-block;
             padding: 15px 0;
+            margin-left: 10px;
             &__link {
               display: block;
+              .brand-icon {
+                color: #ea352d;
+              }
             }
             .nav-parent {
             	position: absolute;
               top: 50px;
+              width: 224px;
               .nav-children {
                 display: block;
                 cursor: pointer;
@@ -122,6 +131,55 @@
               }
             }
           }
+          .logined-list {
+            height: 54px;
+            vertical-align: top;
+            .notification {
+              display: inline-block;
+              padding: 15px 0;
+              &__link {
+                display: block;
+                .notification-icon {
+                }
+              }
+            }
+            .todo {
+              display: inline-block;
+              padding: 15px 0;
+              &__link {
+                display: block;
+                position: relative;
+                .todo-icon {
+                }
+              }
+              &__count {
+                position: absolute;
+                top: -7px;
+                left: -83px;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: #ea352d;
+                text-align: center;
+                line-height: 18px;
+                font-size: 14px;
+                color: #fff;
+              }
+            }
+            .myPage {
+              display: inline-block;
+              padding: 15px 0;
+              &__link {
+                display: block;
+                .myPage-icon {
+                  border-radius: 50%;
+                  height: 24px;
+                  width: 24px;
+                  vertical-align: bottom;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -134,6 +192,10 @@ a {
 }
 
 .category:hover > .category__link {
+	color: #0066FF
+}
+
+.brand:hover > .brand__link {
 	color: #0066FF
 }
 
