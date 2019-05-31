@@ -4,7 +4,7 @@
   .header-inner {
     margin: 0 auto;
     width: 1020px;
-    height: 92px;
+    height: 97px;
     padding-top: 8px;
     background-color: bisque;
     .header-top {
@@ -32,7 +32,7 @@
           }
           .serch-icon {
             position: absolute;
-            top: 7px;
+            top: 0;
             right: 0;
             display: flex;
             -webkit-box-align: center;
@@ -40,7 +40,87 @@
             justify-content: center;
             width: 40px;
             height: 40px;
+            line-height: 40px;
+            font-size: 17px;
+            background-color: #666666;
+            color: #fff;
             cursor: pointer;
+            border-radius: 0 4px 4px 0;
+          }
+        }
+      }
+    }
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      &__left {
+      	position: relative;
+        .nav-list {
+          .category{
+            display: inline-block;
+            padding: 15px 0;
+            &__link {
+              display: block;
+            }
+            .nav-parent {
+            	position: absolute;
+              top: 50px;
+              .nav-children {
+                display: block;
+                cursor: pointer;
+                &__link {
+                  display: block;
+                  padding: 15px 30px;
+                }
+              }
+            }
+          }
+          .brand{
+            display: inline-block;
+            padding: 15px 0;
+            &__link {
+              display: block;
+            }
+            .nav-parent {
+            	position: absolute;
+              top: 50px;
+              .nav-children {
+                display: block;
+                cursor: pointer;
+                &__link {
+                  display: block;
+                  padding: 15px 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__right {
+        .nav-login {
+          &__list {
+            .register {
+              display: inline-block;
+              padding: 15px 0;
+              &__link {
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+                padding: 8px 10px;
+                border-radius: 4px;
+              }
+            }
+            .login {
+              display: inline-block;
+              padding: 15px 0;
+              &__link {
+                border: 1px solid #0099e8;
+                padding: 8px 10px;
+                transition: all ease-out .3s;
+                border-radius: 4px;
+                margin-left: 5px;
+              }
+            }
           }
         }
       }
@@ -48,32 +128,34 @@
   }
 }
 
-
-
-.header-nav__left{
-	position: relative;
-  width: 100%;
-}
-ul > li{
-  display: inline-block;
-  padding: 15px 0;
+a {
+  text-decoration: none;
+  color: #000;
 }
 
-/* Submenu */
-
-ul li ul{
-	position: absolute;
-	top: 50px;
+.category:hover > .category__link {
+	color: #0066FF
 }
-ul li ul li{
+
+.header-nav__left ul li ul {
+  display: none;
+}
+
+ul.nav-list > li:hover ul {
   display: block;
-  cursor: pointer;
 }
 
-
-.header-nav__left ul li ul{
-	display: none;
+.nav-children__link:hover {
+  background-color: #FF0000;
+  color: #fff;
 }
-.header-nav__left ul li:hover ul{
-	display: block;
+
+.login__link {
+  background-color: #fff;
+  color: #0099e8;
+}
+
+.login:hover > .login__link {
+  background-color: #0099e8;
+  color: #fff;
 }
