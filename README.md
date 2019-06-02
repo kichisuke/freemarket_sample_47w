@@ -5,8 +5,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, index: true|
-|email|integer|null: false, unique: true|
-|password|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
@@ -84,7 +84,8 @@
 ### Association
 - has_many :images
 - has_many :likes
-- belongs_to :user
+- belongs_to :saler, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 
 ## images table
@@ -106,7 +107,7 @@
 
 ### Association
 - belongs_to :item
-- has_many :users
+- belongs_to :user 
 
 
 ## comments table
