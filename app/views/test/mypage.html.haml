@@ -1,0 +1,73 @@
+.container
+  .contents
+    .mypage-side
+      %ul.mypage-side__lists
+        %li
+          %a.mypage-side__lists__link.mypage-link.list-active{href: "#"} マイページ
+            %icon.mypage-side__lists__link__go
+        %li
+          %a.mypage-side__lists__link.mypage-link{href: "#"} お知らせ
+            %icon.mypage-side__lists__link__go
+      %h3.mypage-side__head メルペイ
+      %ul.mypage-side__lists
+        %li
+          %a.mypage-side__lists__link.mypage-link{href: "#"} 売上・振込申請
+            %icon.mypage-side__lists__link__go
+        %li
+          %a.mypage-side__lists__link.mypage-link{href: "#"} ポイント
+            %icon.mypage-side__lists__link__go
+      %h3.mypage-side__head 設定
+      %ul.mypage-side__lists
+        %li
+          %a.mypage-side__lists__link.mypage-link{href: "#"} プロフィール
+            %icon.mypage-side__lists__link__go
+        %li
+          %a.mypage-side__lists__link.mypage-link{href: "#"} 発送元・お届け先住所変更
+            %icon.mypage-side__lists__link__go
+    .mypage
+      .mypage__user
+        .mypage__user__link
+          %a.mypage-link{href: "#"}
+            %img.mypage__user__link__icon
+            %h2.mypage__user__link__name user name
+            .mypage__user__link__number
+              .mypage__user__link__number__rate 評価
+                %span.mypage__user__link__number__rate__count 0
+              .mypage__user__link__number__exhibits 出品数
+                %span.mypage__user__link__number__exhibits__count 0
+      .mypage__tabs
+        %ul.mypage__tabs__menu.tabs
+          %li.mypage__tabs__menu__news.tab.tab-active
+            %h3
+              %a.mypage-link{href: "#"} お知らせ
+          %li.mypage__tabs__menu__todo-list.tab
+            %h3
+              %a.mypage-link{href: "#"} やることリスト
+        .mypage__tabs__contents
+          %ul
+            %li.mypage__tabs__contents__news
+              %a.mypage__tabs__contents__news__link.mypage-link{href: "#"}
+                %img.mypage__tabs__contents__news__link__image IMG
+                .mypage__tabs__contents__news__link__message
+                  .mypage__tabs__contents__news__link__message__text 事務局から個別メッセージ
+                  %icon
+                  %span.mypage__tabs__contents__news__link__message__day 1日前
+                %icon.mypage__tabs__contents__news__link__go
+            %li.mypage__tabs__contents__news-lists
+              %a.mypage__tabs__contents__news-lists__link.mypage-link{href: "#"} 一覧を見る
+          %ul.mypage__tabs__contents__todo
+            %li.mypage__tabs__contents__todo.not-found 現在、やることリストはありません
+      .mypage__buy
+        %h2.mypage__buy__title 購入した商品
+        %ul.mypage__buy__menu.tabs
+          %li.mypage__buy__menu__now.tab.tab-active
+            %h3
+              %a.mypage-link{href: "#"} 取引中
+          %li.mypage__buy__menu__past.tab
+            %h3
+              %a.mypage-link{href: "#"} 過去の取引
+        .mypage__tabs__contents
+          %ul.mypage__tabs__contents__now
+            %li.mypage__tabs__contents__now.not-found 取引中の商品がありません
+          %ul.mypage__tabs__contents__past
+            %li.mypage__tabs__contents__past.not-found 取引中の商品がありません
