@@ -61,6 +61,7 @@
             padding: 15px 0;
             &__link {
               display: block;
+              text-decoration: none;
               .category-icon {
                 color: #ea352d;
               }
@@ -72,6 +73,7 @@
               .nav-children {
                 display: block;
                 cursor: pointer;
+                background-color: #fff;
                 &__link {
                   display: block;
                   padding: 15px 30px;
@@ -85,6 +87,7 @@
             margin-left: 10px;
             &__link {
               display: block;
+              text-decoration: none;
               .brand-icon {
                 color: #ea352d;
               }
@@ -96,6 +99,7 @@
               .nav-children {
                 display: block;
                 cursor: pointer;
+                background-color: #fff;
                 &__link {
                   display: block;
                   padding: 15px 30px;
@@ -117,6 +121,7 @@
                 color: #fff;
                 padding: 8px 10px;
                 border-radius: 4px;
+                text-decoration: none;
               }
             }
             .login {
@@ -128,6 +133,7 @@
                 transition: all ease-out .3s;
                 border-radius: 4px;
                 margin-left: 5px;
+                text-decoration: none;
               }
             }
           }
@@ -139,7 +145,10 @@
               padding: 15px 0;
               &__link {
                 display: block;
+                text-decoration: none;
+                color: #000;
                 .notification-icon {
+                  color: #C0C0C0;
                 }
               }
             }
@@ -149,7 +158,10 @@
               &__link {
                 display: block;
                 position: relative;
+                text-decoration: none;
+                color: #000;
                 .todo-icon {
+                  color: #C0C0C0;
                 }
               }
               &__count {
@@ -171,6 +183,8 @@
               padding: 15px 0;
               &__link {
                 display: block;
+                text-decoration: none;
+                color: #000;
                 .myPage-icon {
                   border-radius: 50%;
                   height: 24px;
@@ -186,8 +200,16 @@
   }
 }
 
-a {
+.nav-children__link {
   text-decoration: none;
+  color: #000;
+}
+
+.category__link {
+  color: #000;
+}
+
+.brand__link {
   color: #000;
 }
 
@@ -220,4 +242,42 @@ ul.nav-list > li:hover ul {
 .login:hover > .login__link {
   background-color: #0099e8;
   color: #fff;
+}
+
+.footer {
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  .footer-inner {
+    margin: 0 auto;
+    width: 1020px;
+    height: 298px;
+    display: flex;
+    .footer-cell {
+      &__head {
+
+      }
+      &__list {
+        &--children {
+          .footer-link {
+
+          }
+        }
+      }
+      .sns-icons {
+        display: flex;
+      }
+    }
+    .footer-wide-cell {
+      &__wrapper {
+        display: flex;
+        .footer-inner-cell {
+
+        }
+      }
+    }
+    .footer-cell-lang {
+
+    }
+  }
 }

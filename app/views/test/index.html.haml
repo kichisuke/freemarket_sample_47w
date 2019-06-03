@@ -57,9 +57,6 @@
               %a.myPage__link{href: '#'}
                 = image_tag 'member_photo_noimage_thumb.png', alt: 'my page', class: 'myPage-icon'
                 マイページ
-
-
-
         /
           if user_signed_in?文で分ける
           %ul.nav-login__list
@@ -69,4 +66,119 @@
             %li.login
               %a.login__link{href: '#'}
                 ログイン
+.footer
+  .footer-inner
+    .footer-cell
+      %h2.footer-cell__head
+        メルカリについて
+      %ul.footer-cell__list
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            会社概要（運営会社）
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            採用情報
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            プレスリリース
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            公式ブログ
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            メルカリロゴ利用ガイドライン
+        .sns-icons
+          %li.footer-cell__list--children
+            %a.footer-link{href: '#'}
+              = fa_icon "facebook"
+          %li.footer-cell__list--children
+            %a.footer-link{href: '#'}
+              = fa_icon "twitter"
+    .footer-cell
+      %h2.footer-cell__head
+        ヘルプ＆ガイド
+      %ul.footer-cell__list
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            メルカリガイド
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            らくらくメルカリ便
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            ゆうゆうメルカリ便
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            大型メルカリ便
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            車体取引ガイド
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            メルカリあんしん・あんぜん宣言！
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            偽ブランド品撲滅への取り組み
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            メルカリボックス
+    .footer-wide-cell
+      %h2.footer-cell__head
+        プライバシーと利用規約
+      .footer-wide-cell__wrapper
+        .footer-inner-cell
+          %ul.footer-cell__list
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                プライバシーポリシー
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                メルカリ利用規約
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                あんしんスマホサポート制度に関する利用特約
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                コンプライアンスポリシー
+        .footer-inner-cell
+          %ul.footer-cell__list
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                個人データの安全管理に係る基本方針
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                特定商取引に関する表記
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                資金決済法に基づく表示
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                法令順守と犯罪抑止のために
+            %li.footer-cell__list--children
+              %a.footer-link{href: '#'}
+                返品・返金ポリシー
+    .footer-cell-lang
+      %h2.footer-cell__head
+        国
+      %ul.footer-cell__list
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            日本
+        %li.footer-cell__list--children
+          %a.footer-link{href: '#'}
+            United States
+  .footer-bottom
+
+
+
+
+
+
+
+
+
+
+
+
+
 
