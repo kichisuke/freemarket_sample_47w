@@ -66,6 +66,27 @@
             %li.login
               %a.login__link{href: '#'}
                 ログイン
+
+.banner
+  .banner-contents
+    .banner-contents__inner
+      .banner-contents__inner--top
+        %h2.banner-title
+          スマホでかんたんフリマアプリ
+        %p.banner-publicity
+          今すぐ無料ダウンロード!
+      .banner-icons
+        .banner-icons__mercari-logo
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?1857733084", width: "68", height: "68"
+        .banner-icons__links
+          %ul.banner-icons__links__list
+            %li.banner-icons__links__list__ios
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?1857733084"
+            %li.banner-icons__links__list__android
+              = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?1857733084"
+    .banner-contents__smartphone-image
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?1857733084", width: "300", heigth: "260"
+
 .footer
   .footer-inner
     .footer-cell
@@ -90,10 +111,10 @@
         .sns-icons
           %li.footer-cell__list--children
             %a.footer-link{href: '#'}
-              = fa_icon "facebook"
+              = fa_icon "twitter", class: 'twitter-icon'
           %li.footer-cell__list--children
             %a.footer-link{href: '#'}
-              = fa_icon "twitter"
+              = fa_icon "facebook", class: 'facebook-icon'
     .footer-cell
       %h2.footer-cell__head
         ヘルプ＆ガイド
@@ -123,7 +144,7 @@
           %a.footer-link{href: '#'}
             メルカリボックス
     .footer-wide-cell
-      %h2.footer-cell__head
+      %h2.footer-wide-cell__head
         プライバシーと利用規約
       .footer-wide-cell__wrapper
         .footer-inner-cell
@@ -167,7 +188,10 @@
         %li.footer-cell__list--children
           %a.footer-link{href: '#'}
             United States
-  .footer-bottom
+  .footer__bottom
+    = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?128691313", width: "124", heigth: "33", alt: "mercari"
+    %p.footer__bottom--2019 © 2019 Mercari
+
 
 
 

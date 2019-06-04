@@ -6,7 +6,6 @@
     width: 1020px;
     height: 97px;
     padding-top: 8px;
-    background-color: bisque;
     .header-top {
       width: 1020px;
       display: flex;
@@ -244,35 +243,104 @@ ul.nav-list > li:hover ul {
   color: #fff;
 }
 
+.banner {
+  background: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?6820409);
+  background-position: center;
+  .banner-contents {
+    display: block;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    &__inner {
+      padding: 20px 20px 0 0;
+      &--top {
+        .banner-title {
+          font-size: 24px;
+        }
+        .banner-publicity {
+          font-size: 35px;
+          margin: 10px 0 0;
+        }
+      }
+      .banner-icons {
+        display: flex;
+        margin: 20px 0 0 0;
+        &__mercari-logo {
+
+        }
+        &__links {
+          padding: 14px 0 0 0;
+          margin: 0 0 0 20px;
+          &__list {
+            display: flex;
+            &__ios {
+
+            }
+            &__android {
+              margin: 0 0 0 15px;
+            }
+          }
+        }
+      }
+    }
+    &__smartphone-image {
+      width: 300px;
+      height: 100%;
+    }
+  }
+}
+
 .footer {
   padding: 0 20px 10px 20px;
   background: #212121;
   color: #fff;
   .footer-inner {
     margin: 0 auto;
+    padding: 18px 0 0 0;
     width: 1020px;
     height: 298px;
     display: flex;
     .footer-cell {
+      padding: 0 20px 0 0;
       &__head {
-
+        font-size: 16px;
       }
       &__list {
         &--children {
+          margin: 10px 0 0;
           .footer-link {
-
+            font-size: 12px;
+            color: #C0C0C0;
           }
         }
       }
       .sns-icons {
         display: flex;
+        .twitter-icon {
+          font-size: 35px;
+          color: #fff;
+          margin: 0 10px 0 0;
+        }
+        .facebook-icon {
+          font-size: 35px;
+          color: #fff;
+          padding: 0 10px 0 10px;
+        }
       }
     }
     .footer-wide-cell {
+      &__head {
+        font-size: 16px;
+      }
       &__wrapper {
         display: flex;
         .footer-inner-cell {
-
+          padding: 0 20px 0 0;
         }
       }
     }
@@ -280,4 +348,22 @@ ul.nav-list > li:hover ul {
 
     }
   }
+  &__bottom {
+    margin: 30px auto 20px;
+    width: 1020px;
+    line-height: 0;
+    &--2019 {
+      font-size: 8px;
+      text-align: center;
+      vertical-align: sub;
+    }
+  }
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }
