@@ -3,31 +3,31 @@
     .mypage-side
       %ul.mypage-side__lists
         %li
-          %a.mypage-side__lists__link.mypage-link.list-active{href: "#"}
+          %a.mypage-side__lists__link.mypage-list-link.list-active{href: "#"}
             マイページ
             = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"}
+          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
             お知らせ
             = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
       %h3.mypage-side__head メルペイ
       %ul.mypage-side__lists
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"}
+          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
             売上・振込申請
             = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"}
+          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
             ポイント
             = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
       %h3.mypage-side__head 設定
       %ul.mypage-side__lists
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"}
+          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
             プロフィール
             = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"}
+          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
             発送元・お届け先住所変更
             = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
     .mypage
@@ -52,7 +52,7 @@
         .mypage__tabs__contents
           %ul
             %li.mypage__tabs__contents__news
-              %a.mypage__tabs__contents__news__link.mypage-link{href: "#"}
+              %a.mypage__tabs__contents__news__link.mypage-list-link{href: "#"}
                 = image_tag "mercari_box.png", class: "mypage__tabs__contents__news__link__image"
                 .mypage__tabs__contents__news__link__message
                   .mypage__tabs__contents__news__link__message__text
@@ -64,7 +64,7 @@
                 %icon.mypage__tabs__contents__news__link__go
                   = fa_icon "chevron-right"
             %li.mypage__tabs__contents__news-lists
-              %a.mypage__tabs__contents__news-lists__link.mypage-link{href: "#"} 一覧を見る
+              %a.mypage__tabs__contents__news-lists__link.mypage-list-link{href: "#"} 一覧を見る
           %ul.mypage__tabs__contents__todo
             %li.mypage__tabs__contents__todo.not-found 現在、やることリストはありません
       .mypage__buy

@@ -31,6 +31,21 @@ ul {
   text-decoration: none;
 }
 
+.mypage-list-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+.mypage-list-link:hover {
+  background-color: #fafafa;
+}
+
+.mypage-list-link:hover > .mypage-side__lists__link__go {
+  right: 12px;
+  color: #333;
+}
+
 .tabs {
   display: flex;
   text-align: center;
@@ -188,6 +203,7 @@ ul {
         transform: translate(0, -50%);
         color: #ccc;
         font-weight: 600;
+        transition: all ease-out .2s;
       }
     }
   }
