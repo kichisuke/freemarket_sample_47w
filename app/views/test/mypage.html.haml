@@ -1,40 +1,46 @@
 .container
-  .contents
+  .contents.clearfix
     .mypage-side
       %ul.mypage-side__lists
         %li
-          %a.mypage-side__lists__link.mypage-link.list-active{href: "#"} マイページ
-            %icon.mypage-side__lists__link__go
+          %a.mypage-side__lists__link.mypage-link.list-active{href: "#"}
+            マイページ
+            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"} お知らせ
-            %icon.mypage-side__lists__link__go
+          %a.mypage-side__lists__link.mypage-link{href: "#"}
+            お知らせ
+            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
       %h3.mypage-side__head メルペイ
       %ul.mypage-side__lists
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"} 売上・振込申請
-            %icon.mypage-side__lists__link__go
+          %a.mypage-side__lists__link.mypage-link{href: "#"}
+            売上・振込申請
+            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"} ポイント
-            %icon.mypage-side__lists__link__go
+          %a.mypage-side__lists__link.mypage-link{href: "#"}
+            ポイント
+            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
       %h3.mypage-side__head 設定
       %ul.mypage-side__lists
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"} プロフィール
-            %icon.mypage-side__lists__link__go
+          %a.mypage-side__lists__link.mypage-link{href: "#"}
+            プロフィール
+            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
         %li
-          %a.mypage-side__lists__link.mypage-link{href: "#"} 発送元・お届け先住所変更
-            %icon.mypage-side__lists__link__go
+          %a.mypage-side__lists__link.mypage-link{href: "#"}
+            発送元・お届け先住所変更
+            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
     .mypage
       .mypage__user
         .mypage__user__link
           %a.mypage-link{href: "#"}
-            %img.mypage__user__link__icon
+            = image_tag "member_photo_noimage.png", class: "mypage__user__link__icon"
             %h2.mypage__user__link__name user name
             .mypage__user__link__number
               .mypage__user__link__number__rate 評価
-                %span.mypage__user__link__number__rate__count 0
+              %span.mypage__user__link__number__rate__count 0
               .mypage__user__link__number__exhibits 出品数
-                %span.mypage__user__link__number__exhibits__count 0
+              %span.mypage__user__link__number__exhibits__count 0
       .mypage__tabs
         %ul.mypage__tabs__menu.tabs
           %li.mypage__tabs__menu__news.tab.tab-active
@@ -47,12 +53,16 @@
           %ul
             %li.mypage__tabs__contents__news
               %a.mypage__tabs__contents__news__link.mypage-link{href: "#"}
-                %img.mypage__tabs__contents__news__link__image IMG
+                = image_tag "mercari_box.png", class: "mypage__tabs__contents__news__link__image"
                 .mypage__tabs__contents__news__link__message
-                  .mypage__tabs__contents__news__link__message__text 事務局から個別メッセージ
-                  %icon
-                  %span.mypage__tabs__contents__news__link__message__day 1日前
+                  .mypage__tabs__contents__news__link__message__text
+                    事務局から個別メッセージ
+                  %span.mypage__tabs__contents__news__link__message__day
+                    1日前
+                    = fa_icon "fa-clock"
+                    
                 %icon.mypage__tabs__contents__news__link__go
+                  = fa_icon "chevron-right"
             %li.mypage__tabs__contents__news-lists
               %a.mypage__tabs__contents__news-lists__link.mypage-link{href: "#"} 一覧を見る
           %ul.mypage__tabs__contents__todo
