@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+h3 {
+  font-weight: bold;
+}
+
 .container {
   background: #f5f5f5;
   width: 100%;
@@ -29,6 +33,7 @@ ul {
   display: block;
   color: #333;
   text-decoration: none;
+  cursor : pointer;
 }
 
 .mypage-list-link {
@@ -54,7 +59,12 @@ ul {
   font-size: 16px;
 }
 
-.tab {
+.tab-news {
+  background-color: #eee;
+  width: 50%;
+}
+
+.tab-buy {
   background-color: #eee;
   width: 50%;
 }
@@ -62,6 +72,18 @@ ul {
 .tab-active {
   border-top: 2px solid #ea352d;
   background-color: white;
+}
+
+.tab-news-content {
+  display: none;
+}
+
+.tab-buy-content {
+  display: none;
+}
+
+.tab-show {
+  display: block;
 }
 
 .list-active {
@@ -144,8 +166,6 @@ ul {
           &__message {
             margin: 0 40px 0 20px;
             width: 100%;
-            &__text {
-            }
             &__day {
               margin: 0 0 0 8px;
               color: #888;
