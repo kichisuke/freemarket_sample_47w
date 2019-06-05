@@ -1,35 +1,6 @@
 .container
   .contents.clearfix
-    .mypage-side
-      %ul.mypage-side__lists
-        %li
-          %a.mypage-side__lists__link.mypage-list-link.list-active{href: "#"}
-            マイページ
-            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
-        %li
-          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
-            お知らせ
-            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
-      %h3.mypage-side__head メルペイ
-      %ul.mypage-side__lists
-        %li
-          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
-            売上・振込申請
-            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
-        %li
-          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
-            ポイント
-            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
-      %h3.mypage-side__head 設定
-      %ul.mypage-side__lists
-        %li
-          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
-            プロフィール
-            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
-        %li
-          %a.mypage-side__lists__link.mypage-list-link{href: "#"}
-            発送元・お届け先住所変更
-            = fa_icon "chevron-right", class: "mypage-side__lists__link__go"
+    = render partial: "mypage-side"
     .mypage
       .mypage__user
         .mypage__user__link
