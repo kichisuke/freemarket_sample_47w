@@ -6,12 +6,12 @@
         .mypage__user__link
           %a.mypage-link{href: "#"}
             = image_tag "member_photo_noimage.png", class: "mypage__user__link__icon"
-            %h2.mypage__user__link__name user name
+            %h3.mypage__user__link__name user name
             .mypage__user__link__number
               .mypage__user__link__number__rate 評価
-              %span.mypage__user__link__number__rate__count 0
+              .mypage__user__link__number__count 0
               .mypage__user__link__number__exhibits 出品数
-              %span.mypage__user__link__number__exhibits__count 0
+              .mypage__user__link__number__count 0
       .mypage__tabs
         %ul.mypage__tabs__menu.tabs
           %li.mypage__tabs__menu__news.tab-news.tab-active
@@ -29,8 +29,8 @@
                   .mypage__tabs__contents__news__link__message__text
                     事務局から個別メッセージ
                   %span.mypage__tabs__contents__news__link__message__day
-                    1日前
                     = fa_icon "fa-clock"
+                    1日前
                 %icon.mypage__tabs__contents__news__link__go
                   = fa_icon "chevron-right"
             %li.mypage__tabs__contents__news
@@ -40,8 +40,8 @@
                   .mypage__tabs__contents__news__link__message__text
                     事務局から個別メッセージ
                   %span.mypage__tabs__contents__news__link__message__day
-                    1日前
                     = fa_icon "fa-clock"
+                    1日前
                 %icon.mypage__tabs__contents__news__link__go
                   = fa_icon "chevron-right"
             %li.mypage__tabs__contents__news-lists

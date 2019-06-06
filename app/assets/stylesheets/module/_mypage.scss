@@ -131,20 +131,15 @@ ul {
         justify-content: center;
         &__rate {
           font-size: 14px;
-          &__count {
-            margin: 0 0 0 8px;
-            font-size: 16px;
-            font-weight: 600;
-          }
+        }
+        &__count {
+          margin: 0 0 0 8px;
+          font-size: 16px;
+          font-weight: 600;
         }
         &__exhibits {
           font-size: 14px;
           margin: 0 0 0 16px;
-          &__count {
-            margin: 0 0 0 8px;
-            font-size: 16px;
-            font-weight: 600;
-          }
         }
       }
     }
