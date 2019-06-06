@@ -1,6 +1,27 @@
-!!!
-.header
-  .header-top
-    .header-top__logo
-      = image_tag 'logo.svg', width:"134", height:"36", alt:"logo_img"
-    .header-top__form  
+.container
+  .header
+    .header-inner
+      .header-top
+        %h1
+          %a{href: 'http://www.google.co.jp'}
+            = image_tag 'logo.svg', alt: 'logo', height: '36', width: '134', class: ''
+        %form.header-form
+          %input{name: 'keyword', value:'何かお探しですか？', class:'header-input'}
+          = fa_icon "search", class: 'icon-search'
+      .header-menu-box
+        %nav.left-box
+          %ul.left-list
+            %li
+              %h2
+                %a{href: 'http://www.google.co.jp', class:'brand-icon'}
+                  = fa_icon "list-ul", class: 'icon-search'
+                  %span
+                  カテゴリーから探す
+              %ul.header-parent-wrap
+                %li.header-parent
+                  %h3
+                    %a{href: 'http://www.google.co.jp'}レディース
+                %li.header-parent
+                  %h3
+                    %a{href: 'http://www.google.co.jp'}メンズ
+
