@@ -89,6 +89,12 @@
           width: 224px;
           a{
             padding: 8px 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+            display: block;
+            color: #333;
           }
         }
       }
@@ -113,10 +119,14 @@ ul.left-list > li:hover ul {
   display: block;
 }
 
-.left-box ul li ul li ul {
+ul.header-parent-wrap > li.header-child:hover ul {
   display: none;
 }
 
-ul.header-child-wrap > li:hover ul {
+li.left-list-li ul li ul li{
+  display: none;
+}
+
+li.left-list-li ul.header-parent-wrap li:hover ul li{
   display: block;
 }
