@@ -1,0 +1,68 @@
+.header
+  .header-inner
+    .header-top
+      .header-top__logo
+        %h1
+          = link_to do
+            = image_tag 'logo.png', alt: 'mercari', class: 'header-top__logo--size'
+      .header-top__form
+        %form.top-form
+          %input.serch-form{name: 'keyword', placeholder: '何かお探しですか？', type: 'search', value: ''}
+          = fa_icon "search", class: 'serch-icon'
+    .header-nav
+      .header-nav__left
+        %ul.nav-list
+          %li.category
+            %a.category__link{href: '#'}
+              = fa_icon "list-ul", class: 'category-icon'
+              カテゴリーから探す
+            %ul.nav-parent
+              %li.nav-children
+                %a.nav-children__link{href: '#'}
+                  レディース
+              %li.nav-children
+                %a.nav-children__link{href: '#'}
+                  メンズ
+              %li.nav-children
+                %a.nav-children__link{href: '#'}
+                  ベビー・キッズ
+          %li.brand
+            %a.brand__link{href: '#'}
+              = fa_icon "tag", class: 'brand-icon'
+              ブランドから探す
+            %ul.nav-parent
+              %li.nav-children
+                %a.nav-children__link{href: '#'}
+                  シャネル
+              %li.nav-children
+                %a.nav-children__link{href: '#'}
+                  ナイキ
+              %li.nav-children
+                %a.nav-children__link{href: '#'}
+                  ルイヴィトン
+      .header-nav__right
+        .nav-login
+          %ul.logined-list
+            %li.notification
+              %a.notification__link{href: '#'}
+                = fa_icon "bell", class: 'notification-icon'
+                お知らせ
+            %li.todo
+              %a.todo__link{href: '#'}
+                = fa_icon "check", class: 'todo-icon'
+                やることリスト
+                .todo__count
+                  3
+            %li.myPage
+              %a.myPage__link{href: '#'}
+                = image_tag 'member_photo_noimage_thumb.png', alt: 'my page', class: 'myPage-icon'
+                マイページ
+        /
+          if user_signed_in?文で分ける
+          %ul.nav-login__list
+            %li.register
+              %a.register__link{href: '#'}
+                新規会員登録
+            %li.login
+              %a.login__link{href: '#'}
+                ログイン
