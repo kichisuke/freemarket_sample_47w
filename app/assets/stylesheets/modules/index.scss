@@ -260,7 +260,8 @@ ul.nav-list > li:hover ul {
       margin: 26px 11px;
       width: 100%;
       &--link {
-
+        font-size: 22px;
+        font-weight: bold;
       }
     }
     &__box {
@@ -313,6 +314,16 @@ ul.nav-list > li:hover ul {
         }
       }
     }
+    .view-all {
+      display: flex;
+      padding: 20px 0 30px;
+      width: 99.5%;
+      justify-content: flex-end;
+      &__link {
+        display: block;
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -322,6 +333,16 @@ ul.nav-list > li:hover ul {
 }
 
 .pickup-items__head--link:hover {
+  opacity: .7;
+  text-decoration: underline;
+}
+
+.view-all__link {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.view-all__link:hover {
   opacity: .7;
   text-decoration: underline;
 }
