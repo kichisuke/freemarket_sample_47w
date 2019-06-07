@@ -40,15 +40,36 @@
       margin: 8px 0 0;
       .left-box{
         float: left;
+        .left-list li{
+          position: relative;
+          display: inline-block;
+          padding: 0 11px;
+          cursor: pointer;
+          }
       }
-      nav h2{
+      nav{ 
+        h2{
         font-size: 14px;
         font-weight: 400;
+        }
         a{
           color: #333;
         }
+        .category-icon{
+          font-weight: bold;
+          .category-search{
+            color: #ea352d;
+            font-size: 12px;
+            margin-right: 4px;
+          }
+        }
         .brand-icon{
           font-weight: bold;
+          .brand-search{
+            color: #ea352d;
+            font-size: 12px;
+            margin-right: 4px;
+          }
         }
         span{
           vertical-align: middle;
@@ -84,9 +105,29 @@
         left: 224px;
         bottom: 0;
         background: #fff;
-        box-shadow: 1px 0 0 0 #eee inset;
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
         .header-child{
           width: 224px;
+          a{
+            padding: 8px 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+            display: block;
+            color: #333;
+          }
+        }
+      }
+      .header-grandchild-wrap{
+        position: absolute;
+        top: 0;
+        left: 224px;
+        bottom: 0;
+        background: #fff;
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+        .header-grandchild{
+          width: 320px;
           a{
             padding: 8px 16px;
             overflow: hidden;
@@ -102,6 +143,7 @@
   }
 }
 
+
 img{
   vertical-align: middle;
 }
@@ -109,7 +151,6 @@ img{
 a{
   text-decoration: none;
 }
-
 
 .left-box ul li ul {
   display: none;
@@ -129,4 +170,12 @@ li.left-list-li ul li ul li{
 
 li.left-list-li ul.header-parent-wrap li:hover ul li{
   display: block;
+}
+
+li.left-list-li ul.header-child-wrap li ul li {
+  visibility: hidden;
+}
+
+li.left-list-li ul.header-child-wrap li:hover ul li {
+  visibility: visible;
 }

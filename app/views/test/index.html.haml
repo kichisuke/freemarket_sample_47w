@@ -13,8 +13,8 @@
           %ul.left-list
             %li.left-list-li
               %h2
-                %a{href: 'http://www.google.co.jp', class:'brand-icon'}
-                  = fa_icon "list-ul", class: 'icon-search'
+                %a{href: 'http://www.google.co.jp', class:'category-icon'}
+                  = fa_icon "list-ul", class: 'category-search'
                   %span
                   カテゴリーから探す
               %ul.header-parent-wrap
@@ -24,8 +24,37 @@
                   %ul.header-child-wrap
                     %li.header-child
                       %a{href: 'http://www.google.co.jp'}トップス
+                      %ul.header-grandchild-wrap
+                        %li.header-grandchild
+                          %a{href: 'http://www.google.co.jp'}Tシャツ/カットソー(半袖/袖なし)
+                        %li.header-grandchild
+                          %a{href: 'http://www.google.co.jp'}Tシャツ/カットソー(七分/長袖)
                     %li.header-child
-                      %a{href: 'http://www.google.co.jp'}ジャケット/アウター  
+                      %a{href: 'http://www.google.co.jp'}ジャケット/アウター
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}パンツ
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}スカート
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}ワンピース  
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}靴
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}ルームウェア/パジャマ
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}レッグウェア
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}帽子
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}バッグ
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}アクセサリー
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}ヘアアクセサリー
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}小物
+                    %li.header-child
+                      %a{href: 'http://www.google.co.jp'}時計
                 %li.header-parent
                   %h3
                     %a{href: 'http://www.google.co.jp'}メンズ
@@ -65,4 +94,9 @@
                 %li.header-parent
                   %h3
                     %a{href: 'http://www.google.co.jp'}カテゴリー一覧
-                    
+            %li.left-list-li
+              %h2
+                %a{href: 'http://www.google.co.jp', class:'brand-icon'}
+                  = fa_icon "tag", class: 'brand-search'
+                  %span
+                  ブランドから探す        
