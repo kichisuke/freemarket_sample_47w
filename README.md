@@ -144,6 +144,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
+|parent_id|integer||
 
 ### Association
 - has_many :items
