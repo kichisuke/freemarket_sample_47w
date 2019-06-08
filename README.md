@@ -7,13 +7,6 @@
 |nickname|string|null: false, index: true|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|profile_text|text||
 |avatar_image|text||
 
 ### Association
@@ -22,6 +15,23 @@
 - has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 - has_many :likes
 - has_many :comments
+
+
+## profiles table
+
+|Column|Type|Options|
+|------|----|-------|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|profile_text|text||
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
 
 
 ## addresses table
@@ -94,7 +104,7 @@
 - belongs_to :buyer, class_name: "User"
 
 
-## images table
+## item_images table
 
 |Column|Type|Options|
 |------|----|-------|
