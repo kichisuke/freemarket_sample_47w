@@ -1,0 +1,179 @@
+.container
+  .header
+    .header-inner
+      .header-top
+        %h1
+          %a{href: '#'}
+            = image_tag 'logo.svg', alt: 'logo', height: '36', width: '134', class: ''
+        %form.header-form
+          %input{name: 'keyword', value:'何かお探しですか？', class:'header-input'}
+          = fa_icon "search", class: 'icon-search'
+      .header-menu-box
+        %nav.left-box
+          %ul.left-list
+            %li.left-list-li
+              %h2
+                %a{href: '#', class:'category-icon'}
+                  = fa_icon "list-ul", class: 'category-search'
+                  %span
+                  カテゴリーから探す
+              %ul.header-parent-wrap
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}レディース
+                  %ul.header-child-wrap
+                    %li.header-child
+                      %a{href: '#'}トップス
+                      %ul.header-grandchild-wrap
+                        %li.header-grandchild
+                          %a{href: '#'}Tシャツ/カットソー(半袖/袖なし)
+                        %li.header-grandchild
+                          %a{href: '#'}Tシャツ/カットソー(七分/長袖)
+                    %li.header-child
+                      %a{href: '#'}ジャケット/アウター
+                    %li.header-child
+                      %a{href: '#'}パンツ
+                    %li.header-child
+                      %a{href: '#'}スカート
+                    %li.header-child
+                      %a{href: '#'}ワンピース  
+                    %li.header-child
+                      %a{href: '#'}靴
+                    %li.header-child
+                      %a{href: '#'}ルームウェア/パジャマ
+                    %li.header-child
+                      %a{href: '#'}レッグウェア
+                    %li.header-child
+                      %a{href: '#'}帽子
+                    %li.header-child
+                      %a{href: '#'}バッグ
+                    %li.header-child
+                      %a{href: '#'}アクセサリー
+                    %li.header-child
+                      %a{href: '#'}ヘアアクセサリー
+                    %li.header-child
+                      %a{href: '#'}小物
+                    %li.header-child
+                      %a{href: '#'}時計
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}メンズ
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}ベビー・キッズ
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}インテリア・住まい・小物
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}本・音楽・ゲーム
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}おもちゃ・ホビー・グッズ
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}コスメ・香水・美容
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}家電・スマホ・カメラ
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}スポーツ・レジャー
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}ハンドメイド
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}チケット
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}自動車・オートバイ
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}その他
+                %li.header-parent
+                  %h3
+                    %a{href: '#'}カテゴリー一覧
+            %li.left-list-li
+              %h2
+                %a{href: '#', class:'brand-icon'}
+                  = fa_icon "tag", class: 'brand-search'
+                  %span
+                  ブランドから探す
+  .main-content                  
+    .list-side
+      %ul.list-side__menu
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            マイページ
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            お知らせ
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            お知らせ
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            やることリスト
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            いいね！一覧
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品する
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品した商品-出品中
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品した商品-取引中
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品した商品-売却済み
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            購入した商品-取引中
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品した商品-過去の取引
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            ニュース一覧
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            評価一覧
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            ガイド
+            = fa_icon "chevron-right", class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            お問い合わせ
+            = fa_icon "chevron-right", class: 'icon-menu'
+    .right-side
+      .content
+        %h2.content-header
+          プロフィール
+          %form
+            %input{type: "hidden"}
+            .profile-header
+              = image_tag 'logo.svg', alt: 'logo', height: '60', width: '60', class: 'myicon-img'
+              %input{type: "text", value: "名前",class: "profile-header__input"}
+            .profile-content
+              %textarea{name: "introduction", class: "profile-content__textarea"}
+              %input{type:"hidden"}
+              %button{type:"submit" ,class:"profile-content__button"}変更する
+  

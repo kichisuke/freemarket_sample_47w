@@ -1,5 +1,10 @@
 .header{
+  width: 1020px;
+  height:149px;
   display: block;
+  position: relative;
+  z-index: 1001;
+  background: #fff;
   .header-inner{
     width: 700px;
     margin: 0 auto;
@@ -40,12 +45,6 @@
       margin: 8px 0 0;
       .left-box{
         float: left;
-        .left-list li{
-          position: relative;
-          display: inline-block;
-          padding: 0 11px;
-          cursor: pointer;
-          }
       }
       nav{ 
         h2{
@@ -77,7 +76,7 @@
       }
       .header-parent-wrap{
         position: absolute;
-        top: 80px;
+        top: 70px;
         z-index: 1000;
         background: #fff;
         box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
@@ -143,6 +142,122 @@
   }
 }
 
+.main-content{
+  width:1020px;
+  height: 1000px;
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+  display:block;
+  background: #f5f5f5;
+  .list-side{
+    float:left;
+    width: 280px;
+    margin: 24px auto 0;
+    &__menu li{
+      border-top: 1px solid #eee;
+    }
+    &__menu__item{
+      position: relative;
+      display: block;
+      padding: 16px;
+      background: #fff;
+      font-size: 14px;
+      color: #333;
+    }
+    .icon-menu{
+      position: absolute;
+      top: 30%;
+      right: 16px;
+      color: #ccc;
+    }
+  }
+
+  .right-side{
+    width: 700px;
+    float: right;
+    margin: 24px auto 0;
+    padding: 0 0 40px;
+    .content{
+    background: #fff;
+      &-header{
+        text-align: center;
+        font-size: 24px;
+        padding: 8px 24px;
+        line-height: 1.4;
+        .profile-header{
+          padding: 72px 16px 24px;
+          background:url("user-bg.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          font-size: 0;
+          .myicon-img{
+            display: inline-block;
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
+          &__input{
+            width: 220px;
+            margin: 0 0 0 8px;
+            vertical-align: middle;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        .profile-content{
+          padding: 40px 16px;
+          &__textarea{
+            min-height: 216px;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 104px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          &__button{
+            margin: 16px 0 0;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+}
+
+main {
+  display: block;
+}
 
 img{
   vertical-align: middle;
