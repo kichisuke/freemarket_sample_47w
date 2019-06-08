@@ -67,4 +67,4 @@ gem 'mini_magick'
 
 gem 'haml-rails'
 gem 'erb2haml'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.8.1'
