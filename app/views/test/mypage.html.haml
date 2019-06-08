@@ -1,4 +1,5 @@
 .container
+  = render 'shared/header'
   .contents.clearfix
     = render partial: "mypage-side"
     .mypage
@@ -63,3 +64,5 @@
             %li.mypage__tabs__contents__now.not-found 取引中の商品がありません
           %ul.tab-buy-content
             %li.mypage__tabs__contents__past.not-found 取引中の商品がありません
+  = render 'shared/banner'
+  = render 'shared/footer'
