@@ -3,11 +3,11 @@
     ピックアップカテゴリー
   %section.pickup-items
     %h3.pickup-items__head
-      %a.pickup-items__head--link{href: '#'}
+      = link_to '#', class: 'pickup-items__head--link' do
         カテゴリー 新着アイテム
     .pickup-items__box
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -23,7 +23,7 @@
             %p.item-link__text--tax
               (税込)
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -39,7 +39,7 @@
             %p.item-link__text--tax
               (税込)
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -55,7 +55,7 @@
             %p.item-link__text--tax
               (税込)
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -71,15 +71,15 @@
             %p.item-link__text--tax
               (税込)
     .view-all
-      %a.view-all__link{href: '#'}
+      = link_to '#', class: 'view-all__link' do
         全ての商品を見る
   %section.pickup-items
     %h3.pickup-items__head
-      %a.pickup-items__head--link{href: '#'}
+      = link_to '#', class: 'pickup-items__head--link' do
         カテゴリー 新着アイテム
     .pickup-items__box
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -95,7 +95,7 @@
             %p.item-link__text--tax
               (税込)
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -111,7 +111,7 @@
             %p.item-link__text--tax
               (税込)
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -127,7 +127,7 @@
             %p.item-link__text--tax
               (税込)
       %section.pickup-items__box--item
-        %a.item-link{href: '#'}
+        = link_to '#', class: 'item-link' do
           .item-link__image-box
             = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
           .item-link__text
@@ -143,5 +143,5 @@
             %p.item-link__text--tax
               (税込)
     .view-all
-      %a.view-all__link{href: '#'}
+      = link_to '#', class: 'view-all__link' do
         全ての商品を見る
