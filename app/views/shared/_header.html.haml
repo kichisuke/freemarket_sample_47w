@@ -8,13 +8,13 @@
       .header-top__form
         %form.top-form
           %input.serch-form{name: 'keyword', placeholder: '何かお探しですか？', type: 'search', value: ''}
-          = fa_icon "search", class: 'serch-icon'
+          = icon('fas','search', class: 'serch-icon')
     .header-nav
       .header-nav__left
         %ul.nav-list
           %li.category
             %a.category__link{href: '#'}
-              = fa_icon "list-ul", class: 'category-icon'
+              = icon('fas', 'list-ul', class: 'category-icon')
               カテゴリーから探す
             %ul.nav-parent
               %li.nav-children
@@ -28,7 +28,7 @@
                   ベビー・キッズ
           %li.brand
             %a.brand__link{href: '#'}
-              = fa_icon "tag", class: 'brand-icon'
+              = icon('fas', 'tag', class: 'brand-icon')
               ブランドから探す
             %ul.nav-parent
               %li.nav-children
@@ -45,11 +45,11 @@
           %ul.logined-list
             %li.notification
               %a.notification__link{href: '#'}
-                = fa_icon "bell", class: 'notification-icon'
+                = icon('far', 'bell', class: 'notification-icon')
                 お知らせ
             %li.todo
               %a.todo__link{href: '#'}
-                = fa_icon "check", class: 'todo-icon'
+                =icon('fas', 'check', class: 'todo-icon')
                 やることリスト
                 .todo__count
                   3

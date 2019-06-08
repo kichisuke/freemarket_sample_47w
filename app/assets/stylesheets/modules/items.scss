@@ -60,6 +60,9 @@
               }
               .likes {
                 font-size: 15px;
+                &__icon {
+                  color: #C0C0C0;
+                }
               }
             }
             &--tax {
