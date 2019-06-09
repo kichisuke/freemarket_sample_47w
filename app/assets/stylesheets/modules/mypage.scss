@@ -1,0 +1,232 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.container {
+  background: #f5f5f5;
+  width: 100%;
+  height: 100%;
+}
+
+.contents {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 1020px;
+  display: flex;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.mypage-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  cursor : pointer;
+}
+
+.mypage-list-link {
+  display: block;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.mypage-list-link:hover {
+  background-color: #fafafa;
+}
+
+.mypage-list-link:hover > .mypage-side__lists__link__go {
+  right: 12px;
+  color: #333;
+}
+
+.tabs {
+  display: flex;
+  text-align: center;
+  height: 72px;
+  line-height: 72px;
+  font-size: 16px;
+}
+
+.tab-news {
+  background-color: #eee;
+  width: 50%;
+}
+
+.tab-buy {
+  background-color: #eee;
+  width: 50%;
+}
+
+.tab-active {
+  border-top: 2px solid #ea352d;
+  background-color: white;
+}
+
+.tab-news-content {
+  display: none;
+}
+
+.tab-buy-content {
+  display: none;
+}
+
+.tab-show {
+  display: block;
+}
+
+.list-active {
+  background-color: #eee;
+  font-weight: 600;
+}
+
+.not-found {
+  background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?94736652);
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  background-size: 78px 85px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+  padding: 160px 0 60px;
+}
+
+.mypage {
+  width: 700px;
+  &__user {
+    background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?17794984);
+    height: 200px;
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    &__link {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translate(0, -50%);
+      &__icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      &__name {
+        font-size: 14px;
+        margin: 8px 0 0;
+      }
+      &__number {
+        display: flex;
+        justify-content: center;
+        &__rate {
+          font-size: 14px;
+        }
+        &__count {
+          margin: 0 0 0 8px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &__exhibits {
+          font-size: 14px;
+          margin: 0 0 0 16px;
+        }
+      }
+    }
+  }
+  &__tabs {
+    &__contents {
+      background-color: #fff;
+      &__news {
+        position: relative;
+        height: 80px;
+        border-bottom: 1px solid #eee;
+        &__link {
+          display: flex;
+          padding: 16px;
+          &__image {
+            width: 48px;
+            height: 48px;
+          }
+          &__message {
+            margin: 0 40px 0 20px;
+            width: 100%;
+            font-size: 14px;
+            &__day {
+              margin: 0 0 0 8px;
+              color: #888;
+            }
+          }
+          &__go {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translate(0, -50%);
+            font-weight: 600;
+          }
+        }
+      }
+      &__news-lists {
+        padding: 16px;
+        &__link {
+          background-color: #eee;
+          height: 56px;
+          line-height: 56px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__buy {
+    margin: 40px 0 0;
+    background-color: #fff;
+    &__title {
+      padding: 0 16px;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+    }
+  }
+}
+
+.mypage-side {
+  width: 280px;
+  margin: 0 40px 0 0;
+  &__lists {
+    background-color: #fff;
+    &__link {
+      position: relative;
+      height: 16px;
+      line-height: 16px;
+      padding: 16px;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+      &__go {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translate(0, -50%);
+        color: #ccc;
+        font-weight: 600;
+        transition: all ease-out .2s;
+      }
+    }
+  }
+  &__head {
+    margin: 40px 0 8px 0;
+    font-size: 16px;
+  }
+}
