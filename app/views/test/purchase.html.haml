@@ -1,0 +1,46 @@
+.container
+  .purchase
+    = render "purchase-header"
+    .purchase__confirmation
+      .purchase__confirmation__head.bold 購入内容の確認
+      .purchase__confirmation__body
+        .purchase__confirmation__body__inner
+          .purchase__confirmation__body__inner__image
+            = image_tag "dummy-item.png", class: "purchase__confirmation__body__inner__image__photo"
+          .purchase__confirmation__body__inner__name.bold Item Name
+          .purchase-form
+            .purchase__confirmation__body__inner__item-price
+              %p.bold
+                ¥1,000
+                %span 送料込み
+            .purchase__confirmation__body__inner__point ポイントはありません
+            .purchase__confirmation__body__inner__buy-price.bold
+              .purchase__confirmation__body__inner__buy-price__left 支払い金額
+              .purchase__confirmation__body__inner__buy-price__right ¥1,000
+            .purchase__confirmation__body__inner__btn 購入する
+      .purchase__confirmation__user
+        .purchase__confirmation__body__inner
+          .purchase__confirmation__user__head.bold 配送先
+          .purchase__confirmation__user__body
+            〒000-0000
+            %br/
+            address
+            %br/
+            buyer.name
+          .purchase__confirmation__user__change
+            = link_to "#", class: "purchase__confirmation__user__change__link" do
+              変更する
+              = icon 'fas', 'chevron-right'
+      .purchase__confirmation__user
+        .purchase__confirmation__body__inner
+          .purchase__confirmation__user__head.bold 支払い方法
+          .purchase__confirmation__user__body
+            ************1234
+            %br/
+            12/34
+            %br/
+            = image_tag "visa.svg", {width: "49"}
+          .purchase__confirmation__user__change
+            = link_to "#", class: "purchase__confirmation__user__change__link" do
+              変更する
+              = icon 'fas', 'chevron-right'
