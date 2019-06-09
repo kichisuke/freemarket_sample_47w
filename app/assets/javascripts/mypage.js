@@ -16,4 +16,9 @@ $(function() {
     const index = $(this).index();
     $(".tab-buy-content").eq(index).addClass('tab-show');
   });
+
+  $('.mypage-side__lists__link').click(function() {
+    $('.mypage-side__lists__link.list-active').removeClass('list-active');
+    $(this).addClass('list-active');
+  });
 });
