@@ -4,4 +4,7 @@ class TestController < ApplicationController
 
   def mypage
   end
+
+  def signup
+  end
 end
