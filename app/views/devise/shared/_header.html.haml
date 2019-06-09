@@ -1,0 +1,68 @@
+.header
+  .header-inner
+    .header-top
+      .header-top__logo
+        %h1
+          = link_to '#' do
+            = image_tag 'logo.png', alt: 'mercari', class: 'header-top__logo--size'
+      .header-top__form
+        %form.top-form
+          %input.serch-form{name: 'keyword', placeholder: '何かお探しですか？', type: 'search', value: ''}
+          = icon('fas','search', class: 'serch-icon')
+    .header-nav
+      .header-nav__left
+        %ul.nav-list
+          %li.category
+            = link_to '#', class: 'category__link' do
+              = icon('fas', 'list-ul', class: 'category-icon')
+              カテゴリーから探す
+            %ul.nav-parent
+              %li.nav-children
+                = link_to '#', class: 'nav-children__link' do
+                  レディース
+              %li.nav-children
+                = link_to '#', class: 'nav-children__link' do
+                  メンズ
+              %li.nav-children
+                = link_to '#', class: 'nav-children__link' do
+                  ベビー・キッズ
+          %li.brand
+            = link_to '#', class: 'brand__link' do
+              = icon('fas', 'tag', class: 'brand-icon')
+              ブランドから探す
+            %ul.nav-parent
+              %li.nav-children
+                = link_to '#', class: 'nav-children__link' do
+                  シャネル
+              %li.nav-children
+                = link_to '#', class: 'nav-children__link' do
+                  ナイキ
+              %li.nav-children
+                = link_to '#', class: 'nav-children__link' do
+                  ルイヴィトン
+      .header-nav__right
+        .nav-login
+          %ul.logined-list
+            %li.notification
+              = link_to '#', class: 'notification__link' do
+                = icon('far', 'bell', class: 'notification-icon')
+                お知らせ
+            %li.todo
+              = link_to '#', class: 'todo__link' do
+                =icon('fas', 'check', class: 'todo-icon')
+                やることリスト
+                .todo__count
+                  3
+            %li.myPage
+              = link_to '#', class: 'myPage__link' do
+                = image_tag 'member_photo_noimage_thumb.png', alt: 'my page', class: 'myPage-icon'
+                マイページ
+        /
+          if user_signed_in?文で分ける
+          %ul.nav-login__list
+            %li.register
+              = link_to '#', class: 'register__link' do
+                新規会員登録
+            %li.login
+              = link_to '#', class: 'login__link' do
+                ログイン
