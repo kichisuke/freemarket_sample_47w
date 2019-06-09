@@ -205,13 +205,13 @@
       .content
         %h2.content-header
           プロフィール
-          %form
-            %input{type: "hidden"}
-            .profile-header
-              = image_tag 'user_icon.jpg', alt: 'my_icon', height: '60', width: '60', class: 'my_icon-img'
-              %input{type: "text", value: "名前",class: "profile-header__input"}
-            .profile-content
-              %textarea{name: "introduction", class: "profile-content__textarea"}
-              %input{type:"hidden"}
-              %button{type:"submit" ,class:"profile-content__button"}変更する
+        %form
+          %input{type: "hidden"}
+          .profile-header
+            = image_tag 'user_icon.jpg', alt: 'my_icon', height: '60', width: '60', class: 'my_icon-img'
+            %input{type: "text", value: "名前",class: "profile-header__input"}
+          .profile-content
+            %textarea{name: "introduction", class: "profile-content__textarea"}
+            %input{type:"hidden"}
+            %button{type:"submit" ,class:"profile-content__button"}変更する
   
