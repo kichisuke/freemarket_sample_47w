@@ -5,7 +5,7 @@
     .mypage
       .mypage__user
         .mypage__user__link
-          %a.mypage-link{href: "#"}
+          = link_to "#", class: "mypage-link" do
             = image_tag "member_photo_noimage.png", class: "mypage__user__link__icon"
             %h3.mypage__user__link__name user name
             .mypage__user__link__number
@@ -24,7 +24,7 @@
         .mypage__tabs__contents
           %ul.tab-news-content.tab-show
             %li.mypage__tabs__contents__news
-              %a.mypage__tabs__contents__news__link.mypage-list-link{href: "#"}
+              = link_to "#", class: "mypage__tabs__contents__news__link mypage-list-link" do
                 = image_tag "mercari_box.png", class: "mypage__tabs__contents__news__link__image"
                 .mypage__tabs__contents__news__link__message
                   .mypage__tabs__contents__news__link__message__text
@@ -35,7 +35,7 @@
                 %icon.mypage__tabs__contents__news__link__go
                   = icon 'fas', 'chevron-right'
             %li.mypage__tabs__contents__news
-              %a.mypage__tabs__contents__news__link.mypage-list-link{href: "#"}
+              = link_to "#", class: "mypage__tabs__contents__news__link mypage-list-link" do
                 = image_tag "mercari_box.png", class: "mypage__tabs__contents__news__link__image"
                 .mypage__tabs__contents__news__link__message
                   .mypage__tabs__contents__news__link__message__text
