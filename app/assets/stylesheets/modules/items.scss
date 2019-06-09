@@ -1,0 +1,118 @@
+.pickup-container {
+  padding: 40px 0;
+  background-color: #f5f5f5;
+  &__head {
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .pickup-items {
+    width: 940px;
+    margin: 0 auto;
+    &__head {
+      font-size: 22px;
+      text-align: center;
+      margin: 26px 11px;
+      width: 100%;
+      &--link {
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+    &__box {
+      width: auto;
+      display: flex;
+      &--item {
+        margin: 0 0 0 20px;
+        width: 213px;
+        height: 330px;
+        .item-link {
+          display: block;
+          text-decoration: none;
+          color: #333;
+          &__image-box {
+            width: 213px;
+            .item-image {
+              width: 100%;
+            }
+          }
+          &__text {
+            padding: 16px;
+            height: 110px;
+            box-sizing: border-box;
+            background-color: #fff;
+            &--header {
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 1.5;
+              overflow: hidden;
+              overflow: hidden;
+              height: 3em;
+              word-break: break-word;
+              white-space: normal;
+              position: relative;
+            }
+            &--price {
+              display: flex;
+              justify-content: space-between;
+              .price {
+                font-size: 15px;
+              }
+              .likes {
+                font-size: 15px;
+                &__icon {
+                  color: #C0C0C0;
+                }
+              }
+            }
+            &--tax {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+    .view-all {
+      display: flex;
+      padding: 20px 0 30px;
+      width: 99.5%;
+      justify-content: flex-end;
+      &__link {
+        display: block;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.pickup-items__head--link {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.pickup-items__head--link:hover {
+  opacity: .7;
+  text-decoration: underline;
+}
+
+.view-all__link {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.view-all__link:hover {
+  opacity: .7;
+  text-decoration: underline;
+}
+
+.item-link__text--header:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 1.5em;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255,255,255,0)), color-stop(72%, #fff));
+  background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
+}

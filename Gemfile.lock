@@ -72,6 +72,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     excon (0.64.0)
     execjs (2.7.0)
@@ -92,6 +94,8 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
+    font-awesome-sass (5.8.1)
+      sassc (>= 1.11)
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -188,6 +192,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+=======
+    sassc (2.1.0.pre2)
+      ffi (~> 1.9)
+>>>>>>> master
     sexp_processor (4.12.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -239,7 +247,11 @@ DEPENDENCIES
   capistrano3-unicorn
   carrierwave
   coffee-rails (~> 4.2)
+  erb2haml
   fog-aws
+=======
+  font-awesome-sass
+>>>>>>> master
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
