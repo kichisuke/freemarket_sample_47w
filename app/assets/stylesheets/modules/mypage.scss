@@ -17,6 +17,7 @@ h3 {
   margin: 0 auto;
   padding: 40px 0;
   width: 1020px;
+  display: flex;
 }
 
 .clearfix:after {
@@ -107,7 +108,6 @@ a {
 
 .mypage {
   width: 700px;
-  float: left;
   &__user {
     background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?17794984);
     height: 200px;
@@ -203,7 +203,6 @@ a {
 }
 
 .mypage-side {
-  float: left;
   width: 280px;
   margin: 0 40px 0 0;
   &__lists {
