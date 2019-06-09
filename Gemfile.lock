@@ -78,8 +78,6 @@ GEM
     excon (0.64.0)
     execjs (2.7.0)
     ffi (1.11.1)
-    font-awesome-sass (5.8.1)
-      sassc (>= 1.11)
     fog-aws (3.5.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -248,10 +246,8 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   erb2haml
-  font-awesome-sass
-  haml-rails
   fog-aws
-  font-awesome-sass (~> 5.8.1)
+  font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
