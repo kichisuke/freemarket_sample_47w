@@ -144,7 +144,7 @@
 
 .main-content{
   width:1020px;
-  height: 1000px;
+  height: 100%;
   margin: 24px auto 0;
   padding: 0 0 40px;
   display:block;
@@ -170,6 +170,26 @@
       right: 16px;
       color: #ccc;
     }
+    &__merpay{
+      margin: 40px 0 0;
+      font-size: 16px;
+      h3{
+        font-size: 22px;
+      }
+      .list-side__menu{
+        margin: 8px 0 0;
+      }
+    }
+    &__config{
+      margin: 40px 0 0;
+      font-size: 16px;
+      h3{
+        font-size: 22px;
+      }
+      .list-side__menu{
+        margin: 8px 0 0;
+      }
+    }
   }
 
   .right-side{
@@ -191,7 +211,7 @@
           background-size: cover;
           text-align: center;
           font-size: 0;
-          .myicon-img{
+          .my_icon-img{
             display: inline-block;
             overflow: hidden;
             width: 60px;
@@ -243,6 +263,10 @@
       }
     }
   }
+}
+
+html{
+  height: 1500px;
 }
 
 body {
