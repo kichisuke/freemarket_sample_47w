@@ -100,7 +100,28 @@
       }
     }
   }
-  
+  &__footer {
+    width: 456px;
+    //height: 220px;
+    margin: 0 auto;
+    padding: 40px 0;
+    font-size: 12px;
+    &__menu li {
+      display: inline-block;
+      margin: 0 0 0 16px;
+    }
+    &__logo {
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      &__image {
+        width: 80px;
+      }
+    }
+    &__title {
+      margin: 8px 0 0;
+    }
+  }
 }
 
 .bold {
