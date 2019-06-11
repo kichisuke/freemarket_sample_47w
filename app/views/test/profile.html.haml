@@ -214,4 +214,9 @@
             %textarea{name: "introduction", class: "profile-content__textarea"}
             %input{type:"hidden"}
             %button{type:"submit" ,class:"profile-content__button"}変更する
+  .sell-button
+    =link_to "#", class: "sell-button__link" do
+      .sell-button__link__text
+        出品
+      = fa_icon "camera", class: 'icon-camera'
   
