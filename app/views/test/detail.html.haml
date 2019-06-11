@@ -1,1 +1,121 @@
-test
+= render 'shared/header'
+
+.nav-urls
+  %ul.nav-urls__parent
+    %li.nav-urls__children
+      = link_to '#', class: 'nav-urls__children--link' do
+        メルカリ
+      = icon('fas', 'angle-right', class: 'arrow-right-icon')
+    %li.nav-urls__children
+      %span.nav-urls__children--item-name
+        商品名
+
+.item-box-container
+  .item-box-container__item-box
+    %h1.item-box-container__item-box__item-name
+      商品名商品名商品名
+    .item-box-container__item-box__contents
+      .slider-container
+        .slider
+          %div
+            = image_tag "dummy-item1.png"
+          %div
+            = image_tag "dummy-item2.png"
+          %div
+            = image_tag "dummy-item3.png"
+      .item-detail
+        %table.item-detail__table
+          %tr
+            %th
+              出品者
+            %td
+              出品者名
+              .item-user-ratings
+                = icon('far', 'grin', class: 'good-icon')
+                %span 100
+              .item-user-ratings
+                = icon('far', 'meh', class: 'good-icon')
+                %span 100
+              .item-user-ratings
+                = icon('far', 'frown', class: 'good-icon')
+                %span 100
+            %th
+              カテゴリー
+            %td
+              
+
+
+
+    <table class="item-detail-table">
+      <tr>
+        <th>出品者</th>
+        <td>
+          <a href="https://www.mercari.com/jp/u/181108242/">りえ☆コメントはお返事ください</a>
+          <div>
+              <div class="item-user-ratings">
+                <i class="icon-good"></i>
+                <span>141</span>
+              </div>
+                <div class="item-user-ratings">
+                <i class="icon-normal"></i>
+                <span>1</span>
+              </div>
+                <div class="item-user-ratings">
+                <i class="icon-bad"></i>
+                <span>0</span>
+              </div>
+                      </div>
+        </td>
+      </tr>
+      <tr>
+        <th>カテゴリー</th>
+        <td>
+                    <a href="https://www.mercari.com/jp/category/1/"><div>レディース</div></a>
+                                <a href="https://www.mercari.com/jp/category/13/">
+              <div class="item-detail-table-sub-category"><i class="icon-arrow-right"></i> パンツ</div>
+            </a>
+                    <a href="https://www.mercari.com/jp/category/158/">
+            <div class="item-detail-table-sub-sub-category"><i class="icon-arrow-right"></i> カジュアルパンツ</div>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>ブランド</th>
+          <td>
+                          <a href="https://www.mercari.com/jp/brand/592/">
+                <div>
+                  サマンサモスモス
+                </div>
+              </a>
+                      </td>
+      </tr>
+              <tr>
+          <th>商品のサイズ</th>
+          <td>FREE SIZE</td>
+        </tr>
+            <tr>
+        <th>商品の状態</th>
+        <td>新品、未使用</td>
+      </tr>
+      <tr>
+        <th>配送料の負担</th>
+        <td>送料込み(出品者負担)</td>
+      </tr>
+      <tr>
+        <th>配送の方法</th>
+        <td>未定</td>
+      </tr>
+              <tr>
+          <th>配送元地域</th>
+          <td><a href="https://www.mercari.com/jp/area/11/">埼玉県</a></td>
+        </tr>
+      
+              <tr>
+          <th>発送日の目安</th>
+          <td>1~2日で発送</td>
+        </tr>
+      
+          </table>
+
+= render 'shared/banner'
+= render 'shared/footer'
