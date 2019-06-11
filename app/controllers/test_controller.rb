@@ -4,4 +4,6 @@ class TestController < ApplicationController
 
   def detail
   end
+  def mypage
+  end
 end
