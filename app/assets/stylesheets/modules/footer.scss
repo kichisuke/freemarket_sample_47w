@@ -1,0 +1,90 @@
+.footer {
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  .footer-inner {
+    margin: 0 auto;
+    padding: 18px 0 0 0;
+    width: 1020px;
+    height: 298px;
+    display: flex;
+    .footer-cell {
+      padding: 0 20px 0 0;
+      &__head {
+        font-size: 16px;
+      }
+      &__list {
+        &--children {
+          margin: 10px 0 0;
+          .footer-link {
+            font-size: 12px;
+            color: #C0C0C0;
+          }
+        }
+      }
+      .sns-icons {
+        display: flex;
+        .twitter-icon {
+          font-size: 35px;
+          color: #fff;
+          margin: 0 10px 0 0;
+        }
+        .facebook-icon {
+          font-size: 35px;
+          color: #fff;
+        }
+      }
+    }
+    .footer-wide-cell {
+      &__head {
+        font-size: 16px;
+      }
+      &__wrapper {
+        display: flex;
+        .footer-inner-cell {
+          padding: 0 20px 0 0;
+        }
+      }
+    }
+    .footer-cell-lang {
+    }
+  }
+  &__bottom {
+    margin: 30px auto 20px;
+    width: 1020px;
+    line-height: 0;
+    &--2019 {
+      font-size: 8px;
+      text-align: center;
+      vertical-align: sub;
+    }
+  }
+}
+
+.footer-sell-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 160px;
+  height: 160px;
+  font-size: 22px;
+  border-radius: 50%;
+  background-color: #ea352d;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  &__text {
+    margin: 32px 0 0;
+  }
+  &__icon {
+    font-size: 60px;
+  }
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}

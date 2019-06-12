@@ -2,6 +2,6 @@ class TestController < ApplicationController
   def index
   end
 
-  def profile
+  def mypage
   end
 end
