@@ -32,7 +32,7 @@
   padding: 40px 0 0;
   &__item-box {
     width: 700px;
-    padding: 0 40px 40px;
+    padding: 24px 40px 40px;
     margin: 0 auto 0;
     box-sizing: border-box;
     background-color: #fff;
@@ -40,6 +40,48 @@
       font-size: 24px;
       font-weight: bold;
       text-align: center;
+    }
+    &__contents {
+      display: flex;
+      justify-content: center;
+      margin: 16px 0 0 0;
+    }
+  }
+}
+
+.item-detail {
+  &__table {
+    width: 300px;
+    margin: 0 0 0 20px;
+    border-collapse: collapse;
+    border: 1px solid #f5f5f5;
+    font-size: 14px;
+    th {
+      padding: 8px;
+      background-color: #FAFAFA;
+    }
+    td {
+      padding: 8px;
+    }
+    &__ratings-container {
+      display: flex;
+      &__item-user-ratings {
+        margin: 8px 0 0 0;
+        &__good-icon {
+          font-size: 17px;
+          color: #FF6699;
+        }
+        &__normal-icon {
+          margin: 0 0 0 16px;
+          font-size: 17px;
+          color: #FF9900;
+        }
+        &__bad-icon {
+          margin: 0 0 0 16px;
+          font-size: 17px;
+          color: #00CCFF;
+        }
+      }
     }
   }
 }
@@ -50,4 +92,27 @@
 
 .slider-container img {
   width: 100%;
+}
+
+.slick-dots {
+  position: absolute !important;
+  bottom: 20px !important;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 5px;
+}
+
+.thumbnail-slider {
+  display: flex;
+  width: 100%;
+  &__item {
+    width: 75px;
+    height: 75px;
+    display: block;
+    margin: 0 5px 0 0;
+  }
+  img{
+    margin: 0 auto;
+  }
 }
