@@ -1,0 +1,37 @@
+.wrapper{
+  background-color: #eee;
+}
+.wrapper__top{
+  text-align: center;
+  height: 88px;
+  width:100%;
+  padding-top:40px;
+}
+
+.wrapper__bottom{
+  width:456px;
+  height: 140px;
+  padding:40px 0;
+  margin:0 auto;
+  text-align: center;
+  }
+  .wrapper__bottom a{
+    font-size:12px;
+    margin-left:8px;
+  }
+  .wrapper__bottom a:hover{
+    opacity:0.5;
+    text-decoration: underline;
+  }
+  .wrapper__bottom img{
+    margin-top:30px;
+  }
+  .wrapper__bottom img:hover{
+    opacity: 0.5;
+  }
+  .wrapper__bottom small{
+    display: block;
+    font-size:11px;
+    margin-top:3px;
+  }
+  
