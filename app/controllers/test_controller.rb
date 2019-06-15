@@ -10,4 +10,7 @@ class TestController < ApplicationController
 
   def registration
   end
+
+  def sms_confirmation
+  end
 end

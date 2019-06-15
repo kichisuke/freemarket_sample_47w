@@ -1,9 +1,6 @@
 .signup-container
   .registration-header
-    .registration-header__logo
-      %h1.registration-header__logo__link
-        = link_to '#' do
-          = image_tag 'logo.png', alt: 'mercari', class: 'registration-header__img'
+    = render partial: 'registration-header'
     .progress-bar
       %ol
         %li.progress-bar__list#current-page
@@ -154,12 +151,12 @@
           %p
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .registration-form__group
-        %p.registration-form__text
-          「次へ進む」のボタンを押すことにより、
-          = link_to '利用規約', '#'
-          に同意したものとみなします
-        %button{type: 'submit', class: 'registration-form__btn'}
-          次へ進む
+          %p.registration-form__text
+            「次へ進む」のボタンを押すことにより、
+            = link_to '利用規約', '#'
+            に同意したものとみなします
+          %button{type: 'submit', class: 'registration-form__btn'}
+            次へ進む
         .registration-form__group
           %p.registration-form__text__right
             = link_to '#' do
