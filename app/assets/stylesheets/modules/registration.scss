@@ -1,0 +1,208 @@
+//color
+$black: #333333;
+$white: #ffffff;
+$light_gray: #cccccc;
+$dark_gray: #888888;
+$red: #ea352d;
+$blue: #0099e8;
+//
+
+//mixin
+@mixin progress-bar {
+  width: 110%;
+  height: 2px;
+  background-color: $light_gray;
+  position: absolute;
+  bottom: 5px;
+  content: '';
+  z-index: -1;
+}
+//
+
+a {
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+}
+
+select {
+  width: 100%;
+  height: inherit;
+  padding: 0 10px;
+  border: 1px solid $light_gray;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+#current-page {
+  color: $red;
+}
+#red {
+  background: $red;
+}
+
+.registration-header {
+  height: 128px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  &__logo {
+    padding-top: 40px;
+  }
+  &__img {
+    width: 185px;
+    height: 49px;
+    margin-right: 8px;
+    line-height: 49px;
+  }
+}
+.progress-bar {
+  padding: 40px 0 0 44px;
+  display: flex;
+  &__list {
+    font-size: 12px;
+    margin-right: 40px;
+    color: $dark_gray;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  .progress-status {
+    width: 12px;
+    height: 12px;
+    margin: 8px auto 0;
+    background-color: $light_gray;
+    border-radius: 50%;
+    &__bar-right {
+      @include progress-bar;
+      left: 50%;
+    }
+    &__bar-left {
+      @include progress-bar;
+      right: 50%;
+    }
+  }
+}
+
+.registration-main {
+  width: 700px;
+  margin: 0 auto;
+  background-color: $white;
+  &__head {
+    padding: 32px 16px;
+    color: $black;
+    font-size: 22px;
+    text-align: center;
+  }
+  &__inner {
+    padding: 40px 16px;
+  }
+}
+.registration-form {
+  max-width: 320px;
+  margin: 0 auto;
+  &__group {
+    width: 320px;
+    margin-top: 40px;
+    display: block;
+    &:first-child {
+      margin-top: 0;
+    }
+    &__confirmation {
+      h3 {
+        color: $black;
+        font-size: 16px;
+      }
+      p {
+        margin-top: 8px;
+        color: $black;
+        display: inline-block;
+        font-size: 14px;
+      }
+    }
+  }
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: $black;
+    display: inline-block;
+  }
+  span.require {
+    background: $red;
+    color: $white;
+    font-size: 12px;
+    padding: 2px 4px;
+    margin-left: 8px;
+    border-radius: 2px;
+  }
+  &__input {
+    width: 320px;
+    padding: 10px 16px 8px;
+    margin-top: 8px;
+    display: block;
+  }
+  &__birthday-select {
+    width: 320px;
+    color: $black;
+    &__wrap {
+      height: 48px;
+      width: 76px;
+      margin-top: 8px;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      font-size: 18px;
+      transform: translate(0, -50%);
+      color: $dark_gray;
+    }
+    .date {
+      margin: 0 2px;
+      color: $black;
+      font-size: 14px;
+      line-height: 48px;
+    }
+  }
+  &__info-text {
+    width: 320px;
+    color: $dark_gray;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  &__text {
+    font-size: 14px;
+    color: $black;
+    display: inline-block;
+    text-align: center;
+    a {
+      color: $blue;
+    }
+  }
+  &__btn {
+    width: 320px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: $red;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  &__text__right {
+    font-size: 14px;
+    text-align: right;
+    a {
+      color: $blue;
+    }
+  }
+}
