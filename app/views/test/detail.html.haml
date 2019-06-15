@@ -32,73 +32,76 @@
             = image_tag "dummy-item3.png"
       .item-detail
         %table.item-detail__table
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               出品者
-            %td
-              = link_to '#', class: 'item-detail__table__category-link' do
+            %td.item-detail__table__tr__td
+              = link_to '#', class: 'item-detail__table__tr__td__user-link' do
                 出品者名
-              .item-detail__table__ratings-container
-                .item-detail__table__ratings-container__item-user-ratings
-                  = icon('fas', 'grin', class: 'item-detail__table__ratings-container__item-user-ratings__good-icon')
-                  %span 100
-                .item-detail__table__ratings-container__item-user-ratings
-                  = icon('fas', 'meh', class: 'item-detail__table__ratings-container__item-user-ratings__normal-icon')
-                  %span 100
-                .item-detail__table__ratings-container__item-user-ratings
-                  = icon('fas', 'frown', class: 'item-detail__table__ratings-container__item-user-ratings__bad-icon')
-                  %span 100
-          %tr
-            %th
+              .item-detail__table__tr__td__ratings-container
+                .item-detail__table__tr__td__ratings-container__item-user-ratings
+                  = icon('fas', 'grin', class: 'item-detail__table__tr__td__ratings-container__item-user-ratings__good-icon')
+                  %span.item-detail__table__tr__td__ratings-container__item-user-ratings__count
+                    100
+                .item-detail__table__tr__td__ratings-container__item-user-ratings
+                  = icon('fas', 'meh', class: 'item-detail__table__tr__td__ratings-container__item-user-ratings__normal-icon')
+                  %span.item-detail__table__tr__td__ratings-container__item-user-ratings__count
+                    100
+                .item-detail__table__tr__td__ratings-container__item-user-ratings
+                  = icon('fas', 'frown', class: 'item-detail__table__tr__td__ratings-container__item-user-ratings__bad-icon')
+                  %span.item-detail__table__tr__td__ratings-container__item-user-ratings__count
+                    100
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               カテゴリー
-            %td
-              = link_to '#', class: 'item-detail__table__category-link' do
+            %td.item-detail__table__tr__td
+              = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 カテゴリー１
-              = link_to '#', class: 'item-detail__table__category-link' do
+              = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
-                  = icon('fas', 'angle-right', class: 'item-detail__table__category-link__sub-category__arrow-right-icon')
+                  = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
                   カテゴリー２
-              = link_to '#', class: 'item-detail__table__category-link' do
+              = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
-                  = icon('fas', 'angle-right', class: 'item-detail__table__category-link__sub-category__arrow-right-icon')
+                  = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
                   カテゴリー３
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               ブランド
-            %td
-              = link_to '#', class: 'item-detail__table__category-link' do
+            %td.item-detail__table__tr__td
+              = link_to '#', class: 'item-detail__table__tr__td__brand-link' do
                 %div
                   ブランド名
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               商品サイズ
-            %td
+            %td.item-detail__table__tr__td
               FREE SIZE
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               商品の状態
-            %td
+            %td.item-detail__table__tr__td
               新品、未使用
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               配送料の負担
-            %td
+            %td.item-detail__table__tr__td
               送料込み(出品者負担)
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               配送の方法
-            %td
+            %td.item-detail__table__tr__td
               未定
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               配送元地域
-            %td
-              = link_to '#', class: 'item-detail__table__category-link' do
+            %td.item-detail__table__tr__td
+              = link_to '#', class: 'item-detail__table__tr__td__prefecture-link' do
                 大阪府
-          %tr
-            %th
+          %tr.item-detail__table__tr
+            %th.item-detail__table__tr__th
               発送日の目安
-            %td
+            %td.item-detail__table__tr__td
               1~2日で発送
     .item-box-container__item-box__item-price-box
       %span.item-box-container__item-box__item-price-box__price
@@ -127,13 +130,21 @@
           = link_to '#', class: 'item-box-container__item-box__buttons-container__left-buttons__report-btn__link' do
             = icon('far', 'flag', class: 'item-box-container__item-box__buttons-container__left-buttons__report-btn__link__report-icon')
             %span.item-box-container__item-box__buttons-container__left-buttons__report-btn__link__text
-              不適切なボタンの報告
+              不適切な商品の報告
       .item-box-container__item-box__buttons-container__right-button
         = link_to '#', class: 'item-box-container__item-box__buttons-container__right-button__link' do
           = icon('fas', 'lock', class: 'item-box-container__item-box__buttons-container__right-button__link__lock-icon')
           %span.item-box-container__item-box__buttons-container__right-button__link__text
             あんしん・あんぜんへの取り組み
 
+  .item-box-container__message-container
+    %p.item-box-container__message-container__attention
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %form.item-box-container__message-container__form
+      %textarea.item-box-container__message-container__form__textarea
+      %button.item-box-container__message-container__form__submit{type: 'submit'}
+        %span.item-box-container__message-container__form__submit__text
+          コメントする
 
 
 = render 'shared/banner'
