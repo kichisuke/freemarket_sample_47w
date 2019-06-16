@@ -7,4 +7,7 @@ class TestController < ApplicationController
 
   def mypage
   end
+
+  def purchase
+  end
 end
