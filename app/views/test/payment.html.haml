@@ -1,0 +1,87 @@
+.signup-container
+  .registration-header
+    = render partial: 'registration-header'
+    .progress-bar
+      %ol
+        %li.progress-bar__list
+          会員情報
+          .progress-status#red
+          .progress-status__bar-right#red
+        %li.progress-bar__list
+          電話番号認証
+          .progress-status#red
+          .progress-status__bar-left#red
+          .progress-status__bar-right#red
+        %li.progress-bar__list
+          お届け先住所入力
+          .progress-status#red
+          .progress-status__bar-left#red
+          .progress-status__bar-right#red
+        %li.progress-bar__list#current-page
+          支払い方法
+          .progress-status#red
+          .progress-status__bar-left#red
+          .progress-status__bar-right
+        %li.progress-bar__list
+          完了
+          .progress-status
+          .progress-status__bar-left
+  .registration-main
+    .registration-main__head
+      %h2
+        支払い方法
+    .registration-main__inner
+      .form.registration-form
+        .registration-form__group
+          %label{for: "number"} カード番号
+          %span.require 必須
+          %input{type: "text", name: 'number', placeholder: '半角数字のみ', class: 'registration-form__input'}
+        .registration-form__credit-img
+          = image_tag 'credit_card/visa.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+          = image_tag 'credit_card/master_card.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+          = image_tag 'credit_card/saison_card.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+          = image_tag 'credit_card/jcb.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+          = image_tag 'credit_card/american_express.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+          = image_tag 'credit_card/diners_club.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+          = image_tag 'credit_card/discover.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+        .registration-form__group
+          %label{for: "expiration"} 有効期限
+          %span.require 必須
+          .registration-form__select
+            .registration-form__select__wrap
+              %select{name: 'expiration_month', class: 'select'}
+                %option{value: ""} --
+                %option{value: "1"} 1
+                %option{value: "2"} 2
+                %option{value: "3"} 3
+                %option{value: "4"} 4
+                %option{value: "5"} 5
+                %option{value: "6"} 6
+                %option{value: "7"} 7
+                %option{value: "8"} 8
+                %option{value: "9"} 9
+                %option{value: "10"} 10
+                %option{value: "11"} 11
+                %option{value: "12"} 12
+              = icon 'fas', 'chevron-down'
+            %span.date 月
+            .registration-form__select__wrap
+              %select{name: 'expiration_year', class: 'select'}
+                %option{value: ""} --
+                %option{value: "2020"} 2020
+                %option{value: "2021"} 2021
+                %option{value: "2022"} 2022
+                %option{value: "2023"} 2023
+              = icon 'fas', 'chevron-down'
+            %span.date 年
+        .registration-form__group
+          %label{for: "security_code"} セキュリティーコード
+          %span.require 必須
+          %input{type: "text", name: 'security_code', placeholder: 'カード背面4桁もしくは3桁の番号', class: 'registration-form__input'}
+          %p.registration-form__text__right
+            = icon 'fas', 'question-circle'
+            = link_to 'カード背面の番号とは？', '#'
+        %button{type: 'submit', class: 'registration-form__btn'}
+          次へ進む
+  = render partial: 'signup-footer'
+

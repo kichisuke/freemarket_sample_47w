@@ -208,6 +208,7 @@ select {
     cursor: pointer;
   }
   &__text__right {
+    margin-top: 8px;
     font-size: 14px;
     text-align: right;
     a {
@@ -219,7 +220,7 @@ select {
 //sms_confirmation
 .registration-main {
   &__head {
-    @include registration-head(8px, 24px);
+    @include registration-head(10px, 24px);
   }
   &__inner {
     padding: 64px;
@@ -238,5 +239,21 @@ select {
   width: 320px;
   font-size: 16px;
 }
+//
+
+//payment
+.registration-form__credit-img {
+  height: 32px;
+  margin-top: 8px;
+  &__size {
+    float: left;
+    width: 45px;
+    height: auto;
+  }
+}
+.fa-question-circle {
+  color: $blue;
+}
+
 //
 
