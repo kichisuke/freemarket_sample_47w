@@ -16,4 +16,7 @@ class TestController < ApplicationController
 
   def input_address
   end
+
+  def payment
+  end
 end
