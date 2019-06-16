@@ -19,4 +19,7 @@ class TestController < ApplicationController
 
   def payment
   end
+
+  def signup_end
+  end
 end
