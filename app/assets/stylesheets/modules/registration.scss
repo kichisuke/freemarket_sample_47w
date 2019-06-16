@@ -108,6 +108,7 @@ select {
   }
   &__inner {
     padding: 40px 16px;
+    text-align: center;
   }
 }
 .registration-form {
@@ -256,5 +257,9 @@ select {
 }
 //
 
-
+//signup_end
+.registration-main__inner__text {
+  font-size: 18px;
+  text-align: center;
+}
 
