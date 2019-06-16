@@ -155,7 +155,7 @@ select {
     display: block;
     box-sizing: border-box;
   }
-  &__birthday-select {
+  &__select {
     width: 320px;
     color: $black;
     &__wrap {
@@ -225,3 +225,18 @@ select {
     padding: 64px;
   }
 }
+//
+
+//input_adress
+.registration-main {
+  &__head {
+    @include registration-head(10px, 24px);
+  }
+}
+
+.select-prefecture {
+  width: 320px;
+  font-size: 16px;
+}
+//
+

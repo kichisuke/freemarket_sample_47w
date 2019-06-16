@@ -74,8 +74,8 @@
         .registration-form__group
           %label{for: "birthday"} 生年月日
           %span.require 必須
-          .registration-form__birthday-select
-            .registration-form__birthday-select__wrap
+          .registration-form__select
+            .registration-form__select__wrap
               %select{name: 'year', class: 'select'}
                 %option{value: ""} --
                 %option{value: "2019"} 2019
@@ -113,7 +113,7 @@
                 %option{value: "1999"} 1999
               = icon 'fas', 'chevron-down'
             %span.date 年
-            .registration-form__birthday-select__wrap
+            .registration-form__select__wrap
               %select{name: 'month', class: 'select'}
                 %option{value: ""} --
                 %option{value: "1"} 1
@@ -130,7 +130,7 @@
                 %option{value: "12"} 12
               = icon 'fas', 'chevron-down'
             %span.date 月
-            .registration-form__birthday-select__wrap
+            .registration-form__select__wrap
               %select{name: 'day', class: 'select'}
                 %option{value: ""} --
                 %option{value: "1"} 1

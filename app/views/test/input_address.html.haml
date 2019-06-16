@@ -1,0 +1,109 @@
+.signup-container
+  .registration-header
+    = render partial: 'registration-header'
+    .progress-bar
+      %ol
+        %li.progress-bar__list
+          会員情報
+          .progress-status#red
+          .progress-status__bar-right#red
+        %li.progress-bar__list
+          電話番号認証
+          .progress-status#red
+          .progress-status__bar-left#red
+          .progress-status__bar-right#red
+        %li.progress-bar__list#current-page
+          お届け先住所入力
+          .progress-status#red
+          .progress-status__bar-left#red
+          .progress-status__bar-right
+        %li.progress-bar__list
+          支払い方法
+          .progress-status
+          .progress-status__bar-left
+          .progress-status__bar-right
+        %li.progress-bar__list
+          完了
+          .progress-status
+          .progress-status__bar-left
+  .registration-main
+    .registration-main__head
+      %h2
+        住所入力
+    .registration-main__inner
+      .form.registration-form
+        .registration-form__group
+          %label{for: "name"} お名前
+          %span.require 必須
+          %input{type: "text", name: 'family_name', placeholder: '例) 山田', class: 'registration-form__input'}
+          %input{type: "text", name: 'first_name', placeholder: '例) 彩', class: 'registration-form__input'}
+        .registration-form__group
+          %label{for: "name"} お名前カナ
+          %span.require 必須
+          %input{type: "text", name: 'family_name_kana', placeholder: '例) ヤマダ', class: 'registration-form__input'}
+          %input{type: "text", name: 'first_name_kana', placeholder: '例) アヤ', class: 'registration-form__input'}
+        .registration-form__group
+          %label{for: "postal_code"} 郵便番号
+          %span.require 必須
+          %input{type: "text", name: 'postal_code', placeholder: '例) 123-4567', class: 'registration-form__input'}
+        .registration-form__group
+          %label{for: "prefecture"} 都道府県
+          %span.require 必須
+          .registration-form__select
+            .registration-form__select__wrap.select-prefecture
+              %select{name: 'prefecture', class: 'select'}
+                %option{value: "北海道"} 北海道
+                %option{value: "2019"} 2019
+                %option{value: "2018"} 2018
+                %option{value: "2017"} 2017
+                %option{value: "2016"} 2016
+                %option{value: "2015"} 2015
+                %option{value: "2014"} 2014
+                %option{value: "2013"} 2013
+                %option{value: "2012"} 2012
+                %option{value: "2011"} 2011
+                %option{value: "2010"} 2010
+                %option{value: "2009"} 2009
+                %option{value: "2008"} 2008
+                %option{value: "2007"} 2007
+                %option{value: "2006"} 2006
+                %option{value: "2005"} 2005
+                %option{value: "2004"} 2004
+                %option{value: "2003"} 2003
+                %option{value: "2002"} 2002
+                %option{value: "2001"} 2001
+                %option{value: "2000"} 2000
+                %option{value: "1999"} 1999
+                %option{value: "1998"} 1998
+                %option{value: "1997"} 1997
+                %option{value: "1996"} 1996
+                %option{value: "1995"} 1995
+                %option{value: "1994"} 1994
+                %option{value: "1993"} 1993
+                %option{value: "1992"} 1992
+                %option{value: "1991"} 1991
+                %option{value: "1990"} 1990
+                %option{value: "1989"} 1989
+                %option{value: "1999"} 1999
+                %option{value: "1999"} 1999
+              = icon 'fas', 'chevron-down'
+        .registration-form__group
+          %label{for: "city"} 市区町村
+          %span.require 必須
+          %input{type: "text", name: 'city', placeholder: '例) 横浜市緑区', class: 'registration-form__input'}
+        .registration-form__group
+          %label{for: "street_adress"} 番地
+          %span.require 必須
+          %input{type: "text", name: 'street_adress', placeholder: '例) 青山1-1-1', class: 'registration-form__input'}
+        .registration-form__group
+          %label{for: "building"} 建物名
+          %span.require 必須
+          %input{type: "text", name: 'building', placeholder: '例) 柳ビル103', class: 'registration-form__input'}
+        .registration-form__group
+          %label{for: "phone_number"} 電話番号
+          %span.require 必須
+          %input{type: "text", name: 'phone_number', placeholder: '例) 09012345678', class: 'registration-form__input'}
+        %button{type: 'submit', class: 'registration-form__btn'}
+          次へ進む
+  = render partial: 'signup-footer'
+
