@@ -1,32 +1,37 @@
-//mixin
+//color
 $bg-color: #f5f5f5;
 $white: #ffffff;
+//
 
-//extend
-%button {
+//mixin
+@mixin signup-btn($color, $background) {
+  position: relative;
   display: inline-block;
   width: 320px;
   height: 50px;
   font-size: 14px;
+  color: $color;
+  background-color: $background;
   cursor: pointer;
-  position: relative;
 }
 
-h2 {
-  font-weight: bold;
+@mixin signup-icon {
+  position: absolute;
+  left: 16px;
+  line-height: 50px;
 }
+//
 
 .signup-container {
   width: 100%;
   height: 100%;
   background-color: $bg-color;
   box-sizing: border-box;
-  // padding-bottom: 220px;
 }
 
-header {
+.signup-header {
   height: 128px;
-  .header-logo {
+  &__logo {
     text-align: center;
     padding-top: 40px;
     &__size {
@@ -37,7 +42,6 @@ header {
 }
 .signup {
   width: 700px;
-  // height: 408px;
   background-color: $white;
   margin: 0 auto;
   &__head {
@@ -48,76 +52,73 @@ header {
     font-family: sans-serif;
     font-size: 22px;
     color: #333333;
+    h2 {
+      font-weight: bold;
+    }
   }
   &__inner {
     padding: 64px;
     text-align: center;
   }
-  // &__content {
-  // }
   &__mail-btn {
-    @extend %button;
-    background-color: #eeeeee;
-    color: #000000;
+    @include signup-btn(#000000, #eeeeee);
     border: 1px solid transparent;
     line-height: 50px;
-      .icon-mail {
-        position: absolute;
-        left: 16px;
-        font-size: 22px;
-        line-height: 50px;
-        color: #cccccc;
-      }
+    transition: 0.5s;
+    &:hover {
+      text-decoration: none;
+      opacity: 0.6;
+    }
+    .icon-mail {
+      @include signup-icon;
+      font-size: 22px;
+      color: #cccccc;
+    }
   }
   &__facebook-btn {
-    @extend %button;
-    background-color: #385185;
-    color: $white;
+    @include signup-btn($white, #385185);
     margin-top: 16px;
     border: 1px solid transparent;
     line-height: 50px;
     .icon-facebook {
-      position: absolute;
-      left: 16px;
+      @include signup-icon;
       font-size: 30px;
-      line-height: 50px;
     }
   }
   &__google-btn {
-    @extend %button;
-    background-color: $white;
-    color: #333333;
+    @include signup-btn(#333333, $white);
     margin-top: 16px;
     border: 1px solid #979797;
     .icon-google {
+      @include signup-icon;
       width: 32px;
-      position: absolute;
-      left: 16px;
-      line-height: 50px;
     }
   }
 }
 
-footer {
+.sinup-footer {
   height: 220px;
   width: 456px;
   padding: 40px 0;
   margin: 0 auto;
-}
-.footer-nav {
-  font-size: 12px;
-  display: flex;
-  text-decoration: unset;
-  justify-content: center;
-  li {
+  &__nav__lists {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+  }
+  &__nav__list {
     margin-left: 16px;
   }
 }
 .footer-logo{
   text-align: center;
   &__link {
+    width: 130px;
     display: block;
     margin: 40px auto 0;
+    &:hover {
+      opacity: 0.8;
+    }
   }
   &__size {
     height: 65px;
