@@ -207,15 +207,16 @@
         .registration-form__info-text
           %p
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        //システム実装時この部分にreCAPTCHA導入
         .registration-form__group
           %p.registration-form__text
             「次へ進む」のボタンを押すことにより、
-            = link_to '利用規約', '#'
+            = link_to '利用規約', '#', class: 'link-default'
             に同意したものとみなします
           %button{type: 'submit', class: 'registration-form__btn'}
             次へ進む
           %p.registration-form__text__right
-            = link_to '#' do
+            = link_to '#', class: 'link-default' do
               本人情報の登録について
               = icon 'fas', 'chevron-right'
   = render partial: 'signup-footer'

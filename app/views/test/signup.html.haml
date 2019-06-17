@@ -1,9 +1,8 @@
 .signup-container
-  %header
-    .header-logo
-      %h1
-        = link_to '#' do
-          = image_tag 'logo.png', alt: 'mercari', class: 'header-logo__size'
+  %header.signup-header
+    %h1.signup-header__logo
+      = link_to '#', class: 'link-default' do
+        = image_tag 'logo.png', alt: 'mercari', class: 'signup-header__logo__size'
   .signup
     .signup__head
       %h2

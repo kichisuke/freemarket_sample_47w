@@ -1,12 +1,12 @@
-%footer
-  %nav
-    %ul.footer-nav
-      %li
-        = link_to 'プライバシーポリシー', '#'
-      %li
-        = link_to 'メルカリ利用規約', '#'
-      %li
-        = link_to '特定商取引に関する表記'
+%footer.sinup-footer
+  %nav.sinup-footer__nav
+    %ul.sinup-footer__nav__lists
+      %li.sinup-footer__nav__list
+        = link_to 'プライバシーポリシー', '#', class: 'link-default'
+      %li.sinup-footer__nav__list
+        = link_to 'メルカリ利用規約', '#', class: 'link-default'
+      %li.sinup-footer__nav__list
+        = link_to '特定商取引に関する表記', '#', class: 'link-default'
   .footer-logo
     = link_to '#', class: 'footer-logo__link' do
       = image_tag 'logo_gray.png', alt: 'mercari', class: 'footer-logo__size'
