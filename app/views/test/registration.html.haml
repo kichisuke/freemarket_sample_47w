@@ -5,7 +5,7 @@
       %ol
         %li.progress-bar__list#current-page
           会員情報
-          .progress-status#red
+          .progress-status#done
           .progress-status__bar-right
         %li.progress-bar__list
           電話番号認証
@@ -36,19 +36,19 @@
         .registration-form__group
           %label{for: "nickname"} ニックネーム
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: '例)メルカリ太郎', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: '例)メルカリ太郎', class: 'input-default'}
         .registration-form__group
           %label{for: "nickname"} メールアドレス
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: 'PC・携帯どちらでも可', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: 'PC・携帯どちらでも可', class: 'input-default'}
         .registration-form__group
           %label{for: "nickname"} パスワード
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: '6文字以上', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: '6文字以上', class: 'input-default'}
         .registration-form__group
           %label{for: "nickname"} パスワード(確認)
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: '6文字以上', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: '6文字以上', class: 'input-default'}
         .registration-form__group
           .registration-form__group__confirmation
             %h3
@@ -58,19 +58,19 @@
         .registration-form__group
           %label{for: "family_name_kanji"} 姓(全角)
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: '例)山田', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: '例)山田', class: 'input-default'}
         .registration-form__group
           %label{for: "first_name_kanji"} 名(全角)
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: '例)彩', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: '例)彩', class: 'input-default'}
         .registration-form__group
           %label{for: "family_name_kana"} 姓カナ(全角)
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: '例)ヤマダ', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: '例)ヤマダ', class: 'input-default'}
         .registration-form__group
           %label{for: "first_name_kana"} 名カナ(全角)
           %span.require 必須
-          %input{type: "text", name: 'nickname', placeholder: '例)アヤ', class: 'registration-form__input'}
+          %input{type: "text", name: 'nickname', placeholder: '例)アヤ', class: 'input-default'}
         .registration-form__group
           %label{for: "birthday"} 生年月日
           %span.require 必須
@@ -219,4 +219,4 @@
             = link_to '#', class: 'link-default' do
               本人情報の登録について
               = icon 'fas', 'chevron-right'
-  = render partial: 'signup-footer'
+  = render partial: 'login-footer'

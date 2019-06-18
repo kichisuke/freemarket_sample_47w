@@ -5,12 +5,12 @@
       %ol
         %li.progress-bar__list
           会員情報
-          .progress-status#red
-          .progress-status__bar-right#red
+          .progress-status#done
+          .progress-status__bar-right#done
         %li.progress-bar__list#current-page
           電話番号認証
-          .progress-status#red
-          .progress-status__bar-left#red
+          .progress-status#done
+          .progress-status__bar-left#done
           .progress-status__bar-right
         %li.progress-bar__list
           お届け先住所入力
@@ -34,7 +34,7 @@
       .form.registration-form
         .registration-form__group
           %label{for: "phone_number"} 携帯電話の番号
-          %input{type: "tel", name: 'phone_number', placeholder: '携帯電話の番号を入力', class: 'registration-form__input'}
+          %input{type: "tel", name: 'phone_number', placeholder: '携帯電話の番号を入力', class: 'input-default'}
           .registration-form__group__confirmation
             %p.registration-form__group__confirmation__text
               本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
@@ -47,4 +47,4 @@
             = link_to '#', class: 'link-default' do
               電話番号の確認が必要な理由
               = icon 'fas', 'chevron-right'
-  = render partial: 'signup-footer'
+  = render partial: 'login-footer'

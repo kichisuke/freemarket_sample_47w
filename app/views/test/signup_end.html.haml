@@ -5,27 +5,27 @@
       %ol
         %li.progress-bar__list
           会員情報
-          .progress-status#red
-          .progress-status__bar-right#red
+          .progress-status#done
+          .progress-status__bar-right#done
         %li.progress-bar__list
           電話番号認証
-          .progress-status#red
-          .progress-status__bar-left#red
-          .progress-status__bar-right#red
+          .progress-status#done
+          .progress-status__bar-left#done
+          .progress-status__bar-right#done
         %li.progress-bar__list
           お届け先住所入力
-          .progress-status#red
-          .progress-status__bar-left#red
-          .progress-status__bar-right#red
+          .progress-status#done
+          .progress-status__bar-left#done
+          .progress-status__bar-right#done
         %li.progress-bar__list
           支払い方法
-          .progress-status#red
-          .progress-status__bar-left#red
-          .progress-status__bar-right#red
+          .progress-status#done
+          .progress-status__bar-left#done
+          .progress-status__bar-right#done
         %li.progress-bar__list#current-page
           完了
-          .progress-status#red
-          .progress-status__bar-left#red
+          .progress-status#done
+          .progress-status__bar-left#done
   .registration-main
     .registration-main__head
       %h2
@@ -39,4 +39,4 @@
         %button{type: 'button', class: 'registration-form__btn'}
           メルカリを始める
   = render partial: 'shared/banner'
-  = render partial: 'signup-footer'
+  = render partial: 'login-footer'
