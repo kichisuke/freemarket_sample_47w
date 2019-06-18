@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'test' => 'test#index'
-  get 'test/mypage' => 'test#mypage', as: 'mypage'
-  get 'test/mypage/profile' => 'test#profile'
-  get 'test/purchase' => 'test#purchase', as: 'purchase'
+  get 'test', to: 'test#index'
+  get 'test/mypage', to: 'test#mypage', as: 'mypage'
+  get 'test/mypage/profile', to: 'test#profile'
+  get 'test/purchase', to: 'test#purchase', as: 'purchase'
   root 'test#index'
 end
