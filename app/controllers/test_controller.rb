@@ -4,6 +4,7 @@ class TestController < ApplicationController
 
   def sell
   end
+  
   def mypage
   end
 end
