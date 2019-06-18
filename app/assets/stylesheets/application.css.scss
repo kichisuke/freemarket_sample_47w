@@ -1,6 +1,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./reset";
+@import "./mixin";
+@import "./variable";
 @import "modules/header";
 @import "modules/items";
 @import "modules/banner";
