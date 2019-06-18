@@ -1,0 +1,27 @@
+.signup-container
+  %header.signup-header
+    %h1.signup-header__logo
+      = link_to '#', class: 'link-default' do
+        = image_tag 'logo.png', alt: 'mercari', class: 'signup-header__logo__size'
+  .login
+    .login__no-account
+      %p
+        アカウントをお持ちでない方はこちら
+      =link_to '新規会員登録', '#', class: 'login-btn'
+    .login-form__inner
+      %button.signup__facebook-btn
+        = icon 'fab', 'facebook-square', class: 'icon-facebook'
+        Facebookでログイン
+      %button.signup__google-btn
+        = image_tag 'google-icon.png', class: 'icon-google'
+        Googleでログイン
+    .form.login-form
+      .login-form__inner
+        %input{type: "email", placeholder: 'メールアドレス', class: 'input-default'}
+        %input{type: "password", placeholder: 'パスワード', class: 'login-form__inner__input input-default'}
+        //システム実装時にreCAPTCH導入予定
+        %button{type: 'submit', class: 'registration-form__btn'}
+          ログイン
+        .login-form__inner__group
+          = link_to 'パスワードをお忘れの方', '#', class: 'link-default login-form__inner__group__text'
+  = render partial: 'signup-footer'
