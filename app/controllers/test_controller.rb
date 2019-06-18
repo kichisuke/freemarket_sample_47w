@@ -17,4 +17,7 @@ class TestController < ApplicationController
 
   def purchase
   end
+
+  def user_identification
+  end
 end
