@@ -1,8 +1,5 @@
 .signup-container
-  %header.signup-header
-    %h1.signup-header__logo
-      = link_to '#', class: 'link-default' do
-        = image_tag 'logo.png', alt: 'mercari', class: 'signup-header__logo__size'
+  =render partial: 'login-header'
   .signup
     .signup__head
       %h2
@@ -18,4 +15,4 @@
         %button.signup__google-btn
           = image_tag 'google-icon.png', class: 'icon-google'
           Googleで登録
-  = render partial: 'signup-footer'
+  = render partial: 'login-footer'

@@ -1,8 +1,5 @@
-.signup-container
-  %header.signup-header
-    %h1.signup-header__logo
-      = link_to '#', class: 'link-default' do
-        = image_tag 'logo.png', alt: 'mercari', class: 'signup-header__logo__size'
+.login-container
+  = render partial: 'login-header'
   .login
     .login__no-account
       %p
@@ -24,4 +21,4 @@
           ログイン
         .login-form__inner__group
           = link_to 'パスワードをお忘れの方', '#', class: 'link-default login-form__inner__group__text'
-  = render partial: 'signup-footer'
+  = render partial: 'login-footer'
