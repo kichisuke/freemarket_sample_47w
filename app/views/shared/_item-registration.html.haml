@@ -1,0 +1,131 @@
+.wrapper
+  .wrapper__main
+    .wrapper__main__head
+      %h2 商品の情報を入力
+    .wrapper__main__image
+      %h2
+        出品画像
+        %span.form-require 必須
+      %p 最大10枚までアップロードできます
+      .wrapper__main__image__drop-box
+        %pre
+          :preserve
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
+    .wrapper__main__item
+      .wrapper__main__item__name
+        %h3
+          商品名
+          %span.form-require 必須
+        %input{placeholder: "商品名(必須40文字まで)"}/
+      .wrapper__main__item__text
+        %h3
+          商品の説明
+          %span.form-require 必須
+        %textarea{placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+    .wrapper__main__list__item
+      .wrapper__main__list__name
+        %p 商品の詳細
+      .wrapper__main__list__select__box
+        .wrapper__main__list__select__top
+          %p
+            カテゴリー
+            %span.form-require 必須
+          .wrapper__main__list__select__wrap 
+            %select
+              %option ---
+              %option レディース
+              %option メンズ
+              %option ベビー・キッズ
+              %option インテリア・住まい・小物
+              %option 本・音楽・ゲーム
+              %option おもちゃ・ホビーグッズ
+              %option コスメ・香水・美容
+              %option 家電・スマホ・カメラ
+              %option スポーツ・レジャー
+              %option ハンドメイド
+              %option チケット
+              %option 自動車・オートバイ
+              %option その他
+            %i.fas.fa-chevron-down
+        .wrapper__main__list__select__bottom
+          %p
+            商品の状態
+            %span.form-require 必須
+          .wrapper__main__list__select__wrap 
+            %select
+              %option ---
+              %option 新品、未使用
+              %option 未使用に近い
+              %option 目立った傷や汚れなし
+              %option やや傷や汚れあり
+              %option 傷や汚れあり
+              %option 全体的に状態が悪い
+            %i.fas.fa-chevron-down
+    .wrapper__main__list__delivery
+      .wrapper__main__list__name
+        %p
+          配送について
+          %span.fa.fa-question-circle
+      .wrapper__main__list__select__box 
+        .wrapper__main__list__select__top
+          %p
+            配送料の負担
+            %span.form-require 必須
+          .wrapper__main__list__select__wrap 
+            %select
+              %option ---
+              %option 送料込み(出品者負担)
+              %option 着払い(購入者負担)
+            %i.fas.fa-chevron-down
+        .wrapper__main__list__select__center
+          %p
+            発送元の地域
+            %span.form-require 必須
+          .wrapper__main__list__select__wrap
+            = collection_select :item, :delivery_source_area, Prefecture.all, :id, :name
+            %i.fas.fa-chevron-down
+        .wrapper__main__list__select__bottom
+          %p
+            発送までの日数
+            %span.form-require 必須
+          .wrapper__main__list__select__wrap 
+            %select
+              %option ---
+              %option 1~2日で発送
+              %option 2~4日で発送
+              %option 3~4日で発送
+            %i.fas.fa-chevron-down
+    .wrapper__main__list__price
+      .wrapper__main__list__name
+        %h
+          販売価格(300〜9,999,999)
+          %span.fa.fa-question-circle
+      .wrapper__main__list__select__box
+        .wrapper__main__list__select__top
+          %p
+            価格
+            %span.form-require 必須
+          %p.children
+            ¥
+            %input{placeholder: "例）300"}/
+        .wrapper__main__list__select__center
+          %p 販売手数料(10%)
+          %a.children -
+        .wrapper__main__list__select__bottom
+          %p 販売利益
+          %a.children -
+    .wrapper__main__bottom
+      %a.blue 禁止されている出品、行為
+      %a
+        を必ずご確認ください。
+        %br/
+      %a またブランド品でシリアルナンバー等がある場合はご記載ください。
+      %a.blue 偽ブランドの販売
+      %a は犯罪であり処罰される可能性があります。
+      %br/
+      %a また、出品を持ちまして
+      %a.blue 加盟店規約
+      %a に同意したことになります。
+      %button.wrapper__main__bottom__red 出品する
+      %button.wrapper__main__bottom__grey もどる

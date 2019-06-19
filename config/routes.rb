@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'test/mypage/profile', to: 'test#profile'
   get 'test/purchase', to: 'test#purchase', as: 'purchase'
   root 'test#index'
+  get 'test/sell' => 'test#sell'
   get 'detail', to: 'test#detail'
 end

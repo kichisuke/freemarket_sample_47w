@@ -67,3 +67,4 @@ gem 'erb2haml'
 gem 'font-awesome-sass'
 
 gem 'mini_magick'
+gem 'active_hash'
