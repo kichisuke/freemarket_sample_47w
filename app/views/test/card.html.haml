@@ -114,19 +114,15 @@
           = link_to "#", class: "list-side__menu__item" do
             ログアウト
             = icon 'fas', 'chevron-right', class: 'icon-menu'
-    .right-side
+    .right-side-card
       .content
         %h2.content-header
           支払い方法
-        %form
-          %input{type: "hidden"}
-          .profile-header
-            = image_tag 'member_photo_noimage_thumb.png', alt: 'my_icon', height: '60', width: '60', class: 'my_icon-img'
-            %input{type: "text", value: "名前",class: "profile-header__input"}
-          .profile-content
-            %textarea{name: "introduction", class: "profile-content__textarea"}
-            %input{type:"hidden"}
-            %button{type:"submit" ,class:"profile-content__button"}変更する
+        .content-inner
+          .content-inner__header
+            クレジットカード一覧 
+          .content-inner__main
+            VISA
   .sell-button
     =link_to "#", class: "sell-button__link" do
       .sell-button__link__text
