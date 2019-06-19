@@ -26,9 +26,9 @@
     text-align: center;
     border-bottom: 1px solid $bg-color;
     font-family: sans-serif;
-    font-size: 22px;
-    color: #333333;
+    color: $black;
     h2 {
+      font-size: 22px;
       font-weight: bold;
     }
   }

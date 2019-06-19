@@ -27,6 +27,7 @@
 
 @mixin registration-head($top-bottom, $sides) {
   padding: $top-bottom $sides;
+  margin: 0;
   border: 1px solid #f5f5f5;
   color: $black;
   font-size: 22px;

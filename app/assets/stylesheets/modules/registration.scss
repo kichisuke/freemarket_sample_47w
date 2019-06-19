@@ -107,9 +107,7 @@ label {
   background-color: $white;
   &__head {
     @include registration-head(32px, 16px);
-    h2 {
-      font-weight: bold;
-    }
+    // padding: 32px 16px;
   }
   &__inner {
     padding: 40px 16px;
@@ -202,7 +200,7 @@ label {
 
 //sms_confirmation
 .registration-main {
-  &__head {
+  &__head--sms {
     @include registration-head(10px, 24px);
   }
   &__inner {
@@ -213,7 +211,7 @@ label {
 
 //input_adress
 .registration-main {
-  &__head {
+  &__head--adress {
     @include registration-head(10px, 24px);
   }
 }
@@ -225,6 +223,11 @@ label {
 //
 
 //payment
+.registration-main {
+  &__head--payment {
+    @include registration-head(10px, 24px)
+  }
+}
 .registration-form__credit-img {
   height: 32px;
   margin-top: 8px;
