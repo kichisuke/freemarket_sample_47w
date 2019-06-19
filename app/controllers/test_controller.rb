@@ -6,6 +6,9 @@ class TestController < ApplicationController
     @item = Item.new
   end
   
+  def detail
+  end
+
   def profile
   end
 
