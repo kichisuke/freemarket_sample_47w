@@ -1,0 +1,139 @@
+.container
+  = render 'shared/header'
+  .profile-header
+    %ul
+      %li
+        = link_to "#", class: "profile-header__link" do
+          メルカリ
+          = icon 'fas', 'chevron-right', class: 'profile-header__link__icon'
+      %li
+        = link_to "#", class: "profile-header__link" do
+          マイページ
+          = icon 'fas', 'chevron-right', class: 'profile-header__link__icon'
+      %li
+        = link_to "#", class: "profile-header__link" do
+          プロフィール
+  .main-content.clearfix
+    .list-side
+      %ul.list-side__menu
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            マイページ
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            お知らせ
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            やることリスト
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            いいね！一覧
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品する
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品した商品 - 出品中
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品した商品 - 取引中
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            出品した商品 - 売却済み
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            購入した商品 - 取引中
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            購入した商品 - 過去の取引
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            ニュース一覧
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            評価一覧
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            ガイド
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            お問い合わせ
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+      %h3.list-side__merpay
+        メルペイ
+      %ul.list-side__menu
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            売上・振込申請
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            ポイント
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+      %h3.list-side__config
+        設定
+      %ul.list-side__menu
+        %li
+          = link_to "#", class: "list-side__menu__item__active" do
+            プロフィール
+            = icon 'fas', 'chevron-right', class: 'icon-menu__active'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            発送元・お届け先住所変更
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            支払い方法
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            メール/パスワード
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            本人情報
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            電話番号の確認
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+        %li
+          = link_to "#", class: "list-side__menu__item" do
+            ログアウト
+            = icon 'fas', 'chevron-right', class: 'icon-menu'
+    .right-side
+      .content
+        %h2.content-header
+          プロフィール
+        %form
+          %input{type: "hidden"}
+          .profile-header
+            = image_tag 'member_photo_noimage_thumb.png', alt: 'my_icon', height: '60', width: '60', class: 'my_icon-img'
+            %input{type: "text", value: "名前",class: "profile-header__input"}
+          .profile-content
+            %textarea{name: "introduction", class: "profile-content__textarea"}
+            %input{type:"hidden"}
+            %button{type:"submit" ,class:"profile-content__button"}変更する
+  .sell-button
+    =link_to "#", class: "sell-button__link" do
+      .sell-button__link__text
+        出品
+      = icon 'fas', 'camera', class: 'icon-camera'
+  .banner
+  = render 'shared/banner'    
+  .footer
+  = render 'shared/footer'
+  
