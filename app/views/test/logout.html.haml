@@ -1,0 +1,25 @@
+.container
+  = render 'shared/header'
+  .profile-header
+    %ul
+      %li
+        = link_to "#", class: "profile-header__link" do
+          メルカリ
+          = icon 'fas', 'chevron-right', class: 'profile-header__link__icon'
+      %li
+        = link_to "#", class: "profile-header__link" do
+          マイページ
+          = icon 'fas', 'chevron-right', class: 'profile-header__link__icon'
+      %li
+        = link_to "#", class: "profile-header__link" do
+          ログアウト
+
+  .contents.clearfix
+    = render partial: "mypage-side"
+    .mypage
+      .mypage__logout
+        = link_to '#', class: 'mypage__logout__btn' do
+          ログアウト
+
+  = render 'shared/banner'
+  = render 'shared/footer'
