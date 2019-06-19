@@ -65,6 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-sass'
-
 gem 'mini_magick'
-gem 'haml-rails'
+gem 'active_hash'

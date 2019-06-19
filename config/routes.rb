@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'test' => 'test#index'
   get 'test/mypage' => 'test#mypage', as: 'mypage'
+  get 'test/mypage/profile', to: 'test#profile'
+  get 'test/purchase', to: 'test#purchase', as: 'purchase'
   get 'test/signup' => 'test#signup'
   get 'test/login' => 'test#login'
   get 'test/registration' => 'test#registration'
@@ -9,4 +11,6 @@ Rails.application.routes.draw do
   get 'test/payment' => 'test#payment'
   get 'test/signup_end' => 'test#signup_end'
   root 'test#index'
+  get 'test/sell' => 'test#sell'
+  get 'detail', to: 'test#detail'
 end

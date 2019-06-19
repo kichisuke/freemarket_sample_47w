@@ -1,0 +1,16 @@
+= render 'shared/header'
+
+.nav-urls
+  %ul.nav-urls__parent
+    %li.nav-urls__parent__children
+      = link_to '#', class: 'nav-urls__parent__children--link' do
+        メルカリ
+      = icon('fas', 'angle-right', class: 'nav-urls__parent__children__arrow-right-icon')
+    %li.nav-urls__parent__children
+      %span.nav-urls__parent__children--item-name
+        商品名
+
+= render 'shared/item-detail'
+= render 'shared/other-items'
+= render 'shared/banner'
+= render 'shared/footer'
