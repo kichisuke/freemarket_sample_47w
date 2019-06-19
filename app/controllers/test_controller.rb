@@ -6,6 +6,12 @@ class TestController < ApplicationController
     @item = Item.new
   end
   
+  def profile
+  end
+
   def mypage
+  end
+
+  def purchase
   end
 end
