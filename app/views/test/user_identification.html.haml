@@ -31,7 +31,9 @@
           .mypage__identification__body__content
             .mypage__identification__body__content__label 都道府県
             %span 任意
-            %select.mypage__identification__body__content__form
+            .mypage__identification__body__content__select
+              = collection_select :item, :prefecture, Prefecture.all, :id, :name, prompt: "--"
+              = icon 'fas', 'chevron-down', class: "mypage__identification__body__content__select--down"
           .mypage__identification__body__content
             .mypage__identification__body__content__label 市区町村
             %span 任意

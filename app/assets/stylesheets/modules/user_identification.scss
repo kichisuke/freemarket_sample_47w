@@ -36,6 +36,29 @@
           line-height: 1.5;
           font-size: 16px;
         }
+        &__select {
+          position: relative;
+          select {
+            width: 100%;
+            position: relative;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            -webkit-appearance: none;
+          }
+          &--down {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            color: #888;
+            transform: translate(0, -50%);
+          }
+        }
       }
       &__btn {
         margin: 40px 0;
