@@ -14,5 +14,42 @@
         line-height: 1.4;
         margin: 0;
       }
+      .content-inner{
+        padding: 64px;
+        &__header{
+          max-width: 320px;
+          margin: 0 auto;
+          font-size: 16px;
+        }
+        &__main{
+          border-bottom: 1px solid #eee;
+          max-width: 320px;
+          margin: 0 auto;
+          position: relative;
+          &__card-info{
+            margin: 8px 0 0;
+            font-size: 16px;
+          }
+          &__button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 6px;
+            background: #fff;
+            border-radius: 3px;
+            border: 1px solid #ea352d;
+            color: #ea352d;
+          }
+        }
+        &__footer{
+            display: block;
+            margin: 40px 0 0;
+            text-align: right;
+            &__link{
+            color: #0099e8;
+            text-decoration: none;
+            }
+        }
+      }
   }
 }
