@@ -121,16 +121,17 @@
         .content-inner
           %h3.content-inner__header
             クレジットカード一覧 
-          .content-inner__main
-            %form{class: "content-inner__main__form"}
-              %figure
-              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3721624228', alt: 'visa_icon', height: '15', width: '49', class: 'visa_icon-img'
-              .content-inner__main__card-info
+          %ul
+            %li  
+              %form{class: "content-inner__main__form"}
+                %figure
+                = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3721624228', alt: 'visa_icon', height: '15', width: '49', class: 'visa_icon-img'
+                .content-inner__main__card-info
                 ****************
-              .content-inner__main__card-info
+                .content-inner__main__card-info
                 99 / 99
-              %button{class: "content-inner__main__button"}
-                削除する
+                %button{class: "content-inner__main__button", href: '#'}
+                  削除する
           .content-inner__footer
             = link_to "#", class: "content-inner__footer__link" do
               支払い方法について
