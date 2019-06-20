@@ -1,11 +1,16 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./reset";
+@import "./slick-theme.scss";
 @import "modules/header";
 @import "modules/items";
 @import "modules/banner";
 @import "modules/footer";
+@import "modules/item-registration";
+@import "modules/wrapper";
 @import "modules/mypage";
+@import "modules/item-detail";
+@import "modules/other-items";
 @import "modules/profile";
 @import "modules/card";
 @import "modules/purchase";

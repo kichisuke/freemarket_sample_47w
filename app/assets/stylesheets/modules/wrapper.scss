@@ -1,0 +1,35 @@
+.wrapper {
+  background-color: #eee;
+
+  &__top {
+    text-align: center;
+    height: 88px;
+    width:100%;
+    padding-top:40px;
+  }
+
+  &__bottom {
+    width:456px;
+    height: 140px;
+    padding:40px 0;
+    margin:0 auto;
+    text-align: center;
+
+    li {
+      font-size:12px;
+      margin-left:8px;
+      display: inline-block;
+      margin: 0 0 0 16px;
+    }
+
+    img {
+      margin-top:30px;
+    }
+
+    small {
+      display: block;
+      font-size:11px;
+      margin-top:3px;
+    }
+  }
+}
