@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get 'test/mypage/identification', to: 'test#user_identification'
   get 'test/purchase', to: 'test#purchase', as: 'purchase'
   root 'test#index'
-  get 'test/sell' => 'test#sell'
+  get 'test/sell', to: 'test#sell'
   get 'detail', to: 'test#detail'
 end
