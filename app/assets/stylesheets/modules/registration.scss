@@ -107,7 +107,6 @@ label {
   background-color: $white;
   &__head {
     @include registration-head(32px, 16px);
-    // padding: 32px 16px;
   }
   &__inner {
     padding: 40px 16px;
