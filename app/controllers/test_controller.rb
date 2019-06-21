@@ -17,4 +17,7 @@ class TestController < ApplicationController
 
   def purchase
   end
+
+  def logout
+  end
 end
