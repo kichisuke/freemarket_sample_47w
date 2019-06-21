@@ -1,0 +1,56 @@
+.container
+  = render 'shared/header'
+  .contents.clearfix
+    = render partial: "mypage-side"
+    .mypage
+      .mypage__identification
+        .mypage__identification__title.bold 本人情報の登録
+        .mypage__identification__body
+          .mypage__identification__body__head
+            お客さまの本人情報をご登録ください。
+            %br/
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            %br/
+            .link-blue
+              = link_to "#", class: "link-blue" do
+                本人確認書類のアップロードについて
+                = icon 'fas', 'chevron-right'
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label お名前
+            .mypage__identification__body__content__text user.name
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label お名前カナ
+            .mypage__identification__body__content__text user.name kana
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label 生年月日
+            .mypage__identification__body__content__text user.birthday
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label 郵便番号
+            %span 任意
+            %input.mypage__identification__body__content__form{ placeholder: "例）1234567"}
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label 都道府県
+            %span 任意
+            .mypage__identification__body__content__select
+              = collection_select :item, :prefecture, Prefecture.all, :id, :name, prompt: "--"
+              = icon 'fas', 'chevron-down', class: "mypage__identification__body__content__select--down"
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label 市区町村
+            %span 任意
+            %input.mypage__identification__body__content__form{ placeholder: "例）横浜市緑区"}
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label 番地
+            %span 任意
+            %input.mypage__identification__body__content__form{ placeholder: "例）青山1-1-1"}
+          .mypage__identification__body__content
+            .mypage__identification__body__content__label 建物名
+            %span 任意
+            %input.mypage__identification__body__content__form{ placeholder: "例）柳ビル103"}
+          %button.mypage__identification__body__btn 登録する
+          .link-blue
+            = link_to "#", class: "link-blue" do
+              本人情報の登録について
+              = icon 'fas', 'chevron-right'
+  = render 'shared/banner'
+  = render 'shared/footer'
+  = render 'shared/footer-sellBtn'

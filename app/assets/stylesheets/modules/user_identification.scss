@@ -1,0 +1,84 @@
+.mypage {
+  &__identification {
+    background-color: #ffffff;
+    &__title {
+      font-size: 24px;
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+    }
+    &__body {
+      padding: 64px;
+      &__content {
+        margin: 40px 0 0;
+        &__label {
+          margin: 0 0 8px;
+          font-weight: 600;
+          display: inline-block;
+        }
+        span {
+          background: #ccc;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+        }
+        &__form {
+          display: block;
+          width: calc( 100% - 32px );
+          height: 30px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        &__select {
+          position: relative;
+          select {
+            width: 100%;
+            position: relative;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            -webkit-appearance: none;
+          }
+          &--down {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            color: #888;
+            transform: translate(0, -50%);
+          }
+        }
+      }
+      &__btn {
+        margin: 40px 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.link-blue {
+  margin: 8px 0 0;
+  line-height: 1.5;
+  text-align: right;
+  color: #0099e8;
+}
