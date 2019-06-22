@@ -1,0 +1,268 @@
+select {
+  width: 100%;
+  height: inherit;
+  padding: 0 10px;
+  border: 1px solid $light_gray;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+span.require {
+  background: $red;
+  color: $white;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+span.optional {
+  background: $dark_gray;
+  color: $white;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: $black;
+  display: inline-block;
+}
+
+.registration-main__inner--center {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.link-default {
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+}
+
+.registration-header {
+  height: 128px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  &__logo {
+    padding-top: 40px;
+  }
+  &__img {
+    width: 185px;
+    height: 49px;
+    margin-right: 8px;
+    line-height: 49px;
+  }
+}
+.progress-bar {
+  padding: 40px 0 0 44px;
+  li {
+    font-size: 12px;
+    margin-right: 40px;
+    color: $dark_gray;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    &:last-child {
+      margin: 0;
+    }
+    &:before {
+      @include progress-bar;
+      right: 50%;
+    }
+    &:after {
+      @include progress-bar;
+      left: 50%;
+    }
+  }
+  .progress-status {
+    width: 12px;
+    height: 12px;
+    margin: 8px auto 0;
+    background-color: $light_gray;
+    border-radius: 50%;
+  }
+}
+.progress-bar li {
+  &:first-child:before {
+  content: none;
+  }
+  &:last-child:after {
+    content: none
+  }
+}
+li.through {
+  .progress-status {
+    background-color: $red;
+  }
+  &:before {
+    background-color: $red;
+  }
+  &:after {
+    background-color: $red;
+  }
+}
+li.current-page {
+  color: $red;
+  font-weight: 600;
+  .progress-status {
+    background-color: $red;
+    }
+  &:before {
+    background-color: $red;
+  }
+}
+
+.registration-main {
+  width: 700px;
+  margin: 0 auto;
+  background-color: $white;
+  &__head {
+    @include registration-head(32px, 16px);
+  }
+  &__inner {
+    padding: 40px 16px;
+  }
+}
+.registration-form {
+  max-width: 320px;
+  margin: 0 auto;
+  &__group {
+    width: 320px;
+    margin-top: 40px;
+    display: block;
+    &:first-child {
+      margin-top: 0;
+    }
+    &__confirmation {
+      h3 {
+        color: $black;
+        font-size: 16px;
+      }
+      p {
+        margin-top: 8px;
+        color: $black;
+        display: inline-block;
+        font-size: 14px;
+      }
+    }
+  }
+  &__select {
+    width: 320px;
+    color: $black;
+    &__wrap {
+      height: 48px;
+      width: 76px;
+      margin-top: 8px;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      font-size: 18px;
+      transform: translate(0, -50%);
+      color: $dark_gray;
+    }
+    .date {
+      margin: 0 2px;
+      color: $black;
+      font-size: 14px;
+      line-height: 48px;
+    }
+  }
+  &__info-text {
+    width: 320px;
+    color: $dark_gray;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  &__text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: $black;
+    display: inline-block;
+    text-align: center;
+    a {
+      color: $blue;
+    }
+  }
+  &__btn {
+    width: 320px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: $red;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  &__text__right {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: right;
+    a {
+      color: $blue;
+    }
+  }
+}
+
+//sms_confirmation
+.registration-main {
+  &__head--sms {
+    @include registration-head(10px, 24px);
+  }
+  &__inner {
+    padding: 64px;
+  }
+}
+//
+
+//input_adress
+.registration-main {
+  &__head--adress {
+    @include registration-head(10px, 24px);
+  }
+}
+
+.select-prefecture {
+  width: 320px;
+  font-size: 16px;
+}
+//
+
+//payment
+.registration-main {
+  &__head--payment {
+    @include registration-head(10px, 24px)
+  }
+}
+.registration-form__credit-img {
+  height: 32px;
+  margin-top: 8px;
+  &__size {
+    float: left;
+    width: 45px;
+    height: auto;
+  }
+}
+.fa-question-circle {
+  color: $blue;
+}
+//
+
+//signup_end
+.registration-main__inner__text {
+  font-size: 18px;
+}
+//
+

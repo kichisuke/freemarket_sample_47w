@@ -5,7 +5,7 @@ class TestController < ApplicationController
   def sell
     @item = Item.new
   end
-  
+
   def detail
   end
 
@@ -13,6 +13,27 @@ class TestController < ApplicationController
   end
 
   def mypage
+  end
+
+  def signup
+  end
+
+  def login
+  end
+
+  def registration
+  end
+
+  def sms_confirmation
+  end
+
+  def input_address
+  end
+
+  def payment
+  end
+
+  def signup_end
   end
 
   def purchase

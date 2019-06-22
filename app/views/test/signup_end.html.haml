@@ -1,0 +1,33 @@
+.signup-container
+  .registration-header
+    = render partial: 'registration-header'
+    .progress-bar
+      %ol
+        %li.through
+          会員情報
+          .progress-status
+        %li.through
+          電話番号認証
+          .progress-status
+        %li.through
+          お届け先住所入力
+          .progress-status
+        %li.through
+          支払い方法
+          .progress-status
+        %li.current-page
+          完了
+          .progress-status
+  .registration-main
+    %h2.registration-main__head
+      会員登録完了
+    .registration-main__inner--center
+      %p.registration-main__inner__text
+        ありがとうございます。
+        %br
+        登録が完了しました。
+      = link_to root_path do
+        %button{type: 'button', class: 'registration-form__btn'}
+          メルカリを始める
+  = render partial: 'shared/banner'
+  = render partial: 'login-footer'

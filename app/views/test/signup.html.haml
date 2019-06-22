@@ -1,0 +1,17 @@
+.signup-container
+  =render partial: 'login-header'
+  .signup
+    %h2.signup__head
+      新規会員登録
+    .signup__inner
+      .signup__content
+        = link_to '#', class: 'signup__mail-btn' do
+          = icon 'far', 'envelope', class: 'icon-mail'
+          メールアドレスで登録
+        %button.signup__facebook-btn
+          = icon 'fab', 'facebook-square', class: 'icon-facebook'
+          Facebookで登録
+        %button.signup__google-btn
+          = image_tag 'google-icon.png', class: 'icon-google'
+          Googleで登録
+  = render partial: 'login-footer'

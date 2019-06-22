@@ -1,0 +1,15 @@
+%footer.login-footer
+  %nav.login-footer__nav
+    %ul.login-footer__nav__lists
+      %li.login-footer__nav__list
+        = link_to 'プライバシーポリシー', '#', class: 'link-default'
+      %li.login-footer__nav__list
+        = link_to 'メルカリ利用規約', '#', class: 'link-default'
+      %li.login-footer__nav__list
+        = link_to '特定商取引に関する表記', '#', class: 'link-default'
+  .footer-logo
+    = link_to '#', class: 'footer-logo__link' do
+      = image_tag 'logo_gray.png', alt: 'mercari', class: 'footer-logo__size'
+    %p
+      %small
+        © 2019 Mercari
