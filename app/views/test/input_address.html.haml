@@ -3,29 +3,21 @@
     = render partial: 'registration-header'
     .progress-bar
       %ol
-        %li.progress-bar__list
+        %li.through
           会員情報
-          .progress-status#done
-          .progress-status__bar-right#done
-        %li.progress-bar__list
+          .progress-status
+        %li.through
           電話番号認証
-          .progress-status#done
-          .progress-status__bar-left#done
-          .progress-status__bar-right#done
-        %li.progress-bar__list#current-page
+          .progress-status
+        %li.current-page
           お届け先住所入力
-          .progress-status#done
-          .progress-status__bar-left#done
-          .progress-status__bar-right
-        %li.progress-bar__list
+          .progress-status
+        %li
           支払い方法
           .progress-status
-          .progress-status__bar-left
-          .progress-status__bar-right
-        %li.progress-bar__list
+        %li
           完了
           .progress-status
-          .progress-status__bar-left
   .registration-main
     %h2.registration-main__head--adress
       住所入力

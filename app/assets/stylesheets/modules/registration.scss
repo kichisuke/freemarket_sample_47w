@@ -34,14 +34,6 @@ label {
   display: inline-block;
 }
 
-#current-page {
-  color: $red;
-  font-weight: 600;
-}
-#done {
-  background-color: $red;
-}
-
 .registration-main__inner--center {
   text-align: center;
   padding: 40px 16px;
@@ -53,7 +45,6 @@ label {
     opacity: 0.8;
   }
 }
-
 
 .registration-header {
   height: 128px;
@@ -72,8 +63,7 @@ label {
 }
 .progress-bar {
   padding: 40px 0 0 44px;
-  display: flex;
-  &__list {
+  li {
     font-size: 12px;
     margin-right: 40px;
     color: $dark_gray;
@@ -83,6 +73,14 @@ label {
     &:last-child {
       margin: 0;
     }
+    &:before {
+      @include progress-bar;
+      right: 50%;
+    }
+    &:after {
+      @include progress-bar;
+      left: 50%;
+    }
   }
   .progress-status {
     width: 12px;
@@ -90,14 +88,35 @@ label {
     margin: 8px auto 0;
     background-color: $light_gray;
     border-radius: 50%;
-    &__bar-right {
-      @include progress-bar;
-      left: 50%;
+  }
+}
+.progress-bar li {
+  &:first-child:before {
+  content: none;
+  }
+  &:last-child:after {
+    content: none
+  }
+}
+li.through {
+  .progress-status {
+    background-color: $red;
+  }
+  &:before {
+    background-color: $red;
+  }
+  &:after {
+    background-color: $red;
+  }
+}
+li.current-page {
+  color: $red;
+  font-weight: 600;
+  .progress-status {
+    background-color: $red;
     }
-    &__bar-left {
-      @include progress-bar;
-      right: 50%;
-    }
+  &:before {
+    background-color: $red;
   }
 }
 
