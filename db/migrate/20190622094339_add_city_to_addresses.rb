@@ -1,15 +1,5 @@
 class AddCityToAddresses < ActiveRecord::Migration[5.0]
   def change
-
-    create_table :users do |t|
-        ## Database authenticatable
-        t.string :nickname,           null: false, index:true, default: ""
-        t.string :email,              null: false, unique:true, default: ""
-        t.string :encrypted_password, null: false, default: ""
-        t.text :avatar_image
-    end
-
-
     create_table :addresses do |t|
       t.string :postal_code,           null: false, default: ""
       t.string :prefecture,            null: false, default: "", index: true
@@ -20,5 +10,6 @@ class AddCityToAddresses < ActiveRecord::Migration[5.0]
       t.references :user,              null: false, foreign_key: true
       t.timestamps
     end
+    
   end
 end
