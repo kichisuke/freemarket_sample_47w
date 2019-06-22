@@ -1,6 +1,6 @@
 .signup-container
   .registration-header
-    = render partial: 'registration-header'
+    = render partial: 'shared/registration-header'
     .progress-bar
       %ol
         %li.current-page
@@ -209,4 +209,4 @@
             = link_to '#', class: 'link-default' do
               本人情報の登録について
               = icon 'fas', 'chevron-right'
-  = render partial: 'login-footer'
+  = render partial: 'shared/login-footer'
