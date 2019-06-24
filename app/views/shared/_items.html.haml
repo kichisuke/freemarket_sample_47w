@@ -9,13 +9,13 @@
       %section.pickup-items__box--item
         = link_to '#', class: 'item-link' do
           .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
+            = image_tag "#{@top_item1[0].item_images[0].url}", alt: 'item-name', class: 'item-image'
           .item-link__text
             %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
+              ="#{@top_item1[0].name}"
             .item-link__text--price
               .price
-                ¥ 26,900
+                ='¥ ' + "#{@top_item1[0].price}"
               .likes
                 = icon('far', 'heart', class: 'likes__icon')
                 %span.likes__rate
@@ -25,13 +25,13 @@
       %section.pickup-items__box--item
         = link_to '#', class: 'item-link' do
           .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
+            = image_tag "#{@top_item1[1].item_images[0].url}", alt: 'item-name', class: 'item-image'
           .item-link__text
             %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
+              ="#{@top_item1[1].name}"
             .item-link__text--price
               .price
-                ¥ 26,900
+                ='¥ ' + "#{@top_item1[1].price}"
               .likes
                 = icon('far', 'heart', class: 'likes__icon')
                 %span.likes__rate
@@ -41,13 +41,13 @@
       %section.pickup-items__box--item
         = link_to '#', class: 'item-link' do
           .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
+            = image_tag "#{@top_item1[2].item_images[0].url}", alt: 'item-name', class: 'item-image'
           .item-link__text
             %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
+              ="#{@top_item1[2].name}"
             .item-link__text--price
               .price
-                ¥ 26,900
+                ='¥ ' + "#{@top_item1[2].price}"
               .likes
                 = icon('far', 'heart', class: 'likes__icon')
                 %span.likes__rate
@@ -57,13 +57,13 @@
       %section.pickup-items__box--item
         = link_to '#', class: 'item-link' do
           .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
+            = image_tag "#{@top_item1[3].item_images[0].url}", alt: 'item-name', class: 'item-image'
           .item-link__text
             %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
+              ="#{@top_item1[3].name}"
             .item-link__text--price
               .price
-                ¥ 26,900
+                ='¥ ' + "#{@top_item1[3].price}"
               .likes
                 = icon('far', 'heart', class: 'likes__icon')
                 %span.likes__rate
