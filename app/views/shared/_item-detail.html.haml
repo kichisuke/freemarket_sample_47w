@@ -1,7 +1,7 @@
 .item-box-container
   .item-box-container__item-box
     %h1.item-box-container__item-box__item-name
-      商品名商品名商品名
+      = @item.name
     .item-box-container__item-box__contents
       .slider-container
         %ul.slider#slider
@@ -25,7 +25,7 @@
               出品者
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__user-link' do
-                出品者名
+                = @item.saler.nickname
               .item-detail__table__tr__td__ratings-container
                 .item-detail__table__tr__td__ratings-container__item-user-ratings
                   = icon('fas', 'grin', class: 'item-detail__table__tr__td__ratings-container__item-user-ratings__good-icon')
@@ -64,48 +64,46 @@
             %th.item-detail__table__tr__th
               商品サイズ
             %td.item-detail__table__tr__td
-              FREE SIZE
+              = @item.size
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               商品の状態
             %td.item-detail__table__tr__td
-              新品、未使用
+              = @item.condition
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送料の負担
             %td.item-detail__table__tr__td
-              送料込み(出品者負担)
+              = @item.delivery_charge
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送の方法
             %td.item-detail__table__tr__td
-              未定
+              = @item.delivery_method
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送元地域
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__prefecture-link' do
-                大阪府
+                = @item.delivery_source_area
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               発送日の目安
             %td.item-detail__table__tr__td
-              1~2日で発送
+              = @item.estimated_shipping_date
     .item-box-container__item-box__item-price-box
       %span.item-box-container__item-box__item-price-box__price
-        ¥ 10,000
+        ¥
+        = @item.price
       %span.item-box-container__item-box__item-price-box__tax
         (税込)
       %span.item-box-container__item-box__item-price-box__shipping-fee
-        送料込み
+        = @item.delivery_charge
     = link_to '#', class: 'item-box-container__item-box__item-buy-btn' do
       購入画面に進む
     .item-box-container__item-box__item-description
       %p.item-box-container__item-box__item-description__text
-        商品説明欄
-        商品について説明する。
-
-        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        = @item.text
     .item-box-container__item-box__buttons-container
       .item-box-container__item-box__buttons-container__left-buttons
         %button.item-box-container__item-box__buttons-container__left-buttons__like-btn
