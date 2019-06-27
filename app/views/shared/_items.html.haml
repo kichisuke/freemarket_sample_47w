@@ -4,144 +4,18 @@
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        カテゴリー 新着アイテム
+        #{@top_item1[0].category.name} 新着アイテム
     .pickup-items__box
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item1[0].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item1[0].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item1[0].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item1[1].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item1[1].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item1[1].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item1[2].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item1[2].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item1[2].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item1[3].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item1[3].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item1[3].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
+      = render "shared/pickup-items1"
     .view-all
       = link_to '#', class: 'view-all__link' do
         全ての商品を見る
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        カテゴリー 新着アイテム
+        #{@top_item2[0].category.name} 新着アイテム
     .pickup-items__box
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item2[0].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item2[0].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item2[0].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item2[1].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item2[1].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item2[1].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item2[2].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item2[2].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item2[2].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag "#{@top_item2[3].item_images[0].url}", alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ="#{@top_item2[3].name}"
-            .item-link__text--price
-              .price
-                ='¥ ' + number_with_delimiter("#{@top_item2[3].price}")
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
+      = render "shared/pickup-items2"
     .view-all
       = link_to '#', class: 'view-all__link' do
         全ての商品を見る
