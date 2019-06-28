@@ -1,5 +1,5 @@
 .signup-container
-  =render partial: 'login-header'
+  =render partial: 'shared/login-header'
   .signup
     %h2.signup__head
       新規会員登録
@@ -14,4 +14,4 @@
         %button.signup__google-btn
           = image_tag 'google-icon.png', class: 'icon-google'
           Googleで登録
-  = render partial: 'login-footer'
+  = render partial: 'shared/login-footer'

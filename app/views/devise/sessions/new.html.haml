@@ -1,5 +1,5 @@
 .login-container
-  = render partial: 'login-header'
+  = render partial: 'shared/login-header'
   .login
     .login__no-account
       %p
@@ -21,4 +21,4 @@
           ログイン
         .login-form__inner__group
           = link_to 'パスワードをお忘れの方', '#', class: 'link-default login-form__inner__group__text'
-  = render partial: 'login-footer'
+  = render partial: 'shared/login-footer'
