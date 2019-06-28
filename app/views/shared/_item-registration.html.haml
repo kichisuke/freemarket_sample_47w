@@ -18,12 +18,12 @@
           %h3
             商品名
             %span.form-require 必須
-          %input{placeholder: "商品名(必須40文字まで)"}/
+          = f.text_field :name, placeholder: '商品名(必須40文字まで)'
         .wrapper__main__item__text
           %h3
             商品の説明
             %span.form-require 必須
-          %textarea{placeholder: "商品の説明(必須1,000文字以内) (色、素材、重さ、定価、注意点など) 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+          = f.text_area :text, autofocus: true, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
       .wrapper__main__list__item
         .wrapper__main__list__name
           %p 商品の詳細
@@ -54,14 +54,7 @@
               商品の状態
               %span.form-require 必須
             .wrapper__main__list__select__wrap 
-              %select
-                %option ---
-                %option 新品、未使用
-                %option 未使用に近い
-                %option 目立った傷や汚れなし
-                %option やや傷や汚れあり
-                %option 傷や汚れあり
-                %option 全体的に状態が悪い
+              =f.select :condition,["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
               %i.fas.fa-chevron-down
       .wrapper__main__list__delivery
         .wrapper__main__list__name
@@ -74,28 +67,21 @@
               配送料の負担
               %span.form-require 必須
             .wrapper__main__list__select__wrap 
-              %select
-                %option ---
-                %option 送料込み(出品者負担)
-                %option 着払い(購入者負担)
+              =f.select :delivery_charge,["---","送料込み(出品者負担)","着払い(購入者負担)"]
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__center
             %p
               発送元の地域
               %span.form-require 必須
             .wrapper__main__list__select__wrap
-              = collection_select :item, :delivery_source_area, Prefecture.all, :id, :name
+              = f.collection_select :delivery_source_area, Prefecture.all, :id, :name
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__bottom
             %p
               発送までの日数
               %span.form-require 必須
             .wrapper__main__list__select__wrap 
-              %select
-                %option ---
-                %option 1~2日で発送
-                %option 2~4日で発送
-                %option 3~4日で発送
+              =f.select :estimated_shipping_date ,["---","1~2日で発送","2~4日で発送","3~4日で発送"]
               %i.fas.fa-chevron-down
       .wrapper__main__list__price
         .wrapper__main__list__name
@@ -109,7 +95,7 @@
               %span.form-require 必須
             %p.children
               ¥
-              %input{placeholder: "例）300"}/
+              = f.text_field :price, autofocus: true, placeholder: "例）300"
           .wrapper__main__list__select__center
             %p 販売手数料(10%)
             %a.children -
@@ -128,5 +114,6 @@
         %a また、出品を持ちまして
         %a.blue 加盟店規約
         %a に同意したことになります。
-        %button.wrapper__main__bottom__red 出品する
+        %button.wrapper__main__bottom__red 
+          =f.submit "出品する"
         %button.wrapper__main__bottom__grey もどる
