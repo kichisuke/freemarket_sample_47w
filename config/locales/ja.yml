@@ -2,7 +2,7 @@ ja:
   enums:
     item:
       condition:
-        new: "新品、未使用"
+        brand_new: "新品、未使用"
         near_unused: "未使用に近い"
         low_damage: "目立った傷や汚れなし"
         mid_damage: "やや傷や汚れあり"
