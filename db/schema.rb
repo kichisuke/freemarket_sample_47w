@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20190622142314) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postal_code",    default: "", null: false
-    t.integer  "prefecture",                  null: false
+    t.string   "prefecture",     default: "", null: false
     t.string   "city",           default: "", null: false
     t.string   "street_address", default: "", null: false
     t.string   "building"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20190622142314) do
     t.integer  "user_id",                     null: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.index ["prefecture"], name: "index_addresses_on_prefecture", using: :btree
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
@@ -51,10 +52,13 @@ ActiveRecord::Schema.define(version: 20190622142314) do
   end
 
   create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "token",      null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "number",           null: false
+    t.date     "expiration_month", null: false
+    t.date     "expiration_year",  null: false
+    t.integer  "security_code",    null: false
+    t.integer  "user_id",          null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_creditcards_on_user_id", using: :btree
   end
 
@@ -70,21 +74,20 @@ ActiveRecord::Schema.define(version: 20190622142314) do
     t.string   "name",                                  default: "", null: false
     t.integer  "price",                                              null: false
     t.text     "text",                    limit: 65535
-    t.integer  "condition",                                          null: false
+    t.string   "condition",                             default: "", null: false
     t.integer  "delivery_charge",                                    null: false
-    t.integer  "delivery_method",                                    null: false
-    t.integer  "delivery_source_area",                               null: false
-    t.integer  "estimated_shipping_date",                            null: false
+    t.string   "delivery_method",                                    null: false
+    t.string   "delivery_source_area",                               null: false
+    t.date     "estimated_shipping_date",                            null: false
     t.integer  "category_id"
-    t.integer  "brand_id"
-    t.integer  "size"
-    t.integer  "saler_id"
+    t.integer  "brand_id_id"
+    t.string   "size"
+    t.integer  "saler"
     t.integer  "buyer_id"
-    t.integer  "sales_status",                                       null: false
+    t.string   "sales_status",                                       null: false
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
-    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+    t.index ["brand_id_id"], name: "index_items_on_brand_id_id", using: :btree
     t.index ["name"], name: "index_items_on_name", using: :btree
     t.index ["price"], name: "index_items_on_price", using: :btree
   end
