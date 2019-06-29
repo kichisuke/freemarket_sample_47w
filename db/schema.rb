@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20190622142314) do
     t.integer  "delivery_method",                                    null: false
     t.integer  "delivery_source_area",                               null: false
     t.integer  "estimated_shipping_date",                            null: false
-    t.integer  "category_id",                                        null: false
+    t.integer  "category_id"
     t.integer  "brand_id"
     t.integer  "size"
     t.integer  "saler_id"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20190622142314) do
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["name"], name: "index_items_on_name", using: :btree
     t.index ["price"], name: "index_items_on_price", using: :btree
   end
