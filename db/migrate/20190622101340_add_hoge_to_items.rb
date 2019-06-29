@@ -9,7 +9,7 @@ class AddHogeToItems < ActiveRecord::Migration[5.0]
       t.integer :delivery_method,       null: false
       t.integer :delivery_source_area,  null: false
       t.integer :estimated_shipping_date, null: false
-      t.integer :category_id,             null: false, foreign_key: true
+      t.references :category
       t.references :brand
       t.integer :size
       t.integer :saler_id
