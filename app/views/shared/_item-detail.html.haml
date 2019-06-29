@@ -64,22 +64,22 @@
             %th.item-detail__table__tr__th
               商品サイズ
             %td.item-detail__table__tr__td
-              = @item.size
+              = @item.size_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               商品の状態
             %td.item-detail__table__tr__td
-              = @item.condition
+              = @item.condition_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送料の負担
             %td.item-detail__table__tr__td
-              = @item.delivery_charge
+              = @item.delivery_charge_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送の方法
             %td.item-detail__table__tr__td
-              = @item.delivery_method
+              = @item.delivery_method_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送元地域
@@ -90,7 +90,7 @@
             %th.item-detail__table__tr__th
               発送日の目安
             %td.item-detail__table__tr__td
-              = @item.estimated_shipping_date
+              = @item.estimated_shipping_date_i18n
     .item-box-container__item-box__item-price-box
       %span.item-box-container__item-box__item-price-box__price
         ¥
@@ -98,7 +98,7 @@
       %span.item-box-container__item-box__item-price-box__tax
         (税込)
       %span.item-box-container__item-box__item-price-box__shipping-fee
-        = @item.delivery_charge
+        = @item.delivery_charge_i18n
     = link_to '#', class: 'item-box-container__item-box__item-buy-btn' do
       購入画面に進む
     .item-box-container__item-box__item-description
