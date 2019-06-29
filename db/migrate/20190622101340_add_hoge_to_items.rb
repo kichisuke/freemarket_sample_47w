@@ -4,17 +4,17 @@ class AddHogeToItems < ActiveRecord::Migration[5.0]
       t.string :name,                  null: false, default: "", index: true
       t.integer :price,                null: false, index: true
       t.text :text
-      t.string :condition,             null: false, default: ""
+      t.integer :condition,             null: false
       t.integer :delivery_charge,      null: false
-      t.string :delivery_method,       null: false, unique: true
-      t.string :delivery_source_area,  null: false
-      t.date :estimated_shipping_date, null: false
-      t.integer :category,             null: false, foreign_key: true
-      t.references :brand_id
-      t.string :size
-      t.integer :saler
+      t.integer :delivery_method,       null: false
+      t.integer :delivery_source_area,  null: false
+      t.integer :estimated_shipping_date, null: false
+      t.integer :category_id,             null: false, foreign_key: true
+      t.references :brand
+      t.integer :size
+      t.integer :saler_id
       t.integer :buyer_id
-      t.string :sales_status,          null: false
+      t.integer :sales_status,          null: false
       t.timestamps
     end
   end
