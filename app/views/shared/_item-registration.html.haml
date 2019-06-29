@@ -54,7 +54,7 @@
               商品の状態
               %span.form-require 必須
             .wrapper__main__list__select__wrap 
-              =f.select :condition,["---","新品、未使用","未使用に近い","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
+              =f.select :condition, Item.conditions_i18n.invert, {}
               %i.fas.fa-chevron-down
       .wrapper__main__list__delivery
         .wrapper__main__list__name
@@ -67,7 +67,7 @@
               配送料の負担
               %span.form-require 必須
             .wrapper__main__list__select__wrap 
-              =f.select :delivery_charge,["---","送料込み(出品者負担)","着払い(購入者負担)"]
+              =f.select :delivery_charge, Item.delivery_charges_i18n.invert, {}
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__center
             %p
@@ -81,7 +81,7 @@
               発送までの日数
               %span.form-require 必須
             .wrapper__main__list__select__wrap 
-              =f.select :estimated_shipping_date ,["---","1~2日で発送","2~4日で発送","3~4日で発送"]
+              =f.select :estimated_shipping_date , Item.estimated_shipping_dates_i18n.invert, {}
               %i.fas.fa-chevron-down
       .wrapper__main__list__price
         .wrapper__main__list__name
