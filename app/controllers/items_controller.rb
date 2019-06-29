@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     #メンズカテゴリーの4アイテムを最新の上から4つ抽出
     @top_item2 = Item.where("category_id = '2'").order('created_at DESC').limit(4)
   end
-  
+
   def show
   end
 
