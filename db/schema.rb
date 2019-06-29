@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190622142314) do
+ActiveRecord::Schema.define(version: 20190629095129) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postal_code",    default: "", null: false
@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 20190622142314) do
     t.text     "text",                    limit: 65535
     t.integer  "condition",                                          null: false
     t.integer  "delivery_charge",                                    null: false
-    t.integer  "delivery_method",                                    null: false
     t.integer  "delivery_source_area",                               null: false
     t.integer  "estimated_shipping_date",                            null: false
     t.integer  "category_id"
@@ -80,7 +79,6 @@ ActiveRecord::Schema.define(version: 20190622142314) do
     t.integer  "size"
     t.integer  "saler_id"
     t.integer  "buyer_id"
-    t.integer  "sales_status",                                       null: false
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
