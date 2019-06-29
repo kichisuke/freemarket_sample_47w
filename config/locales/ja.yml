@@ -1,0 +1,42 @@
+ja:
+  enums:
+    item:
+      condition:
+        brand_new: "新品、未使用"
+        near_unused: "未使用に近い"
+        low_damage: "目立った傷や汚れなし"
+        mid_damage: "やや傷や汚れあり"
+        high_damage: "傷や汚れあり"
+        bad: "全体的に状態が悪い"
+      delivery_charge:
+        postage_included: "送料込み(出品者負担)"
+        cash_on_delivery: "着払い(購入者負担)"
+      delivery_method:
+        mercari: "らくらくメルカリ便"
+        yu_mail: "ゆうメール"
+        letter_pack: "レターパック"
+        normal_post: "普通郵便(定形、定形外)"
+        kuroneko: "クロネコヤマト"
+        yu_pack: "ゆうパック"
+        click_post: "クリックポスト"
+        yu_packet: "ゆうパケット"
+      estimated_shipping_date:
+        shipping1: "1~2日で発送"
+        shipping2: "2~4日で発送"
+        shipping3: "3~4日で発送"
+      size:
+        xxs: "XXS以下"
+        xs: "XS(SS)"
+        s: "S"
+        m: "M"
+        l: "L"
+        xl: "XL(LL)"
+        xl2: "2XL(3L)"
+        xl3: "3XL(4L)"
+        xl4: "4XL(5L)以上"
+        free_size: "FREE SIZE"
+      sales_status:
+        exhibition: "出品中"
+        stop: "出品停止"
+        trading: "取引中"
+        sold: "売却済"
