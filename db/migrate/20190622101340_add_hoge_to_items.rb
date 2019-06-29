@@ -7,7 +7,7 @@ class AddHogeToItems < ActiveRecord::Migration[5.0]
       t.integer :condition,             null: false
       t.integer :delivery_charge,      null: false
       t.integer :delivery_method,       null: false
-      t.integer :delivery_source_area,  null: false
+      t.integer :prefecture_id,  null: false
       t.integer :estimated_shipping_date, null: false
       t.references :category
       t.references :brand
