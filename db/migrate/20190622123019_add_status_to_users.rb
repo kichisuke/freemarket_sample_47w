@@ -4,7 +4,7 @@ class AddStatusToUsers < ActiveRecord::Migration[5.0]
     #t.string :nickname,           null: false, index:true, default: ""
     #t.string :email,              null: false, unique:true, default: ""
     #t.string :encrypted_password, null: false, default: ""
-    #t.text :avatar_image        
-    #end 
+    #t.text :avatar_image
+    #end
   end
 end
