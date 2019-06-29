@@ -44,22 +44,22 @@
               カテゴリー
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
-                カテゴリー１
+                = @category.parent.parent.name
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
-                  カテゴリー２
+                  = @category.parent.name
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
-                  カテゴリー３
+                  = @category.name
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               ブランド
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__brand-link' do
                 %div
-                  ブランド名
+                  = @item.brand.name
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               商品サイズ
@@ -85,7 +85,7 @@
               配送元地域
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__prefecture-link' do
-                = @item.delivery_source_area
+                = @item.prefecture.name
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               発送日の目安
