@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :category_search
       get :brand_search
       get "search"
+      get ':id/purchase', to: 'items#purchase'
     end
   end
 

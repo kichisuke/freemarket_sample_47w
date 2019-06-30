@@ -78,6 +78,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def purchase
+    @item = Item.find(params[:id])
+    @user = User.find(1)
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status).merge(saler_id: current_user.id)
