@@ -6,4 +6,6 @@ class Address < ApplicationRecord
   validates :city, presence: true
   validates :street_address, presence: true
   validates :phone_number, allow_nil: true, format: { with: /\A\d{10,11}\z/, message: "10桁または11桁の数字のみでご入力ください" }
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
 end
