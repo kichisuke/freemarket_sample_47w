@@ -118,4 +118,9 @@ class ItemsController < ApplicationController
   def move_to_login
     redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
   end
+
+  def purchase
+    @item = Item.find(params[:id])
+    @user = User.find(1)
+  end
 end
