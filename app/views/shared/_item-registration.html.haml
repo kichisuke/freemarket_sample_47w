@@ -74,7 +74,7 @@
               発送元の地域
               %span.form-require 必須
             .wrapper__main__list__select__wrap
-              = f.collection_select :delivery_source_area, Prefecture.all, :id, :name
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__bottom
             %p

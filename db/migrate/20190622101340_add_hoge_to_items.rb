@@ -6,7 +6,7 @@ class AddHogeToItems < ActiveRecord::Migration[5.0]
       t.text :text
       t.integer :condition,             null: false
       t.integer :delivery_charge,      null: false
-      # t.integer :delivery_method,       null: false
+      t.integer :delivery_method#,       null: false
       t.integer :prefecture_id,  null: false
       t.integer :estimated_shipping_date, null: false
       t.references :category
@@ -14,7 +14,7 @@ class AddHogeToItems < ActiveRecord::Migration[5.0]
       t.integer :size
       t.integer :saler_id
       t.integer :buyer_id
-      # t.integer :sales_status,          null: false
+      t.integer :sales_status#,          null: false
       t.timestamps
     end
   end
