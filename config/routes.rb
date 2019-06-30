@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :brand_search
       get "search"
       get ':id/purchase', to: 'items#purchase'
+      post ':id/pay', to: 'items#pay'
     end
   end
 
