@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit, :update, :purchase, :pay, :done]
   before_action :move_to_login, only: [:new]
 
+  require "payjp"
+
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
     @radiesItem = pickup_category_items(1)
