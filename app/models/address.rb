@@ -5,4 +5,6 @@ class Address < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :city, presence: true
   validates :street_address, presence: true
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
 end

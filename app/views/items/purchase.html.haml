@@ -1,6 +1,6 @@
 .container
   .purchase
-    = render "purchase-header"
+    = render "shared/purchase-header"
     .purchase__confirmation
       .purchase__confirmation__head.bold 購入内容の確認
       .purchase__confirmation__body
@@ -22,11 +22,15 @@
         .purchase__confirmation__body__inner
           .purchase__confirmation__user__head.bold 配送先
           .purchase__confirmation__user__body
-            〒000-0000
+            = @user.address.postal_code
             %br/
-            address
+            = @user.address.prefecture.name
+            = @user.address.city
+            = @user.address.street_address
+            = @user.address.building
             %br/
-            buyer.name
+            = @user.profile.family_name
+            = @user.profile.first_name
           .purchase__confirmation__user__change
             = link_to "#", class: "purchase__confirmation__user__change__link" do
               変更する
@@ -44,4 +48,4 @@
             = link_to "#", class: "purchase__confirmation__user__change__link" do
               変更する
               = icon 'fas', 'chevron-right'
-    = render "purchase-footer"
+    = render "shared/purchase-footer"
