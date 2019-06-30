@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index]
-
+  before_action :set_item, only: [:purchase, :pay, :done]
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
     @radiesItem = Item.topItem(1)
@@ -19,16 +18,25 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @item = Item.find(params[:id])
     @user = User.find(1)
   end
 
   def pay
-    @item = Item.find(params[:id])
     @user = User.find(1)
     @item.buyer_id = @user.id
     @item.sales_status = 2
     @item.save
+    redirect_to :done
+  end
+
+  def done
+    @user = User.find(1)
+  end
+
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   private

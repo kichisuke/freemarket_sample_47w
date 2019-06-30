@@ -1,0 +1,37 @@
+.container
+  .purchase
+    = render "shared/purchase-header"
+    .purchase__confirmation
+      .purchase__confirmation__done.bold
+        = icon 'far', 'clock', class: "red-icon"
+        発送をお待ちください。
+        .purchase__confirmation__done__child
+          出品者からの発送通知をお待ちください。
+      .purchase__confirmation__head.bold 購入完了しました
+      .purchase__confirmation__body
+        .purchase__confirmation__body__inner
+          .purchase__confirmation__body__inner__image
+            = image_tag @item.item_images.first.url, class: "purchase__confirmation__body__inner__image__photo"
+          .purchase__confirmation__body__inner__name.bold
+            = @item.name
+          .purchase-form
+            .purchase__confirmation__body__inner__item-price
+              %p.bold
+                ¥
+                = @item.price
+                %span
+                  = @item.delivery_charge_i18n
+      .purchase__confirmation__user
+        .purchase__confirmation__body__inner
+          .purchase__confirmation__user__head.bold 配送先
+          .purchase__confirmation__user__body
+            = @user.address.postal_code
+            %br/
+            = @user.address.prefecture.name
+            = @user.address.city
+            = @user.address.street_address
+            = @user.address.building
+            %br/
+            = @user.profile.family_name
+            = @user.profile.first_name
+    = render "shared/purchase-footer"
