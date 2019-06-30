@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get ':id/purchase', to: 'items#purchase'
       post ':id/pay', to: 'items#pay'
+      get ':id/done', to: 'items#done'
     end
   end
 
