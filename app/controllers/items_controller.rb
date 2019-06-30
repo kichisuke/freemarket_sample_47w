@@ -7,4 +7,9 @@ class ItemsController < ApplicationController
 
   def new
   end
+
+  def purchase
+    @item = Item.find(params[:id])
+    @user = User.find(1)
+  end
 end
