@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:purchase, :pay, :done]
+
+  require "payjp"
+
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
     @radiesItem = Item.topItem(1)
