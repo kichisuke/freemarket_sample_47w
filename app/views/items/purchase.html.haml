@@ -6,17 +6,22 @@
       .purchase__confirmation__body
         .purchase__confirmation__body__inner
           .purchase__confirmation__body__inner__image
-            = image_tag "dummy-item.png", class: "purchase__confirmation__body__inner__image__photo"
-          .purchase__confirmation__body__inner__name.bold Item Name
+            = image_tag @item.item_images.first.url, class: "purchase__confirmation__body__inner__image__photo"
+          .purchase__confirmation__body__inner__name.bold
+            = @item.name
           .purchase-form
             .purchase__confirmation__body__inner__item-price
               %p.bold
-                ¥1,000
-                %span 送料込み
+                ¥
+                = @item.price
+                %span
+                  = @item.delivery_charge_i18n
             .purchase__confirmation__body__inner__point ポイントはありません
             .purchase__confirmation__body__inner__buy-price.bold
               .purchase__confirmation__body__inner__buy-price__left 支払い金額
-              .purchase__confirmation__body__inner__buy-price__right ¥1,000
+              .purchase__confirmation__body__inner__buy-price__right
+                ¥
+                = @item.price
             .purchase__confirmation__body__inner__btn 購入する
       .purchase__confirmation__user
         .purchase__confirmation__body__inner
