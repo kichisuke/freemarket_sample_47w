@@ -157,6 +157,14 @@ class ItemsController < ApplicationController
     child_category_brother_ids = Category.where(parent_id: child_category_parent_id)
   end
 
+  def pay
+    @item = Item.find(params[:id])
+    @user = User.find(1)
+    @item.buyer_id = @user.id
+    @item.sales_status = 2
+    @item.save
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status).merge(saler_id: current_user.id)
