@@ -5,19 +5,13 @@
     .item-box-container__item-box__contents
       .slider-container
         %ul.slider#slider
+        - @images.each do |image|
           %li.slider__item
-            = image_tag "dummy-item1.png"
-          %li.slider__item
-            = image_tag "dummy-item2.png"
-          %li.slider__item
-            = image_tag "dummy-item3.png"
+            = image_tag "#{image.url}"
         %ul.thumbnail-slider#thumbnail-slider
+        - @images.each do |image|
           %li.thumbnail-slider__item
-            = image_tag "dummy-item1.png"
-          %li.thumbnail-slider__item
-            = image_tag "dummy-item2.png"
-          %li.thumbnail-slider__item
-            = image_tag "dummy-item3.png"
+            = image_tag "#{image.url}"
       .item-detail
         %table.item-detail__table
           %tr.item-detail__table__tr
@@ -44,15 +38,15 @@
               カテゴリー
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
-                = @category.parent.parent.name
+                = @item.category.parent.parent.name
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
-                  = @category.parent.name
+                  = @item.category.parent.name
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
-                  = @category.name
+                  = @item.category.name
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               ブランド
