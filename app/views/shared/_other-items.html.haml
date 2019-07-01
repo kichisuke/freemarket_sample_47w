@@ -2,56 +2,27 @@
   %section.other-items
     %h3.other-items__head
       = link_to '#', class: 'other-items__head--link' do
-        出品者名のその他の出品
+        = @item.saler.nickname
+        のその他の出品
     .other-items__box
-      %section.other-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.other-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.other-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
+      - @otherItems.each do |otherItem|
+        %section.other-items__box--item
+          = link_to '#', class: 'item-link' do
+            .item-link__image-box
+              = image_tag "dummy-item.png", alt: 'item-name', class: 'item-image'
+            .item-link__text
+              %h3.item-link__text--header
+                = otherItem.name
+              .item-link__text--price
+                .price
+                  ¥
+                  = otherItem.price
+                .likes
+                  = icon('far', 'heart', class: 'likes__icon')
+                  %span.likes__rate
+                    10
+              %p.item-link__text--tax
+                (税込)
 
 %section.other-items-container
   %section.other-items

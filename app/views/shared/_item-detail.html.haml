@@ -4,14 +4,18 @@
       = @item.name
     .item-box-container__item-box__contents
       .slider-container
-        %ul.slider#slider
-        - @images.each do |image|
-          %li.slider__item
-            = image_tag "#{image.url}"
-        %ul.thumbnail-slider#thumbnail-slider
-        - @images.each do |image|
-          %li.thumbnail-slider__item
-            = image_tag "#{image.url}"
+        .owl-carousel
+          .owl-stage
+            - @images.each do |image|
+              .owl-item
+                .owl-item__inner
+                  = image_tag "#{image.url}"
+
+          .owl-dots
+            - @images.each do |image|
+              .owl-dot
+                .owl-dot-inner
+                  = image_tag "#{image.url}"
       .item-detail
         %table.item-detail__table
           %tr.item-detail__table__tr
@@ -150,3 +154,4 @@
       %li.item-box-container__social-media__list__pinterest
         .item-box-container__social-media__list__pinterest__container
           = icon('fab', 'pinterest', class: 'item-box-container__social-media__list__pinterest__container__icon')
+
