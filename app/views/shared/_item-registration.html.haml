@@ -33,21 +33,22 @@
               カテゴリー
               %span.form-require 必須
             .wrapper__main__list__select__wrap 
-              %select
-                %option ---
-                %option レディース
-                %option メンズ
-                %option ベビー・キッズ
-                %option インテリア・住まい・小物
-                %option 本・音楽・ゲーム
-                %option おもちゃ・ホビーグッズ
-                %option コスメ・香水・美容
-                %option 家電・スマホ・カメラ
-                %option スポーツ・レジャー
-                %option ハンドメイド
-                %option チケット
-                %option 自動車・オートバイ
-                %option その他
+              = f.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, autofocus: true, class: 'item-registration__form__group__box__select__body'
+              -# %select
+              -#   %option ---
+              -#   %option レディース
+              -#   %option メンズ
+              -#   %option ベビー・キッズ
+              -#   %option インテリア・住まい・小物
+              -#   %option 本・音楽・ゲーム
+              -#   %option おもちゃ・ホビーグッズ
+              -#   %option コスメ・香水・美容
+              -#   %option 家電・スマホ・カメラ
+              -#   %option スポーツ・レジャー
+              -#   %option ハンドメイド
+              -#   %option チケット
+              -#   %option 自動車・オートバイ
+              -#   %option その他
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__bottom
             %p

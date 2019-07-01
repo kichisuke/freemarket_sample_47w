@@ -6,11 +6,13 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @item = Item.new
   end
 
   def create
-    @item = Item.new(item_params)
+    @categories = Category.all
+    @item = Item.new(to_int_category_id)
     # @item = Item.create(name: params[:name], price: params[:price], text: params[:text])
 
     # binding.pry
@@ -23,7 +25,13 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :price, :text, :condition, :delivery_charge, :prefecture_id, :estimated_shipping_date)
+    params.require(:item).permit(:name, :price, :text, :category_id, :condition, :delivery_charge, :prefecture_id, :estimated_shipping_date)
+  end
+
+  def to_int_category_id
+    item_params.tap do |ip|
+      ip[:category_id] = ip[:category_id].to_i
+    end
   end
 
   # private
