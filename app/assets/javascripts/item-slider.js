@@ -1,28 +1,28 @@
 $(document).on('turbolinks:load', function() {
-  $('.owl-dots .owl-dot:first-child').addClass('active');
-  $('.owl-dots .owl-dot:first-child').css({'opacity':'1','pointer':'default'});
+  $('.thumnaul-slider .thumnaul-slider__outer:first-child').addClass('active');
+  $('.thumnaul-slider .thumnaul-slider__outer:first-child').css({'opacity':'1','pointer':'default'});
 
-  $('.owl-dot').hover(function(){
+  $('.thumnaul-slider__outer').hover(function(){
     $('.active').css({'opacity':'','pointer':''})
     $('.active').removeClass('active');
     $(this).addClass('active');
     $(this).css({'opacity':'1','pointer':'default'});
   });
 
-  $('.owl-stage').slick({
+  $('.slider').slick({
     autoplay: false,
     Speed: 3000,
     arrows: false,
     dots: false,
-    dotsClass: 'owl-dots',
+    dotsClass: 'thumnaul-slider',
     pauseOnDotsHover: true,
     infinite: true,
   });
 
-  $('.owl-dot').on('mouseover', function(e){
+  $('.thumnaul-slider__outer').on('mouseover', function(e){
     var $currTarget = $(e.currentTarget);
-    index = $('.owl-dot').index(this);
-    slickObj = $('.owl-stage').slick('getSlick');
+    index = $('.thumnaul-slider__outer').index(this);
+    slickObj = $('.slider').slick('getSlick');
     slickObj.slickGoTo(index);
   });
 });

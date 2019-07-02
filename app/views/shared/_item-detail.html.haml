@@ -4,18 +4,16 @@
       = @item.name
     .item-box-container__item-box__contents
       .slider-container
-        .owl-carousel
-          .owl-stage
-            - @item.item_images.each do |image|
-              .owl-item
-                .owl-item__inner
-                  = image_tag "#{image.url}"
-
-          .owl-dots
-            - @item.item_images.each do |image|
-              .owl-dot
-                .owl-dot-inner
-                  = image_tag "#{image.url}"
+        .slider
+          - @item.item_images.each do |image|
+            .slider__outer
+              .slider__outer__inner
+                = image_tag "#{image.url}"
+        .thumnaul-slider
+          - @item.item_images.each do |image|
+            .thumnaul-slider__outer
+              .thumnaul-slider__outer__inner
+                = image_tag "#{image.url}"
       .item-detail
         %table.item-detail__table
           %tr.item-detail__table__tr

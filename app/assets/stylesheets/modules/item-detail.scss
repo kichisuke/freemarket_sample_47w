@@ -349,7 +349,10 @@
   opacity: .7;
 }
 
-.owl-item {
+.slider-container {
+  width: 300px;
+}
+.slider__outer {
   min-height: 1px;
   float:left;
   &__inner {
@@ -357,9 +360,6 @@
     width: 100%;
     height: 0;
     padding: 0 0 100%;
-    .owl-lazy {
-      transition: opacity 400ms;
-    }
     img {
       position: absolute;
       top: 0;
@@ -373,11 +373,7 @@
   }
 }
 
-.slider-container {
-  width: 300px;
-}
-
-.owl-dot {
+.thumnaul-slider__outer {
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -385,7 +381,7 @@
   height: 56px;
   opacity: 0.4;
   cursor: pointer;
-  .owl-dot-inner {
+  &__inner {
     overflow: hidden;
     position: static;
     width: auto;
