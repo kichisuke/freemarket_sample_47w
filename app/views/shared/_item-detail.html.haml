@@ -6,13 +6,13 @@
       .slider-container
         .owl-carousel
           .owl-stage
-            - @images.each do |image|
+            - @item.item_images.each do |image|
               .owl-item
                 .owl-item__inner
                   = image_tag "#{image.url}"
 
           .owl-dots
-            - @images.each do |image|
+            - @item.item_images.each do |image|
               .owl-dot
                 .owl-dot-inner
                   = image_tag "#{image.url}"
