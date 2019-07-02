@@ -35,7 +35,7 @@
         %section.other-items__box--item
           = link_to item_path(sameCategories.id), class: 'item-link' do
             .item-link__image-box
-              = image_tag "#{sameCategories.item_images[0].url}", alt: 'item-name', class: 'item-image'
+              = image_tag "#{sameCategories.item_images.first.url}", alt: 'item-name', class: 'item-image'
             .item-link__text
               %h3.item-link__text--header
                 = sameCategories.name
