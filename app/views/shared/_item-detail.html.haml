@@ -51,18 +51,20 @@
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
                   = @item.category.name
-          %tr.item-detail__table__tr
-            %th.item-detail__table__tr__th
-              ブランド
-            %td.item-detail__table__tr__td
-              = link_to '#', class: 'item-detail__table__tr__td__brand-link' do
-                %div
-                  = @item.brand.name
-          %tr.item-detail__table__tr
-            %th.item-detail__table__tr__th
-              商品サイズ
-            %td.item-detail__table__tr__td
-              = @item.size_i18n
+          - if @item.brand.present?
+            %tr.item-detail__table__tr
+              %th.item-detail__table__tr__th
+                ブランド
+              %td.item-detail__table__tr__td
+                = link_to '#', class: 'item-detail__table__tr__td__brand-link' do
+                  %div
+                    = @item.brand.name
+          - if @item.brand.present?
+            %tr.item-detail__table__tr
+              %th.item-detail__table__tr__th
+                商品サイズ
+              %td.item-detail__table__tr__td
+                = @item.size_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               商品の状態
@@ -156,4 +158,3 @@
       %li.item-box-container__social-media__list__pinterest
         .item-box-container__social-media__list__pinterest__container
           = icon('fab', 'pinterest', class: 'item-box-container__social-media__list__pinterest__container__icon')
-
