@@ -130,16 +130,18 @@
         %span.item-box-container__message-container__form__submit__text
           コメントする
   %ul.item-box-container__nav-item
-    %li.item-box-container__nav-item__prev
-      = link_to '#', class: 'item-box-container__nav-item__prev__link' do
-        = icon('fas', 'angle-left', class: 'item-box-container__nav-item__prev__link__icon')
-        %span.item-box-container__nav-item__prev__link__text
-          前の商品名
-    %li.item-box-container__nav-item__next
-      = link_to '#', class: 'item-box-container__nav-item__next__link' do
-        %span.item-box-container__nav-item__next__link__text
-          次の商品名
-        = icon('fas', 'angle-right', class: 'item-box-container__nav-item__next__link__icon')
+    - if  @previousItem.present?
+      %li.item-box-container__nav-item__prev
+        = link_to item_path(@previousItem.id), class: 'item-box-container__nav-item__prev__link' do
+          = icon('fas', 'angle-left', class: 'item-box-container__nav-item__prev__link__icon')
+          %span.item-box-container__nav-item__prev__link__text
+            = @previousItem.name
+    - if  @nextItem.present?
+      %li.item-box-container__nav-item__next
+        = link_to item_path(@nextItem.id), class: 'item-box-container__nav-item__next__link' do
+          %span.item-box-container__nav-item__next__link__text
+            = @nextItem.name
+          = icon('fas', 'angle-right', class: 'item-box-container__nav-item__next__link__icon')
   .item-box-container__social-media
     %ul.item-box-container__social-media__list
       %li.item-box-container__social-media__list__facebook

@@ -7,7 +7,7 @@
     .other-items__box
       - @otherItems.each do |otherItem|
         %section.other-items__box--item
-          = link_to '#', class: 'item-link' do
+          = link_to item_path(otherItem.id), class: 'item-link' do
             .item-link__image-box
               = image_tag "#{otherItem.item_images[0].url}", alt: 'item-name', class: 'item-image'
             .item-link__text
@@ -33,7 +33,7 @@
     .other-items__box
       - @sameCategories.each do |sameCategories|
         %section.other-items__box--item
-          = link_to '#', class: 'item-link' do
+          = link_to item_path(sameCategories.id), class: 'item-link' do
             .item-link__image-box
               = image_tag "#{sameCategories.item_images[0].url}", alt: 'item-name', class: 'item-image'
             .item-link__text
