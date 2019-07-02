@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-describe TweetsController do
+describe ItemsController do
 
 end
