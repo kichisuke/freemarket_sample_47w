@@ -152,11 +152,11 @@
     }
   }
   &__nav-item {
-    display: flex;
     width: 700px;
     margin: 24px auto 0;
-    justify-content: space-between;
+    @include clearfix;
     &__prev {
+      float: left;
       &__link {
         color: #0099e8;
         &__icon {
@@ -167,6 +167,7 @@
       }
     }
     &__next {
+      float: right;
       &__link {
         color: #0099e8;
         &__icon {
