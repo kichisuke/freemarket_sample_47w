@@ -23,11 +23,11 @@
       支払い方法
     .registration-main__inner
       .form.registration-form
-        = form_tag(url: '/signup_create', id: 'charge-form', method: :POST, action: 'signup_create') do
+        = form_tag(url: '/signup_create', id: 'credit-form', method: :POST, action: 'signup_create') do
           .registration-form__group
             %label カード番号
             %span.require 必須
-            %input{type: 'text', name: 'number', maxlength: '16', placeholder: '半角数字のみ', class: 'input-default'}
+            %input{type: 'text', name: 'number', maxlength: '16', placeholder: '半角数字のみ',id: 'card-number', class: 'input-default'}
             -# = text_field :number, maxlength: '16', placeholder: '半角数字のみ', class: 'input-default'
           .registration-form__credit-img
             = image_tag 'credit_card/visa.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
@@ -43,7 +43,7 @@
             .registration-form__select
               .registration-form__select__wrap
                 -# = f.date_field :expiration_month, class: 'select'
-                %select{name: 'expiration_month', class: 'select'}
+                %select{name: 'expiration_month', id: 'card_expire_mm', class: 'select'}
                   %option{value: ""} --
                   %option{value: "1"} 1
                   %option{value: "2"} 2
@@ -60,7 +60,7 @@
                 = icon 'fas', 'chevron-down'
               %span.date 月
               .registration-form__select__wrap
-                %select{name: 'expiration_year', class: 'select'}
+                %select{name: 'expiration_year', id: 'card_expire_yy', class: 'select'}
                   %option{value: ""} --
                   %option{value: "2020"} 2020
                   %option{value: "2021"} 2021
@@ -79,12 +79,12 @@
             -# = label :security_code, 'セキュリティーコード'
             %label セキュリティーコード
             %span.require 必須
-            %input{type: 'text', name: 'security_code', maxlength: '4', placeholder: 'カード背面4桁もしくは3桁の番号', class: 'input-default'}
+            %input{type: 'text', name: 'security_code', maxlength: '4', placeholder: 'カード背面4桁もしくは3桁の番号', id: 'cvc', class: 'input-default'}
             -# = text_field :security_code, maxlength: '4', placeholder: 'カード背面4桁もしくは3桁の番号', class: 'input-default'
             %p.registration-form__text__right
               = icon 'fas', 'question-circle'
               = link_to 'カード背面の番号とは？', '#', class: 'link-default'
-          %input{type: 'submit', class: 'registration-form__btn', value: '次へ進む'}
+          %input{type: 'submit', id: 'submit-button', class: 'registration-form__btn', value: '次へ進む'}
           -# = submit '次へ進む', class: 'registration-form__btn'
   = render partial: 'shared/login-footer'
 
