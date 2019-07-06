@@ -1,6 +1,6 @@
 - @top_item1.each_with_index do |item, index|
   %section.pickup-items__box--item
-    = link_to '#', class: 'item-link' do
+    = link_to item_path(item.id), class: 'item-link' do
       .item-link__image-box
         = image_tag "#{@top_item1[index].item_images.first.url}", alt: 'item-name', class: 'item-image'
       .item-link__text
