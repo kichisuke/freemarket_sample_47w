@@ -89,7 +89,7 @@ class ItemsController < ApplicationController
     @item.buyer_id = @user.id
     @item.sales_status = 2
     @item.save
-    redirect_to :done
+    redirect_to action: 'done'
   end
 
   def done
