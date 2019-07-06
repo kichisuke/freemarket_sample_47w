@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand
-  has_many :images
+  has_many :item_images
   has_many :likes
   has_many :comments
   belongs_to :saler, class_name: "User", foreign_key: 'saler_id'
@@ -13,4 +13,7 @@ class Item < ApplicationRecord
   enum estimated_shipping_date: { shipping1: 0, shipping2: 1, shipping3: 2 }
   enum size: { xxs: 0, xs: 1, s: 2, m: 3, l: 4, xl: 5, xl2: 6, xl3: 7, xl4: 8, xl5: 9, free_size: 10 }
   enum sales_status: { exhibition: 0, stop: 1, trading: 2, sold: 3 }
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 end
