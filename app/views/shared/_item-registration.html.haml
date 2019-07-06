@@ -9,10 +9,12 @@
           %span.form-require 必須
         %p 最大10枚までアップロードできます
         .wrapper__main__image__drop-box
-          %pre
-            :preserve
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
+          = f.fields_for :item_images do |f|
+            = f.file_field :url
+          %p ドラッグアンドドロップ
+          %p またはクリックしてファイルをアップロード
+        - if @image_error.present?
+          p.error= @image_error
       .wrapper__main__item
         .wrapper__main__item__name
           %h3
