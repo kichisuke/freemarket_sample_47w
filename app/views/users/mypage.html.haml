@@ -7,7 +7,8 @@
         .mypage__user__link
           = link_to "#", class: "mypage-link" do
             = image_tag "member_photo_noimage.png", class: "mypage__user__link__icon"
-            %h3.mypage__user__link__name user name
+            %h3.mypage__user__link__name 
+              = @user.nickname
             .mypage__user__link__number
               .mypage__user__link__number__rate 評価
               .mypage__user__link__number__count 0
@@ -61,7 +62,23 @@
               .mypage-link 過去の取引
         .mypage__tabs__contents
           %ul.tab-buy-content.tab-show
-            %li.mypage__tabs__contents__now.not-found 取引中の商品がありません
+            - if @tradings.present?
+              - @tradings.each do |trading|
+                %li.mypage__tabs__contents__news
+                  = link_to item_path(trading.id), class: "mypage__tabs__contents__news__link mypage-list-link" do
+                    = image_tag trading.item_images.first.url, class: "mypage__tabs__contents__news__link__image"
+                    .mypage__tabs__contents__news__link__message
+                      .mypage__tabs__contents__news__link__message__text
+                        = trading.name
+                      %span.mypage__tabs__contents__news__link__message__day
+                        = icon 'far', 'heart'
+                        0
+                        = icon 'far', 'comment-alt'
+                        0
+                    %icon.mypage__tabs__contents__news__link__go
+                      = icon 'fas', 'chevron-right'
+            - else
+              %li.mypage__tabs__contents__now.not-found 取引中の商品がありません
           %ul.tab-buy-content
             %li.mypage__tabs__contents__past.not-found 取引中の商品がありません
   = render 'shared/banner'
