@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
-    get 'mypage', to: 'users/sessions#mypage'
-    get 'mypage/profile', to: 'users/sessions#profile'
     get 'mypage/card', to: 'users/sessions#card'
     get 'mypage/identification', to: 'users/sessions#user_identification'
     get 'login', to: 'users/sessions#new'
@@ -28,6 +26,9 @@ Rails.application.routes.draw do
     post 'signup_create', to: 'users/registrations#signup_create'
     get 'signup_end', to: 'users/registrations#signup_end'
   end
+
+  get 'mypage', to: 'users#mypage'
+  get 'mypage/profile', to: 'users#profile'
 
   #下記は一旦残しておく
   get 'test/sell', to: 'test#sell'
