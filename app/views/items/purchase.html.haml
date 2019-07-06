@@ -22,7 +22,7 @@
               .purchase__confirmation__body__inner__buy-price__right
                 ¥
                 = @item.price
-            = form_tag(action: :pay, method: :post) do
+            = form_tag(action: :pay) do
               .purchase__confirmation__body__inner__btn 購入する
       .purchase__confirmation__user
         .purchase__confirmation__body__inner
