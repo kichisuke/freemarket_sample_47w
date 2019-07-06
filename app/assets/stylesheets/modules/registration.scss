@@ -158,12 +158,20 @@ li.current-page {
     width: 320px;
     color: $black;
     &__wrap {
-      height: 48px;
-      width: 76px;
-      margin-top: 8px;
-      font-size: 14px;
+      // height: 48px;
+      // width: 76px;
+      // margin-top: 8px;
+      // font-size: 14px;
       position: relative;
       display: inline-block;
+      .date_select {
+        height: 48px;
+        width: 76px;
+        margin-top: 8px;
+        margin-right: 25px;
+        font-size: 14px;
+        position: relative;
+      }
     }
     i {
       position: absolute;
@@ -214,6 +222,12 @@ li.current-page {
       color: $blue;
     }
   }
+}
+
+#session_birthday_1i::after{
+  content: '年';
+  position: absolute;
+  right: 0;
 }
 
 //sms_confirmation
