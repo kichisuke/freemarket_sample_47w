@@ -91,12 +91,14 @@
               = @item.estimated_shipping_date_i18n
     .item-box-container__item-box__item-price-box
       %span.item-box-container__item-box__item-price-box__price
-        ¥
-        = @item.price
+        ='¥ ' + number_with_delimiter("#{@item.price}")
       %span.item-box-container__item-box__item-price-box__tax
         (税込)
       %span.item-box-container__item-box__item-price-box__shipping-fee
-        = @item.delivery_charge_i18n
+        - if @item.delivery_charge == "postage_included"
+          送料込み
+        - else
+          着払い
     = link_to '#', class: 'item-box-container__item-box__item-buy-btn' do
       購入画面に進む
     .item-box-container__item-box__item-description
