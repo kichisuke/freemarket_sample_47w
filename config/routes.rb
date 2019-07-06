@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
-    get 'mypage', to: 'users/sessions#mypage'
-    get 'mypage/profile', to: 'users/sessions#profile'
     get 'mypage/card', to: 'users/sessions#card'
     get 'mypage/identification', to: 'users/sessions#user_identification'
     get 'registration', to: 'users/registrations#registration'
   end
+
+  get 'mypage', to: 'users#mypage'
+  get 'mypage/profile', to: 'users#profile'
 
   #下記は一旦残しておく
   get 'sms_confirmation', to: 'test#sms_confirmation'
