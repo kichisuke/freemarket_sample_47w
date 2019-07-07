@@ -22,21 +22,29 @@
               .purchase__confirmation__body__inner__buy-price__right
                 ¥
                 = @item.price
-            = form_tag(action: :pay) do
-              %button.purchase__confirmation__body__inner__btn 購入する
+            - if @user.address && @user.creditcard.present?
+              = form_tag(action: :pay) do
+                %button.purchase__confirmation__body__inner__btn 購入する
+            - else
+              .purchase__error-text 配送先と支払い方法の入力を完了してください。
+              .purchase__error-btn 購入する
       .purchase__confirmation__user
         .purchase__confirmation__body__inner
           .purchase__confirmation__user__head.bold 配送先
-          .purchase__confirmation__user__body
-            = @user.address.postal_code
+          - if @user.address.present?
+            .purchase__confirmation__user__body
+              = @user.address.postal_code
+              %br/
+              = @user.address.prefecture.name
+              = @user.address.city
+              = @user.address.street_address
+              = @user.address.building
+              %br/
+              = @user.profile.family_name
+              = @user.profile.first_name
+          - else
             %br/
-            = @user.address.prefecture.name
-            = @user.address.city
-            = @user.address.street_address
-            = @user.address.building
-            %br/
-            = @user.profile.family_name
-            = @user.profile.first_name
+            ／
           .purchase__confirmation__user__change
             = link_to "#", class: "purchase__confirmation__user__change__link" do
               変更する

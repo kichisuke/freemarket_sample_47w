@@ -130,6 +130,19 @@
       margin: 8px 0 0;
     }
   }
+  &__error-text {
+    color: #ea352d
+  }
+  &__error-btn {
+    margin: 8px 0 0;
+    border: 1px solid #888;
+    background: #888;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+  }
 }
 
 .bold {
