@@ -12,16 +12,14 @@
           .purchase-form
             .purchase__confirmation__body__inner__item-price
               %p.bold
-                ¥
-                = @item.price
+                = '¥ ' + number_with_delimiter("#{@item.price}")
                 %span
                   = @item.delivery_charge_i18n
             .purchase__confirmation__body__inner__point ポイントはありません
             .purchase__confirmation__body__inner__buy-price.bold
               .purchase__confirmation__body__inner__buy-price__left 支払い金額
               .purchase__confirmation__body__inner__buy-price__right
-                ¥
-                = @item.price
+                = '¥ ' + number_with_delimiter("#{@item.price}")
             - if @user.address && @user.creditcard.present?
               = form_tag(action: :pay) do
                 %button.purchase__confirmation__body__inner__btn 購入する
