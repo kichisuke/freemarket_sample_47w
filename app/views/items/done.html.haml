@@ -17,8 +17,7 @@
           .purchase-form
             .purchase__confirmation__body__inner__item-price
               %p.bold
-                ¥
-                = @item.price
+                = '¥ ' + number_with_delimiter("#{@item.price}")
                 %span
                   = @item.delivery_charge_i18n
       .purchase__confirmation__user
