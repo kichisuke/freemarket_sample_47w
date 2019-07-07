@@ -251,6 +251,12 @@
       height: 48px;
       margin-top: 40px;
       color:white;
+      
+      input {
+        background: none;
+        color: white;
+        border: none;
+      }
     }
     &__grey {
       background-color:#aaa;
