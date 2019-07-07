@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :comments
   has_one :address
   has_one :profile
+  has_one :creditcard
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable     
 end
