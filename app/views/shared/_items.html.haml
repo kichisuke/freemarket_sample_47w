@@ -4,7 +4,7 @@
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        #{@radiesItem.first.category.name} 新着アイテム
+        レディース 新着アイテム
     .pickup-items__box
       = render "shared/pickup-items1"
     .view-all
@@ -13,9 +13,9 @@
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        #{@mensItem.first.category.name} 新着アイテム
+        メンズ 新着アイテム
     .pickup-items__box
-      = render "shared/pickup-items2"
+      = render "shared/pickup-items2" 
     .view-all
       = link_to '#', class: 'view-all__link' do
         全ての商品を見る
