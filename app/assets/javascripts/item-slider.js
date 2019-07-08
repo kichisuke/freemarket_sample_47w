@@ -1,49 +1,28 @@
-$(document).on('turbolinks:load', function(){
-  var slider = "#slider"
-  var thumbnailSlider = "#thumbnail-slider .thumbnail-slider__item"
+$(document).on('turbolinks:load', function() {
+  $('.thumnaul-slider .thumnaul-slider__outer:first-child').addClass('active');
+  $('.thumnaul-slider .thumnaul-slider__outer:first-child').css({'opacity':'1','pointer':'default'});
 
-  $(thumbnailSlider).each(function(){
-    var index = $(thumbnailSlider).index(this);
-    $(this).attr("data-index",index);
+  $('.thumnaul-slider__outer').hover(function(){
+    $('.active').css({'opacity':'','pointer':''})
+    $('.active').removeClass('active');
+    $(this).addClass('active');
+    $(this).css({'opacity':'1','pointer':'default'});
   });
 
-  $(slider).on('init',function(slick){
-    var index = $(".slide-item.slick-slide.slick-current").attr("data-slick-index");
-    $(thumbnailSlider+'[data-index="'+index+'"]').addClass("thumbnail-current");
-   });
-
-  $(slider).slick({
-    dots: true,
+  $('.slider').slick({
     autoplay: false,
-    arrows: false
+    Speed: 3000,
+    arrows: false,
+    dots: false,
+    dotsClass: 'thumnaul-slider',
+    pauseOnDotsHover: true,
+    infinite: true,
   });
 
-  $(thumbnailSlider).on('mouseover',function(){
-    var index = $(this).attr("data-index");
-    $(slider).slick("slickGoTo",index,false);
-  });
-
-  $(slider).on('beforeChange',function(event,slick, currentSlide,nextSlide){
-    $(thumbnailSlider).each(function(){
-      $(this).removeClass("thumbnail-current");
-    });
-    $(thumbnailSlider+'[data-index="'+nextSlide+'"]').addClass("thumbnail-current");
-  });
-
-
-  $( '.slider' ).on( 'mouseenter', '.slick-dots > li', function() {
-    $( this ).click();
-  });
-  $( '.slider' ).on( 'mouseover', '.slick-dots > li', function() {
-    $( this ).css({
-      opacity: "1",
-      cursor: "pointer"
-    });
-  });
-  $( '.slider' ).on( 'mouseout', '.slick-dots > li', function() {
-    $( this ).css({
-      opacity: "",
-      cursor: ""
-    });
+  $('.thumnaul-slider__outer').on('mouseover', function(e){
+    var $currTarget = $(e.currentTarget);
+    index = $('.thumnaul-slider__outer').index(this);
+    slickObj = $('.slider').slick('getSlick');
+    slickObj.slickGoTo(index);
   });
 });
