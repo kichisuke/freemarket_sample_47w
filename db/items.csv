@@ -1,0 +1,2 @@
+id,name,price,text,condition,delivery_charge,delivery_method,prefecture_id,estimated_shipping_date,category_id,brand_id,size,saler_id,buyer_id,sales_status,created_at,updated_at
+1,ワンピース,12500,安いです,brand_new,postage_included,mercari,0,shipping1,1,1,xxs,1,,exhibition,2019-01-01,2019-01-01 00:00:00
