@@ -4,7 +4,7 @@
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        #{@top_item1.first.category.name} 新着アイテム
+        #{@radiesItem.first.category.name} 新着アイテム
     .pickup-items__box
       = render "shared/pickup-items1"
     .view-all
@@ -13,7 +13,7 @@
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        #{@top_item2.first.category.name} 新着アイテム
+        #{@mensItem.first.category.name} 新着アイテム
     .pickup-items__box
       = render "shared/pickup-items2"
     .view-all

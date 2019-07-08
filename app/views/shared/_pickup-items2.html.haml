@@ -1,14 +1,14 @@
-- @top_item1.each_with_index do |item, index|
+- @radiesItem.each_with_index do |item, index|
   %section.pickup-items__box--item
     = link_to item_path(item.id), class: 'item-link' do
       .item-link__image-box
-        = image_tag "#{@top_item2[index].item_images.first.url}", alt: 'item-name', class: 'item-image'
+        = image_tag "#{@mensItem[index].item_images.first.url}", alt: 'item-name', class: 'item-image'
       .item-link__text
         %h3.item-link__text--header
-          ="#{@top_item2[index].name}"
+          ="#{@mensItem[index].name}"
         .item-link__text--price
           .price
-            ='¥ ' + number_with_delimiter("#{@top_item2[index].price}")
+            ='¥ ' + number_with_delimiter("#{@mensItem[index].price}")
           .likes
             = icon('far', 'heart', class: 'likes__icon')
             %span.likes__rate
