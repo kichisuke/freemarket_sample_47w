@@ -2,6 +2,10 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index]
 
   def index
+    #レディースカテゴリーの4アイテムを最新の上から4つ抽出
+    @radiesItem = Item.topItem(1)
+    #メンズカテゴリーの4アイテムを最新の上から4つ抽出
+    @mensItem = Item.topItem(2)
   end
 
   def show
