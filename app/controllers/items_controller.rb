@@ -3,9 +3,9 @@ class ItemsController < ApplicationController
 
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
-    @radiesItem = Item.where("category_id = '1'").order('created_at DESC').limit(4)
+    @radiesItem = Item.topItem(1)
     #メンズカテゴリーの4アイテムを最新の上から4つ抽出
-    @mensItem = Item.where("category_id = '2'").order('created_at DESC').limit(4)
+    @mensItem = Item.topItem(2)
   end
 
   def show
