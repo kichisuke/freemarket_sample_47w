@@ -10,7 +10,7 @@
         %p 最大10枚までアップロードできます
         .wrapper__main__image__drop-box
           = f.fields_for :item_images do |image|
-            = image.file_field :url, multiple: true, name: 'item_images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+            = image.file_field :url, multiple: true, name: 'item_images[image][]'
           %p ドラッグアンドドロップ
           %p またはクリックしてファイルをアップロード
         - if @image_error.present?
