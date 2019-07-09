@@ -113,6 +113,30 @@
       }
     }
   }
+  &__edit-container {
+    width: 700px;
+    padding: 24px;
+    margin: 30px auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    &__edit-item {
+      display: block;
+      width: 620px;
+      height: 60px;
+      margin: 10px auto;
+      background-color: #ea352d;
+      &__text {
+        text-align: center;
+        color: #FAFAFA;
+        font-size: 24px;
+        line-height: 60px;
+        font-weight: 600;
+      }
+    }
+    &__or {
+      text-align: center;
+    }
+  }
   &__message-container {
     width: 700px;
     padding: 24px;
