@@ -119,11 +119,11 @@
     margin: 30px auto;
     box-sizing: border-box;
     background-color: #fff;
-    &__edit-item {
+    &__edit-item-btn {
       display: block;
       width: 620px;
       height: 60px;
-      margin: 10px auto;
+      margin: 10px auto 15px;
       background-color: #ea352d;
       &__text {
         text-align: center;
@@ -135,6 +135,21 @@
     }
     &__or {
       text-align: center;
+      font-size: 24px;
+    }
+    &__delete-item-btn {
+      display: block;
+      width: 620px;
+      height: 60px;
+      margin: 10px auto 15px;
+      background-color: #aaa;
+      &__text {
+        text-align: center;
+        color: #FAFAFA;
+        font-size: 24px;
+        line-height: 60px;
+        font-weight: 600;
+      }
     }
   }
   &__message-container {
