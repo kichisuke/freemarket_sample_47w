@@ -9,8 +9,8 @@
           %span.form-require 必須
         %p 最大10枚までアップロードできます
         .wrapper__main__image__drop-box
-          = f.fields_for :item_images do |f|
-            = f.file_field :url
+          = f.fields_for :item_images do |image|
+            = image.file_field :url, multiple: true, name: 'item_images[image][]'
           %p ドラッグアンドドロップ
           %p またはクリックしてファイルをアップロード
         - if @image_error.present?
@@ -34,7 +34,7 @@
             %p
               カテゴリー
               %span.form-require 必須
-            .wrapper__main__list__select__wrap 
+            .wrapper__main__list__select__wrap
               = f.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, autofocus: true, class: 'item-registration__form__group__box__select__body'
               -# %select
               -#   %option ---
@@ -56,7 +56,7 @@
             %p
               商品の状態
               %span.form-require 必須
-            .wrapper__main__list__select__wrap 
+            .wrapper__main__list__select__wrap
               =f.select :condition, Item.conditions_i18n.invert, {}
               %i.fas.fa-chevron-down
       .wrapper__main__list__delivery
@@ -64,13 +64,20 @@
           %p
             配送について
             %span.fa.fa-question-circle
-        .wrapper__main__list__select__box 
+        .wrapper__main__list__select__box
           .wrapper__main__list__select__top
             %p
               配送料の負担
               %span.form-require 必須
-            .wrapper__main__list__select__wrap 
+            .wrapper__main__list__select__wrap
               =f.select :delivery_charge, Item.delivery_charges_i18n.invert, {}
+              %i.fas.fa-chevron-down
+          .wrapper__main__list__select__top
+            %p
+              配送の方法
+              %span.form-require 必須
+            .wrapper__main__list__select__wrap
+              =f.select :delivery_method, Item.delivery_methods_i18n.invert, {}
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__center
             %p
@@ -83,8 +90,15 @@
             %p
               発送までの日数
               %span.form-require 必須
-            .wrapper__main__list__select__wrap 
+            .wrapper__main__list__select__wrap
               =f.select :estimated_shipping_date , Item.estimated_shipping_dates_i18n.invert, {}
+              %i.fas.fa-chevron-down
+          .wrapper__main__list__select__bottom
+            %p
+              sales_status
+              %span.form-require 必須
+            .wrapper__main__list__select__wrap
+              =f.select :sales_status , Item.sales_statuses_i18n.invert, {}
               %i.fas.fa-chevron-down
       .wrapper__main__list__price
         .wrapper__main__list__name
@@ -117,6 +131,6 @@
         %a また、出品を持ちまして
         %a.blue 加盟店規約
         %a に同意したことになります。
-        %button.wrapper__main__bottom__red 
+        %button.wrapper__main__bottom__red
           =f.submit "出品する"
         %button.wrapper__main__bottom__grey もどる

@@ -13,40 +13,24 @@ class ItemsController < ApplicationController
 
   def create
     @categories = Category.all
-    @item = Item.new(to_int_category_id)
-    @item.item_images.build
-    # @item = Item.create(name: params[:name], price: params[:price], text: params[:text])
-
-    # binding.pry
-     if @item.save
+    @item = Item.new(item_params)
+    if @item.save
+      params[:item_images][:image].each do |url|
+        @item.item_images.create(url: url, item_id: @item.id)
+      end
       redirect_to root_path, notice: '出品しました。'
-     #else
-       #render "items/new"
-     end
+    end
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :price, :text, :category_id, :condition, :delivery_charge, :prefecture_id, :estimated_shipping_date, item_images_attributes: [:url])
+    params.require(:item).permit(:name, :price, :text, :category_id, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status, item_images_attributes: [:url])
   end
 
-  def to_int_category_id
-    item_params.tap do |ip|
-      ip[:category_id] = ip[:category_id].to_i
-    end
-  end
-
-  # private
-  # def item_params
-  #   params.require(:item).permit(
-  #     :name,
-  #     :text,
-  #     :condition,
-  #     :delivery_charge,
-  #     # :delivery_method,
-  #     :prefecture_id,
-  #     :estimated_shipping_date,
-  #     :price
-  #   )
+  #下記コードは何してるかわからない
+  # def to_int_category_id
+  #   item_params.tap do |ip|
+  #     ip[:category_id] = ip[:category_id].to_i
+  #   end
   # end
 end
