@@ -34,16 +34,6 @@ CSV.foreach('db/categories.csv', headers: true) do |row|
     category.save!
 end
 
-CSV.foreach('db/item_images.csv', headers: true) do |row|
-  item_image = ItemImage.where(
-    id: row[0],
-    url: row[1],
-    item_id: row[2],
-    created_at: row[3],
-    updated_at: row[4]).first_or_initialize
-  item_image.save!
-end
-
 CSV.foreach('db/items.csv', headers: true) do |row|
     item = Item.where(
       id: row[0],
@@ -64,4 +54,14 @@ CSV.foreach('db/items.csv', headers: true) do |row|
       created_at: row[15],
       updated_at: row[16]).first_or_initialize
     item.save!
+end
+
+CSV.foreach('db/item_images.csv', headers: true) do |row|
+  item_image = ItemImage.where(
+    id: row[0],
+    url: row[1],
+    item_id: row[2],
+    created_at: row[3],
+    updated_at: row[4]).first_or_initialize
+  item_image.save!
 end
