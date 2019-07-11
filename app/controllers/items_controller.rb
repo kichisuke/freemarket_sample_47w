@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @categories = Category.all
+    @categories = Category.eager_load(children: :children).where(parent_id: nil)
     @item = Item.new
     @item.item_images.build
   end
@@ -19,6 +19,16 @@ class ItemsController < ApplicationController
         @item.item_images.create(url: url, item_id: @item.id)
       end
       redirect_to root_path, notice: '出品しました。'
+    end
+  end
+
+  def category_search
+    respond_to do |format|
+      format.html
+      format.json do
+        @parent_category = Category.find(params[:parent_id])
+        @child_categories = @parent_category.children
+      end
     end
   end
 
