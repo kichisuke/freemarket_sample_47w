@@ -4,144 +4,18 @@
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        カテゴリー 新着アイテム
+        レディース 新着アイテム
     .pickup-items__box
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
+      = render "shared/pickup-items1"
     .view-all
       = link_to '#', class: 'view-all__link' do
         全ての商品を見る
   %section.pickup-items
     %h3.pickup-items__head
       = link_to '#', class: 'pickup-items__head--link' do
-        カテゴリー 新着アイテム
+        メンズ 新着アイテム
     .pickup-items__box
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
-      %section.pickup-items__box--item
-        = link_to '#', class: 'item-link' do
-          .item-link__image-box
-            = image_tag 'dummy-item.png', alt: 'item-name', class: 'item-image'
-          .item-link__text
-            %h3.item-link__text--header
-              ジャストカヴァリ スター刺繍 ストライプ ドレスシャツ 46
-            .item-link__text--price
-              .price
-                ¥ 26,900
-              .likes
-                = icon('far', 'heart', class: 'likes__icon')
-                %span.likes__rate
-                  10
-            %p.item-link__text--tax
-              (税込)
+      = render "shared/pickup-items2" 
     .view-all
       = link_to '#', class: 'view-all__link' do
         全ての商品を見る
