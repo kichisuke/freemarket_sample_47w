@@ -12,6 +12,21 @@ $(document).on('turbolinks:load', function() {
     var childOption = `<option value="${child.id}">${child.name}</option>`
     return childOption;
   }
+
+  function buildGrandChildForm() {
+    var html = `<div class="wrapper__main__list__select__wrap grandchild-form">
+                  <select class="item-registration__form__group__box__select__body" id="grandchild-form" name="item[category_id]">
+                    <option value>---</option>
+                  </select>
+                  <i class="fas fa-chevron-down"></i>
+                </div>`
+    return html;
+  }
+  function buildGrandChildOption(child) {
+    var GrandChildOption = `<option value="${child.id}">${child.name}</option>`
+    return GrandChildOption;
+  }
+
   $('#parent-category').on('change', function() {
     var parentValue = document.getElementById("parent-form").value;
     $('.child-form').remove();
@@ -28,6 +43,28 @@ $(document).on('turbolinks:load', function() {
       child.forEach(function(child) {
         InsertHTML += buildChildOption(child);
         $('#child-form').append(InsertHTML);
+      })
+    })
+    .fail(function() {
+      alert('error');
+    })
+  });
+  $(document).on('change', '#child-form', function() {
+    var childValue = document.getElementById("child-form").value;
+    $('.glandchild-form').remove();
+
+    $.ajax({
+      url: '/items/category_search',
+      type: 'GET',
+      data: {parent_id: childValue},
+      dataType: 'json'
+    })
+    .done(function(child) {
+      var InsertHTML = '';
+      $('#grandchild-category').append(buildGrandChildForm());
+      child.forEach(function(child) {
+        InsertHTML += buildGrandChildOption(child);
+        $('#grandchild-form').append(InsertHTML);
       })
     })
     .fail(function() {
