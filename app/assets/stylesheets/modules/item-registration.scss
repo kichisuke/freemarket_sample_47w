@@ -1,6 +1,6 @@
 .wrapper__main {
   width:700px;
-  height:2050px;
+  //height:2050px;
   margin:0 auto;
   background-color:white;
 
@@ -82,7 +82,7 @@
 
     &__item {
       width:620px;
-      height: 220px;
+      //height: 220px;
       padding: 40px 40px 20px;
       font-weight: bold;
       border-bottom:2px solid #f5f5f5;
@@ -113,10 +113,15 @@
         margin: 40px 0 0;
       }
 
+      &__wrap {
+        position: relative;
+      }
+
       &__wrap i {
         position: absolute;
-        right: 420px;
-        transform: translateY(-180%);
+        right: 16px;
+        top: 50%;
+        transform: translate(0, -50%);
         color: #888;
         font-size: 18px;
         z-index: 5;
@@ -147,7 +152,7 @@
 
     &__delivery {
       width:620px;
-      height: 300px;
+      //height: 300px;
       padding: 40px;
       font-weight: bold;
       border-bottom:2px solid #f5f5f5;

@@ -26,7 +26,7 @@
             商品の説明
             %span.form-require 必須
           = f.text_area :text, autofocus: true, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-      .wrapper__main__list__item
+      .wrapper__main__list__item.clearfix
         .wrapper__main__list__name
           %p 商品の詳細
         .wrapper__main__list__select__box
@@ -56,7 +56,7 @@
             .wrapper__main__list__select__wrap
               =f.select :condition, Item.conditions_i18n.invert, {}
               %i.fas.fa-chevron-down
-      .wrapper__main__list__delivery
+      .wrapper__main__list__delivery.clearfix
         .wrapper__main__list__name
           %p
             配送について
@@ -69,7 +69,7 @@
             .wrapper__main__list__select__wrap
               =f.select :delivery_charge, Item.delivery_charges_i18n.invert, {}
               %i.fas.fa-chevron-down
-          .wrapper__main__list__select__top
+          .wrapper__main__list__select__center
             %p
               配送の方法
               %span.form-require 必須
@@ -97,7 +97,7 @@
             .wrapper__main__list__select__wrap
               =f.select :sales_status , Item.sales_statuses_i18n.invert, {}
               %i.fas.fa-chevron-down
-      .wrapper__main__list__price
+      .wrapper__main__list__price.clearfix
         .wrapper__main__list__name
           %h
             販売価格(300〜9,999,999)
@@ -116,18 +116,19 @@
           .wrapper__main__list__select__bottom
             %p 販売利益
             %a.children -
-      .wrapper__main__bottom
-        %a.blue 禁止されている出品、行為
-        %a
-          を必ずご確認ください。
+      .wrapper__main__bottom.clearfix
+        .wrapper__main__bottom__text
+          %a.blue 禁止されている出品、行為
+          %a
+            を必ずご確認ください。
+            %br/
+          %a またブランド品でシリアルナンバー等がある場合はご記載ください。
+          %a.blue 偽ブランドの販売
+          %a は犯罪であり処罰される可能性があります。
           %br/
-        %a またブランド品でシリアルナンバー等がある場合はご記載ください。
-        %a.blue 偽ブランドの販売
-        %a は犯罪であり処罰される可能性があります。
-        %br/
-        %a また、出品を持ちまして
-        %a.blue 加盟店規約
-        %a に同意したことになります。
+          %a また、出品を持ちまして
+          %a.blue 加盟店規約
+          %a に同意したことになります。
         %button.wrapper__main__bottom__red
           =f.submit "出品する"
         %button.wrapper__main__bottom__grey もどる
