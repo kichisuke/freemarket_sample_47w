@@ -374,6 +374,17 @@
   opacity: 1;
 }
 
+.item-box-container__edit-container__edit-item-btn:hover {
+  background-color: #e62017;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.item-box-container__edit-container__delete-item-btn:hover {
+  text-decoration: none;
+  opacity: .7;
+}
+
 .item-box-container__item-box__buttons-container__left-buttons__report-btn__link:hover {
   opacity: .7;
 }
