@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
-  resources :items
+  resources :items do
+    collection do
+      get :category_search
+    end
+  end
 
   devise_scope :user do
     get 'mypage', to: 'users/sessions#mypage'
