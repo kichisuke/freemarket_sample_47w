@@ -26,10 +26,11 @@ $(document).on('turbolinks:load', function() {
     var GrandChildOption = `<option value="${child.id}">${child.name}</option>`
     return GrandChildOption;
   }
-
+  //子カテゴリーの作成
   $('#parent-category').on('change', function() {
     var parentValue = document.getElementById("parent-form").value;
     $('.child-form').remove();
+    $('.grandchild-form').remove();
 
     $.ajax({
       url: '/items/category_search',
@@ -41,7 +42,7 @@ $(document).on('turbolinks:load', function() {
       var InsertHTML = '';
       $('#child-category').append(buildChildForm());
       child.forEach(function(child) {
-        InsertHTML += buildChildOption(child);
+        InsertHTML = buildChildOption(child);
         $('#child-form').append(InsertHTML);
       })
     })
@@ -49,9 +50,10 @@ $(document).on('turbolinks:load', function() {
       alert('error');
     })
   });
-  $(document).on('change', '#child-form', function() {
+  //孫カテゴリーの作成
+  $('#child-category').on('change', '#child-form', function() {
     var childValue = document.getElementById("child-form").value;
-    $('.glandchild-form').remove();
+    $('.grandchild-form').remove();
 
     $.ajax({
       url: '/items/category_search',
@@ -63,7 +65,7 @@ $(document).on('turbolinks:load', function() {
       var InsertHTML = '';
       $('#grandchild-category').append(buildGrandChildForm());
       child.forEach(function(child) {
-        InsertHTML += buildGrandChildOption(child);
+        InsertHTML = buildGrandChildOption(child);
         $('#grandchild-form').append(InsertHTML);
       })
     })
