@@ -41,6 +41,14 @@
                 %i.fas.fa-chevron-down
             #child-category
             #grandchild-category
+
+          .wrapper__main__list__select__center.hidden
+            %p
+              サイズ
+              %span.form-require 必須
+            .wrapper__main__list__select__wrap
+              =f.select :size, Item.sizes_i18n.invert, {}
+              %i.fas.fa-chevron-down
           .wrapper__main__list__select__bottom
             %p
               商品の状態

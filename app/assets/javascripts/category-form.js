@@ -31,6 +31,7 @@ $(document).on('turbolinks:load', function() {
     var parentValue = document.getElementById("parent-form").value;
     $('.child-form').remove();
     $('.grandchild-form').remove();
+    $('.hidden').css({'display': 'none'});
 
     $.ajax({
       url: '/items/category_search',
@@ -54,6 +55,7 @@ $(document).on('turbolinks:load', function() {
   $('#child-category').on('change', '#child-form', function() {
     var childValue = document.getElementById("child-form").value;
     $('.grandchild-form').remove();
+    $('.hidden').css({'display': 'none'});
 
     $.ajax({
       url: '/items/category_search',
@@ -72,5 +74,9 @@ $(document).on('turbolinks:load', function() {
     .fail(function() {
       alert('error');
     })
+  });
+  //サイズフォームの表示
+  $('#grandchild-category').on('change', '#grandchild-form', function() {
+    $('.hidden').css({'display': 'block'});
   });
 });
