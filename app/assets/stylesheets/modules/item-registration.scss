@@ -292,6 +292,29 @@
   font-weight: bold;
 }
 
+.form-optional {
+  background-color: #ccc;
+  color:white;
+  padding:3px;
+  border-radius: 3px;
+  margin-left:3px;
+  padding: 3px 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .hidden {
   display: none;
+}
+
+.item-registration__form__input {
+  width: 368px;
+  margin: 8px 0 0;
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
 }
