@@ -39,12 +39,14 @@
             %th.item-detail__table__tr__th
               カテゴリー
             %td.item-detail__table__tr__td
-              = link_to '#', class: 'item-detail__table__tr__td__category-link' do
-                = @item.category.parent.parent.name
-              = link_to '#', class: 'item-detail__table__tr__td__category-link' do
-                .item-detail__table__category-link__sub-category
-                  = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
-                  = @item.category.parent.name
+              - if @item.category.parent.parent.present?
+                = link_to '#', class: 'item-detail__table__tr__td__category-link' do
+                  = @item.category.parent.parent.name
+              - if @item.category.parent.present?
+                = link_to '#', class: 'item-detail__table__tr__td__category-link' do
+                  .item-detail__table__category-link__sub-category
+                    = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
+                    = @item.category.parent.name
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
