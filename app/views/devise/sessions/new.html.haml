@@ -15,21 +15,12 @@
     .form.login-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-form__inner
-          .login-form__inner-group
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'input-default'
-          .login-form__inner-group
-            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'login-form__inner__input input-default'
-          .actions
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'input-default'
+          = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'login-form__inner__input input-default'
+          .login-form__inner__group
+            = recaptcha_tags
             = f.submit "ログイン", class: "registration-form__btn"
-          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-            = link_to "パスワードをお忘れの方", new_password_path(resource_name)
-    -# .form.login-form
-    -#   .login-form__inner
-    -#     %input{type: "email", placeholder: 'メールアドレス', class: 'input-default'}
-    -#     %input{type: "password", placeholder: 'パスワード', class: 'login-form__inner__input input-default'}
-    -#     //システム実装時にreCAPTCH導入予定
-    -#     %button{type: 'submit', class: 'registration-form__btn'}
-    -#       ログイン
-    -#     .login-form__inner__group
-    -#       = link_to 'パスワードをお忘れの方', '#', class: 'link-default login-form__inner__group__text'
+        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+          .login-form__inner__group
+            = link_to 'パスワードをお忘れの方', '#', class: 'link-default login-form__inner__group__text'
   = render partial: 'shared/login-footer'
