@@ -27,37 +27,36 @@
           .registration-form__group
             = f.label :name, 'お名前'
             %span.require 必須
-            = f.text_field :family_name, placeholder: '例) 山田', class: 'input-default'
-            = f.text_field :first_name, placeholder: '例) 彩', class: 'input-default'
+            = f.text_field :family_name, placeholder: '例) 山田', class: 'input-default', required: true, pattern: '[ぁ-んァ-ン一-龥]+'
+            = f.text_field :first_name, placeholder: '例) 彩', class: 'input-default', required: true, pattern: '[ぁ-んァ-ン一-龥]+'
           .registration-form__group
             = f.label :name, 'お名前カナ'
             %span.require 必須
-            = f.text_field :family_name_kana, placeholder: '例) ヤマダ', class: 'input-default'
-            = f.text_field :first_name_kana, placeholder: '例) アヤ', class: 'input-default'
+            = f.text_field :family_name_kana, placeholder: '例) ヤマダ', class: 'input-default', required: true, pattern: '([ァ-ン]|ー)+'
+            = f.text_field :first_name_kana, placeholder: '例) アヤ', class: 'input-default', required: true, pattern: '([ァ-ン]|ー)+'
           .registration-form__group
             = f.label :postal_code, '郵便番号'
             %span.require 必須
-            //バリデーションハイフン
-            = f.text_field :postal_code, placeholder: '例) 123-4567', class: 'input-default'
+            = f.text_field :postal_code, placeholder: '例) 123-4567', class: 'input-default', required: true, pattern: '/\A\d{3}[-]\d{4}\z/'
           .registration-form__group
             = f.label :prefecture, '都道府県'
             %span.require 必須
             .registration-form__select
               .registration-form__select__wrap.select-prefecture
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {required: true}
                 = icon 'fas', 'chevron-down'
           .registration-form__group
             = f.label :city, '市区町村'
             %span.require 必須
-            = f.text_field :city, placeholder: '例) 横浜市緑区', class: 'input-default'
+            = f.text_field :city, placeholder: '例) 横浜市緑区', class: 'input-default', required: true
           .registration-form__group
-            = f.label :street_adress, '番地'
+            = f.label :street_address, '番地'
             %span.require 必須
-            = f.text_field :street_adress, placeholder: '例) 青山1-1-1', class: 'input-default'
+            = f.text_field :street_address, placeholder: '例) 青山1-1-1', class: 'input-default', required: true
           .registration-form__group
             = f.label :building, '建物名'
             %span.optional 任意
-            = f.text_field :building, placeholder: '例) 柳ビル103', class: 'input-default'
+            = f.text_field :building, placeholder: '例) 柳ビル103', class: 'input-default', value: '柳ビル103'
           .registration-form__group
             = f.label :phone_number, '電話番号'
             %span.optional 任意

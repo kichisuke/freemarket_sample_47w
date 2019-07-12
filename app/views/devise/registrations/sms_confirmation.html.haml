@@ -23,10 +23,10 @@
       電話番号の確認
     .registration-main__inner
       .form.registration-form
-        = form_for :session, {url: input_address_path, method: :post} do |f|
+        = form_for :session, {url: user_registration_path, method: :POST} do |f|
           .registration-form__group
             = f.label :phone_number, '携帯電話の番号'
-            = f.telephone_field :phone_number, placeholder: '携帯電話の番号を入力', class: 'input-default'
+            = f.telephone_field :phone_number, placeholder: '携帯電話の番号を入力', class: 'input-default', required: true, pattern: '/\A[0-9]+\z/'
             .registration-form__group__confirmation
               %p.registration-form__group__confirmation__text
                 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
