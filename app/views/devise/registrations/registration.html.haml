@@ -68,6 +68,9 @@
             .registration-form__select
               .registration-form__select__wrap
                 = f.date_select :birthday, {start_year: 1950, end_year: Time.now.year, use_month_numbers: true, prompt: '--'}, {class: 'date_select', required: true}
+                %span.year 年
+                %span.month 月
+                %span.day 日
           .registration-form__info-text
             %p
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
