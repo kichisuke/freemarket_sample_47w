@@ -8,13 +8,31 @@
           出品画像
           %span.form-require 必須
         %p 最大10枚までアップロードできます
-        .wrapper__main__image__drop-box
-          = f.fields_for :item_images do |image|
-            = image.file_field :url, multiple: true, name: 'item_images[image][]'
-          %p ドラッグアンドドロップ
-          %p またはクリックしてファイルをアップロード
-        - if @image_error.present?
-          p.error= @image_error
+        = f.fields_for :item_images, @item.item_images.first do |image|
+          .item__img__dropzone
+            #preview
+            -# １〜５枚目プレビュー表示
+            .item__img__dropzone__input
+              = image.label :image, for: "upload-image", class: "item__img__dropzone__input__image-label" do
+                .input-area
+                  = image.file_field :url, id: "upload-image", class: "upload-image", 'data-image': 0
+                .item__img__dropzone__input__description
+                  .item__img__dropzone__input__description__text
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+          .item__img__dropzone2
+            #preview2
+            -# ６〜１０枚目プレビュー表示
+            .item__img__dropzone2__input2
+              = image.label :image, for: "upload-image" do
+                .input-area
+                  = image.file_field :url, id: "upload-image", class: "upload-image", 'data-image': 0
+                .item__img__dropzone2__input2__description
+                  .item__img__dropzone2__input2__description__text
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
       .wrapper__main__item
         .wrapper__main__item__name
           %h3

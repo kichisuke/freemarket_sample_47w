@@ -82,6 +82,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    dropzonejs-rails (0.8.4)
+      rails (> 3.1)
     enum_help (0.0.17)
       activesupport (>= 3.0.0)
     erb2haml (0.1.5)
@@ -274,6 +276,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
+  dropzonejs-rails
   enum_help
   erb2haml
   fog-aws
