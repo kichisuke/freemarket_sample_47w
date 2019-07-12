@@ -34,6 +34,8 @@ label {
   display: inline-block;
 }
 
+
+
 .registration-main__inner--center {
   text-align: center;
   padding: 40px 16px;
@@ -187,6 +189,21 @@ li.current-page {
       font-size: 14px;
       line-height: 48px;
     }
+    .year {
+      position: absolute;
+      top: 10%;
+      left: 25%;
+    }
+    .month {
+      position: absolute;
+      top: 10%;
+      left: 60%;
+    }
+    .day {
+      position: absolute;
+      top: 10%;
+      left: 93%;
+    }
   }
   &__info-text {
     width: 320px;
@@ -271,6 +288,12 @@ li.current-page {
 }
 .fa-question-circle {
   color: $blue;
+}
+.card-expire-select {
+  height: 48px;
+  width: 76px;
+  margin-top: 8px;
+  font-size: 14px;
 }
 //
 
