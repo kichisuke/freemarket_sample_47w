@@ -15,10 +15,10 @@
     &__box {
       width: auto;
       display: flex;
-      justify-content: space-between;
       &--item {
         width: 213px;
         height: 330px;
+        margin: 0 12px;
         .item-link {
           display: block;
           text-decoration: none;
