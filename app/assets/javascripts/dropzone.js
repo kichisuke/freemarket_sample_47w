@@ -1,7 +1,7 @@
 $(document).on("turbolinks:load", function() {
-  var dropzone = $(".item__img__dropzone__input");
-  var dropzone2 = $(".item__img__dropzone2__input2");
-  var appendzone = $(".item__img__dropzone2")
+  var dropzone = $(".item__image__upload__input-container");
+  var dropzone2 = $(".item__image__upload2__input-container2");
+  var appendzone = $(".item__image__upload2")
   var input_area = $(".input-area");
   var preview = $("#preview");
   var preview2 = $("#preview2");
@@ -11,7 +11,7 @@ $(document).on("turbolinks:load", function() {
   // 新規追加画像を格納する配列（DB用）
   var new_image_files = [];
 
-  $("#new_item .item__img__dropzone, #new_item .item__img__dropzone2").on("change", 'input[type= "file"].upload-image', function() {
+  $(".item__image__upload, .item__image__upload2").on("change", 'input[type= "file"].upload-image', function() {
 
     var file = $(this).prop("files")[0];
     new_image_files.push(file)
@@ -52,7 +52,7 @@ $(document).on("turbolinks:load", function() {
         preview.append(image);
       });
       appendzone.css({
-        display: "block"
+        display: "flex"
       });
       dropzone.css({
         display: "none"
@@ -88,7 +88,7 @@ $(document).on("turbolinks:load", function() {
 
 
   // 削除ボタンを押した時
-  $("#new_item .item__img__dropzone, #new_item .item__img__dropzone2").on('click', '.btn_delete', function() {
+  $(".item__image__upload, .item__image__upload2").on('click', '.btn_delete', function() {
 
     // 削除ボタンを押した画像を取得
     var target_image = $(this).parent().parent();

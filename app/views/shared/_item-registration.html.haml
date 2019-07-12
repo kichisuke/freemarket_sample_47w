@@ -1,5 +1,5 @@
 .wrapper
-  .wrapper__main
+  .wrapper__main#new_item
     = form_for @item do |f|
       .wrapper__main__head
         %h2 商品の情報を入力
@@ -9,27 +9,25 @@
           %span.form-require 必須
         %p 最大10枚までアップロードできます
         = f.fields_for :item_images, @item.item_images.first do |image|
-          .item__img__dropzone
+          .item__image__upload
             #preview
-            -# １〜５枚目プレビュー表示
-            .item__img__dropzone__input
-              = image.label :image, for: "upload-image", class: "item__img__dropzone__input__image-label" do
+            .item__image__upload__input-container
+              = image.label :image, for: "upload-image", class: "item__image__upload__input-container__image-label" do
                 .input-area
                   = image.file_field :url, id: "upload-image", class: "upload-image", 'data-image': 0
-                .item__img__dropzone__input__description
-                  .item__img__dropzone__input__description__text
+                .item__image__upload__input-container__description
+                  .item__image__upload__input-container__description__text
                     ドラッグアンドドロップ
                     %br
                     またはクリックしてファイルをアップロード
-          .item__img__dropzone2
+          .item__image__upload2
             #preview2
-            -# ６〜１０枚目プレビュー表示
-            .item__img__dropzone2__input2
-              = image.label :image, for: "upload-image" do
+            .item__image__upload2__input-container2
+              = image.label :image, for: "upload-image", class: "item__image__upload2__input-container2__image-label" do
                 .input-area
                   = image.file_field :url, id: "upload-image", class: "upload-image", 'data-image': 0
-                .item__img__dropzone2__input2__description
-                  .item__img__dropzone2__input2__description__text
+                .item__image__upload2__input-container2__description
+                  .item__image__upload2__input-container2__description__text
                     ドラッグアンドドロップ
                     %br
                     またはクリックしてファイルをアップロード
