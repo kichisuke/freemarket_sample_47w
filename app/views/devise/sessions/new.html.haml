@@ -18,7 +18,7 @@
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'input-default'
           = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'login-form__inner__input input-default'
           .login-form__inner__group
-            = recaptcha_tags
+            -# = recaptcha_tags
             = f.submit "ログイン", class: "registration-form__btn"
         - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
           .login-form__inner__group

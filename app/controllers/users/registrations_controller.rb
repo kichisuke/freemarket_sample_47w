@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :check_captcha, only: [:sms_confirmation]
+  # before_action :check_captcha, only: [:sms_confirmation]
 
   def signup
   end
@@ -53,14 +53,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
-  def check_captcha
-    unless verify_recaptcha(model: resource)
-      self.resource = resource_class.new sign_up_params
-      resource.validate
-      respond_with_navigational(resource) { render :registration }
-    end
-  end
-
   def user_params
     params.require(:session).permit(:nickname,:email,:password,:password_confirmation)
   end
