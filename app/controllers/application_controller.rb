@@ -13,12 +13,4 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
-
-  # def check_captcha
-  #   unless verify_recaptcha(model: resource)
-  #     self.resource = resource_class.new sign_up_params
-  #     resource.validate
-  #     respond_with_navigational(resource) { render :registration }
-  #   end
-  # end
 end

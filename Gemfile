@@ -76,4 +76,3 @@ gem 'enum_help'
 gem 'pry-rails'
 gem 'jquery-rails'
 gem 'payjp'
-gem "recaptcha", require: "recaptcha/rails"

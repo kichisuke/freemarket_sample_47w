@@ -1,6 +1,4 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :check_captcha, only: [:sms_confirmation]
-
   def signup
   end
 
@@ -42,15 +40,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def signup_end
   end
-
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
 
   protected
   def user_params
