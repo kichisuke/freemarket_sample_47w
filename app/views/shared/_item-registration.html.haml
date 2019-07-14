@@ -53,7 +53,6 @@
             #parent-category
               .wrapper__main__list__select__wrap
                 = f.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "parent-form"
-
                 %i.fas.fa-chevron-down
             #child-category
             #grandchild-category
@@ -113,13 +112,9 @@
             .wrapper__main__list__select__wrap
               =f.select :estimated_shipping_date , Item.estimated_shipping_dates_i18n.invert, {}
               %i.fas.fa-chevron-down
-          .wrapper__main__list__select__bottom
-            %p
-              sales_status
-              %span.form-require 必須
-            .wrapper__main__list__select__wrap
-              =f.select :sales_status , Item.sales_statuses_i18n.invert, {}
-              %i.fas.fa-chevron-down
+
+              =f.hidden_field :sales_status, value: "exhibition"
+
       .wrapper__main__list__price.clearfix
         .wrapper__main__list__name
           %h

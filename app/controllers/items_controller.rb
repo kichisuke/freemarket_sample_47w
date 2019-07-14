@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
 
   def create
     @categories = Category.all
+    item_params[:sale_status]
     @item = Item.new(item_params)
     if new_image_params[:images][0].present? && @item.save
       new_image_params[:images].each do |url|
