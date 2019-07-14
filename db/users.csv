@@ -1,0 +1,11 @@
+id,nickname,email,encypted_password,avatar_image,reset_password_token,reset_password_sent_at,remember_created_at,created_at,updated_at
+1,testuser1,testuser1@gmail.com,password,,,,,2019-01-01,2019-01-01 00:00:00
+2,testuser2,testuser2@yahoo.co.jp,password,,,,,2019-01-01,2019-01-01 00:00:01
+3,testuser3,testuser3@gmail.com,password,,,,,2019-01-01,2019-01-01 00:00:02
+4,testuser4,testuser4@gmail.com,password,,,,,2019-01-01,2019-01-01 00:00:03
+5,testuser5,testuser5@gmail.com,password,,,,,2019-01-01,2019-01-01 00:00:04
+6,testuser6,testuser6@yahoo.co.jp,password,,,,,2019-01-01,2019-01-01 00:00:05
+7,testuser7,testuser7@gmail.com,password,,,,,2019-01-01,2019-01-01 00:00:06
+8,testuser8,testuser8@gmail.com,password,,,,,2019-01-01,2019-01-01 00:00:07
+9,testuser9,testuser9@yahoo.co.jp,password,,,,,2019-01-01,2019-01-01 00:00:08
+10,testuser10,testuser10@yahoo.co.jp,password,,,,,2019-01-01,2019-01-01 00:00:09
