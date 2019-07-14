@@ -50,11 +50,12 @@
               =f.select :size, Item.sizes_i18n.invert, {}
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__center.hidden
-            = f.fields_for :brand do |brand|
-              = brand.label "ブランド"
+            %p
+              ブランド
               %span.form-optional 任意
-              .wrapper__main__list__select__wrap
-                = brand.text_field :name,  placeholder: '例）シャネル',  class: 'item-registration__form__input'
+            .wrapper__main__list__select__wrap
+              = form_tag brand_search_items_path, method: :get do
+                %input{name: 'keyword',  placeholder: '例）シャネル', type: 'text',  class: 'item-registration__form__input', id: 'brand_search'}
 
           .wrapper__main__list__select__bottom
             %p
