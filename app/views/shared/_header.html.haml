@@ -7,8 +7,9 @@
             = image_tag 'logo.png', alt: 'mercari', class: 'header-top__logo--size'
       .header-top__form
         %form.top-form
-          %input.serch-form{name: 'keyword', placeholder: '何かお探しですか？', type: 'search', value: ''}
-          = icon('fas','search', class: 'serch-icon')
+          = form_tag(items_search_path, method: :get ,class: 'header-inner__form' ) do
+            %input.serch-form{name: 'keyword', placeholder: 'キーワードから探す', type: 'search', value: ''}/
+            = icon('fas','search', class: 'serch-icon')
     .header-nav
       .header-nav__left
         %ul.nav-list
