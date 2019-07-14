@@ -12,16 +12,6 @@ a{
   text-decoration: none;
 }
 
-h2{
-  display: block;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-
 h3{
   display: block;
   font-size: 1.17em;
@@ -148,6 +138,13 @@ h3{
     background: #fff;
     box-sizing: border-box;
       &-header{
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
         margin: 0;
         padding: 8px 24px;
         text-align: center;
