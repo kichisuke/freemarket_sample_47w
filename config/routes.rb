@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get 'mypage/card', to: 'users/sessions#card'
     get 'mypage/identification', to: 'users/sessions#user_identification'
     get 'login', to: 'users/sessions#new'
+    get 'logout', to:'users/sessions#logout'
     get 'signup', to: 'users/registrations#signup'
     get 'registration', to: 'users/registrations#registration'
     get 'sms_confirmation', to: 'users/registrations#sms_confirmation'
