@@ -143,6 +143,7 @@
       height: 60px;
       margin: 10px auto 15px;
       background-color: #aaa;
+      cursor: pointer;
       &__text {
         text-align: center;
         color: #FAFAFA;
@@ -445,3 +446,65 @@
     }
   }
 }
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  display: none;
+}
+
+#modal-window {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .modal-window-box {
+      width: 100%;
+      height: calc(100% - 60px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      &__alart {
+        font-weight: 600;
+      }
+    }
+
+    #modal-close-btn {
+      width: 50%;
+      height: 60px;
+      background-color: unset;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #delete-comformation-btn {
+      width: 50%;
+      height: 60px;
+      background-color: unset;
+      font-size: 14px;
+      color: #0099e8;
+      cursor: pointer;
+    }
+  }
+
+  .item-delete-btn {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }

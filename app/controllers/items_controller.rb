@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index]
+  before_action :set_item, except: [:index, :new]
 
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
@@ -16,6 +16,11 @@ class ItemsController < ApplicationController
   end
 
   def new
+  end
+
+  def destroy
+    @item.destroy #if @item.saler_id == current_user.id
+    redirect_to action: :index
   end
 
   private

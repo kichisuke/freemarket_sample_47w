@@ -132,10 +132,21 @@
       or
     = link_to "#", class: 'item-box-container__edit-container__edit-item-btn' do
       .item-box-container__edit-container__edit-item-btn__text
-        出品を再開する
-    = link_to "#", class: 'item-box-container__edit-container__delete-item-btn' do
-      .item-box-container__edit-container__delete-item-btn__text
+        出品を停止する
+    %button.item-box-container__edit-container__delete-item-btn
+      .item-box-container__edit-container__delete-item-btn__text#overlay-open
         この商品を削除する
+    = link_to "", item_path(@item), method: :DELETE, id: 'delete-item'
+    #overlay
+      #modal-window
+        .modal-window-box
+          .modal-window-box__alart 確認
+          %div
+            削除すると二度と復活できません。
+            %br 削除する代わりに停止することもできます。
+          %div 本当に削除しますか？
+        %button#modal-close-btn キャンセル
+        %button#delete-comformation-btn 削除する
   .item-box-container__message-container
     %p.item-box-container__message-container__attention
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
