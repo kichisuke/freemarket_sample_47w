@@ -3,16 +3,8 @@
   .profile-header
     %ul
       %li
-        = link_to "#", class: "profile-header__link" do
-          メルカリ
-          = icon 'fas', 'chevron-right', class: 'profile-header__link__icon'
-      %li
-        = link_to "#", class: "profile-header__link" do
-          マイページ
-          = icon 'fas', 'chevron-right', class: 'profile-header__link__icon'
-      %li
-        = link_to "#", class: "profile-header__link" do
-          プロフィール
+        - breadcrumb :profile
+        = render "layouts/breadcrumbs"
   .main-content.clearfix
     .list-side
       %ul.list-side__menu
