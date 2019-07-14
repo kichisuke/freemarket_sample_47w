@@ -41,9 +41,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def signup_end
   end
 
-  protected
+  private
   def user_params
-    params.require(:session).permit(:nickname,:email,:password,:password_confirmation)
+    params.require(:session).permit(:nickname, :email, :password, :password_confirmation)
   end
 
   def profile_params
