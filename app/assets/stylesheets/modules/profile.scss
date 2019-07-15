@@ -42,11 +42,9 @@ h2{
     padding: 16px 0
     }
   li{
-    display: inline-block;
-    font-size: 14px;
     line-height: 1.2;
   }
-  li:last-child{
+  span{
     font-weight: 600;
   }
     &__link__icon{
