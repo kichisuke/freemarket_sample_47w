@@ -46,7 +46,7 @@
     height: 300px;
     padding:40px;
     border-bottom:2px solid #f5f5f5;
- 
+
     h3 {
       font-size:15px;
     }
@@ -100,7 +100,7 @@
     }
 
     &__select {
-    
+
       &__center {
         margin-top:35px;
       }
@@ -108,6 +108,9 @@
       &__bottom {
         margin-top:35px;
         margin: 40px 0 0;
+        .children {
+          font-size: 28px;
+        }
       }
 
       &__wrap {
@@ -166,22 +169,22 @@
       font-weight: bold;
       border-bottom:2px solid #f5f5f5;
       position: relative;
-    
+
       .wrapper__main__list__select {
-      
+
         &__box {
         position:absolute;
         right:30px;
         top:20px;
         padding: 25px 0;
         }
-      
+
         &__top {
           border-bottom:2px solid #f5f5f5;
           position:relative;
           height: 60px;
           line-height: 60px;
-        
+
           p {
             width: 185px;
             float: left;
@@ -253,7 +256,7 @@
       height: 48px;
       margin-top: 40px;
       color:white;
-      
+
       input {
         background: none;
         color: white;

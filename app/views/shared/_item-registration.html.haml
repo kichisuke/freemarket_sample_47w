@@ -127,13 +127,13 @@
               %span.form-require 必須
             %p.children
               ¥
-              = f.text_field :price, autofocus: true, placeholder: "例）300"
+              = f.text_field :price, autofocus: true, placeholder: "例）300", id: 'item-price'
           .wrapper__main__list__select__center
             %p 販売手数料(10%)
-            %a.children -
+            %a.children#commission -
           .wrapper__main__list__select__bottom
             %p 販売利益
-            %a.children -
+            %a.children#profit -
       .wrapper__main__bottom.clearfix
         .wrapper__main__bottom__text
           %a.blue 禁止されている出品、行為
