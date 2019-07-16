@@ -2,7 +2,7 @@ $(function(){
   if(document.getElementById("item-price") != null) {
     $("#item-price").on("keyup", function(){
       var input = $("#item-price").val();
-      if (input >= 300) {
+      if (input >= 300 && input < 10000000) {
         var commission = input / 10;
         var commissionFloor = Math.floor(commission) ;
         $("#commission").empty();
