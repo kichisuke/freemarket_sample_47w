@@ -18,16 +18,26 @@ $(document).on('turbolinks:load', function() {
        dataType: 'json'
      })
 
-     .done(function(brands) {
-       $('.brand_search_result').empty();
-       if (brands.length !== 0) {
-         brands.forEach(function(brand) {
-           appendBrand(brand);
-         })
-       }
-       else {
+    .done(function(brands) {
+      $('.brand_search_result').empty();
+      if (brands.length !== 0) {
+        brands.forEach(function(brand) {
+          appendBrand(brand);
+          $('.brand_search_result').on('click', '.brand_search_result__list', function() {
+            var name = $(this).data('brand-name');
+            var id = $(this).data('brand-id');
+            $('.brand_search_result').children('li').remove();
+            $('#brand_search').val(name);
+            $('.brand_search_result__id').val(id);
+          })
+        })
+      }
+      else {
         appendErrMsg("一致するブランドがありません");
-       }
-     })
+      }
+    })
+    .fail(function() {
+      alert('ブランドを検索できませんでした');
+    })
   });
 });

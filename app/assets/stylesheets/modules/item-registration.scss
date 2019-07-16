@@ -317,6 +317,7 @@
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
+  font-weight: normal;
 }
 
 .brand_search_result {
@@ -328,6 +329,7 @@
   max-height: 280px;
   background: #fff;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+  font-weight: normal;
   &__list {
     cursor: pointer;
     padding: 16px 8px;
