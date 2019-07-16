@@ -20,7 +20,10 @@ $(document).on('turbolinks:load', function() {
 
     .done(function(brands) {
       $('.brand_search_result').empty();
-      if (brands.length !== 0) {
+      if (input.length == 0) {
+        $('.brand_search_result__id').val('');
+      }
+      else if (brands.length !== 0) {
         brands.forEach(function(brand) {
           appendBrand(brand);
           $('.brand_search_result').on('click', '.brand_search_result__list', function() {
