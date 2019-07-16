@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
       @item.destroy
       @item.item_images.destroy
       redirect_to action: :index
+    else
+      redirect_to root_path、 notice: "削除できません"
     end
   end
 
