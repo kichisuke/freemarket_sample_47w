@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :creditcards, only:[:new, :create]
+
   devise_scope :user do
     get 'mypage/card', to: 'users/sessions#card'
     get 'mypage/identification', to: 'users/sessions#user_identification'
