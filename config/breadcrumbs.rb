@@ -12,3 +12,13 @@ crumb :profile do
   parent :mypage
 end
 
+crumb :card do
+  link "支払い方法", mypage_card_path
+  parent :mypage
+end
+
+crumb :identification do
+  link "支払い方法", mypage_identification_path
+  parent :mypage
+end
+
