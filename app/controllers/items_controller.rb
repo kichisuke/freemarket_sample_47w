@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
 
   def create
     @categories = Category.all
-    item_params[:sale_status]
     @item = Item.new(item_params)
     if new_image_params[:images][0].present? && @item.save
       new_image_params[:images].each do |url|
@@ -22,7 +21,7 @@ class ItemsController < ApplicationController
       end
       redirect_to root_path, notice: '出品しました。'
     else
-      redirect_to new_item_path, notice: '出品出来ませんでした。'
+      render :new, alert: '出品出来ませんでした。'
     end
   end
 
@@ -38,7 +37,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :price, :text, :category_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status, brand_attributes: [:id, :name])
+    params.require(:item).permit(:name, :price, :text, :category_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status, brand_attributes: [:id, :name]).merge(saler_id: current_user.id)
   end
 
   def new_image_params
