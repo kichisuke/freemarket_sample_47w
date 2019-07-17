@@ -1,62 +1,57 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  def signup
+  end
 
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def registration
+  end
 
-  # POST /resource
-  # def create
-  #   super
-  # end
+  def sms_confirmation
+    session[:user] = user_params
+    session[:profile] = profile_params
+  end
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def create
+    @user = User.new(session[:user])
+    @user.profile = @user.build_profile(session[:profile])
+    if @user.save
+      sign_up(@user, current_user)
+      redirect_to input_address_path
+    else
+      redirect_to registration_path
+    end
+  end
 
-  # PUT /resource
-  # def update
-  #   super
-  # end
+  def input_address
+  end
 
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def payment
+    session[:address] = address_params
+  end
 
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
+  def signup_create
+    @address = Address.new(session[:address])
+    @credit = Creditcard.new(token: params[:payjp_token], user_id: current_user.id)
+    if @address.save && @credit.save
+      redirect_to signup_end_path
+    else
+      redirect_to input_address_path
+    end
+  end
 
-  # protected
+  def signup_end
+  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  private
+  def user_params
+    params.require(:session).permit(:nickname, :email, :password, :password_confirmation)
+  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+  def profile_params
+    birthday = Date.new(params[:session]["birthday(1i)"].to_i, params[:session]["birthday(2i)"].to_i, params[:session]["birthday(3i)"].to_i)
+    params.require(:session).permit(:family_name, :first_name, :family_name_kana, :first_name_kana).merge(birthday: birthday)
+  end
 
-  # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
-
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def address_params
+    params.require(:session).permit(:postal_code, :prefecture_id, :city, :street_address, :building, :phone_number).merge(user_id: current_user.id)
+  end
 end
