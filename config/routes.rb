@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get :category_search
+      get :brand_search
     end
   end
 

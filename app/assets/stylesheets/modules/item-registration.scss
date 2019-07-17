@@ -1,5 +1,6 @@
 .wrapper__main {
   width:700px;
+  //height:2050px;
   margin:0 auto;
   background-color:white;
 
@@ -111,6 +112,10 @@
         .children {
           font-size: 28px;
         }
+      }
+
+      &__wrap {
+        position: relative;
       }
 
       &__wrap {
@@ -256,7 +261,6 @@
       height: 48px;
       margin-top: 40px;
       color:white;
-
       input {
         background: none;
         color: white;
@@ -414,4 +418,28 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+=======
+  font-weight: normal;
+}
+
+.brand_search_result {
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 280px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+  font-weight: normal;
+  &__list {
+    cursor: pointer;
+    padding: 16px 8px;
+    font-size: 14px;
+  }
+  &__list:hover {
+    background: #0099e8;
+    color: #fff;
+  }
 }

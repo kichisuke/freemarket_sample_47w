@@ -65,12 +65,13 @@
               =f.select :size, Item.sizes_i18n.invert, {}
               %i.fas.fa-chevron-down
           .wrapper__main__list__select__center.hidden
-            = f.fields_for :brand do |brand|
-              = brand.label "ブランド"
+            %p
+              ブランド
               %span.form-optional 任意
-              .wrapper__main__list__select__wrap
-                = brand.text_field :name,  placeholder: '例）シャネル',  class: 'item-registration__form__input'
-
+            .wrapper__main__list__select__wrap
+              = f.text_field :brand_id, placeholder: '例）シャネル', class: 'item-registration__form__input', id: 'brand_search'
+              %ul.brand_search_result
+              = f.hidden_field :brand_id, class: "brand_search_result__id"
           .wrapper__main__list__select__bottom
             %p
               商品の状態
@@ -112,9 +113,7 @@
             .wrapper__main__list__select__wrap
               =f.select :estimated_shipping_date , Item.estimated_shipping_dates_i18n.invert, {}
               %i.fas.fa-chevron-down
-
               =f.hidden_field :sales_status, value: "exhibition"
-
       .wrapper__main__list__price.clearfix
         .wrapper__main__list__name
           %h
