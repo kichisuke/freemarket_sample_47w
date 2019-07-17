@@ -158,12 +158,16 @@ li.current-page {
     width: 320px;
     color: $black;
     &__wrap {
-      height: 48px;
-      width: 76px;
-      margin-top: 8px;
-      font-size: 14px;
       position: relative;
       display: inline-block;
+      .date_select {
+        height: 48px;
+        width: 76px;
+        margin-top: 8px;
+        margin-right: 25px;
+        font-size: 14px;
+        position: relative;
+      }
     }
     i {
       position: absolute;
@@ -178,6 +182,21 @@ li.current-page {
       color: $black;
       font-size: 14px;
       line-height: 48px;
+    }
+    .year {
+      position: absolute;
+      top: 40%;
+      left: 25%;
+    }
+    .month {
+      position: absolute;
+      top: 40%;
+      left: 60%;
+    }
+    .day {
+      position: absolute;
+      top: 40%;
+      left: 93%;
     }
   }
   &__info-text {
@@ -257,6 +276,12 @@ li.current-page {
 }
 .fa-question-circle {
   color: $blue;
+}
+.card-expire-select {
+  height: 48px;
+  width: 76px;
+  margin-top: 8px;
+  font-size: 14px;
 }
 //
 
