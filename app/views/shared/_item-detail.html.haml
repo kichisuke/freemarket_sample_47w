@@ -1,23 +1,19 @@
 .item-box-container
   .item-box-container__item-box
     %h1.item-box-container__item-box__item-name
-      商品名商品名商品名
+      = @item.name
     .item-box-container__item-box__contents
       .slider-container
-        %ul.slider#slider
-          %li.slider__item
-            = image_tag "dummy-item1.png"
-          %li.slider__item
-            = image_tag "dummy-item2.png"
-          %li.slider__item
-            = image_tag "dummy-item3.png"
-        %ul.thumbnail-slider#thumbnail-slider
-          %li.thumbnail-slider__item
-            = image_tag "dummy-item1.png"
-          %li.thumbnail-slider__item
-            = image_tag "dummy-item2.png"
-          %li.thumbnail-slider__item
-            = image_tag "dummy-item3.png"
+        .slider
+          - @item.item_images.each do |image|
+            .slider__outer
+              .slider__outer__inner
+                = image_tag "#{image.url}"
+        .thumnaul-slider
+          - @item.item_images.each do |image|
+            .thumnaul-slider__outer
+              .thumnaul-slider__outer__inner
+                = image_tag "#{image.url}"
       .item-detail
         %table.item-detail__table
           %tr.item-detail__table__tr
@@ -25,7 +21,7 @@
               出品者
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__user-link' do
-                出品者名
+                = @item.saler.nickname
               .item-detail__table__tr__td__ratings-container
                 .item-detail__table__tr__td__ratings-container__item-user-ratings
                   = icon('fas', 'grin', class: 'item-detail__table__tr__td__ratings-container__item-user-ratings__good-icon')
@@ -44,68 +40,70 @@
               カテゴリー
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
-                カテゴリー１
+                = @item.category.parent.parent.name
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
-                  カテゴリー２
+                  = @item.category.parent.name
               = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                 .item-detail__table__category-link__sub-category
                   = icon('fas', 'angle-right', class: 'item-detail__table__tr__td__category-link__sub-category__arrow-right-icon')
-                  カテゴリー３
-          %tr.item-detail__table__tr
-            %th.item-detail__table__tr__th
-              ブランド
-            %td.item-detail__table__tr__td
-              = link_to '#', class: 'item-detail__table__tr__td__brand-link' do
-                %div
-                  ブランド名
-          %tr.item-detail__table__tr
-            %th.item-detail__table__tr__th
-              商品サイズ
-            %td.item-detail__table__tr__td
-              FREE SIZE
+                  = @item.category.name
+          - if @item.brand.present?
+            %tr.item-detail__table__tr
+              %th.item-detail__table__tr__th
+                ブランド
+              %td.item-detail__table__tr__td
+                = link_to '#', class: 'item-detail__table__tr__td__brand-link' do
+                  %div
+                    = @item.brand.name
+          - if @item.brand.present?
+            %tr.item-detail__table__tr
+              %th.item-detail__table__tr__th
+                商品サイズ
+              %td.item-detail__table__tr__td
+                = @item.size_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               商品の状態
             %td.item-detail__table__tr__td
-              新品、未使用
+              = @item.condition_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送料の負担
             %td.item-detail__table__tr__td
-              送料込み(出品者負担)
+              = @item.delivery_charge_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送の方法
             %td.item-detail__table__tr__td
-              未定
+              = @item.delivery_method_i18n
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               配送元地域
             %td.item-detail__table__tr__td
               = link_to '#', class: 'item-detail__table__tr__td__prefecture-link' do
-                大阪府
+                = @item.prefecture.name
           %tr.item-detail__table__tr
             %th.item-detail__table__tr__th
               発送日の目安
             %td.item-detail__table__tr__td
-              1~2日で発送
+              = @item.estimated_shipping_date_i18n
     .item-box-container__item-box__item-price-box
       %span.item-box-container__item-box__item-price-box__price
-        ¥ 10,000
+        ='¥ ' + number_with_delimiter("#{@item.price}")
       %span.item-box-container__item-box__item-price-box__tax
         (税込)
       %span.item-box-container__item-box__item-price-box__shipping-fee
-        送料込み
+        - if @item.delivery_charge == "postage_included"
+          送料込み
+        - else
+          着払い
     = link_to '#', class: 'item-box-container__item-box__item-buy-btn' do
       購入画面に進む
     .item-box-container__item-box__item-description
       %p.item-box-container__item-box__item-description__text
-        商品説明欄
-        商品について説明する。
-
-        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        = @item.text
     .item-box-container__item-box__buttons-container
       .item-box-container__item-box__buttons-container__left-buttons
         %button.item-box-container__item-box__buttons-container__left-buttons__like-btn
@@ -134,16 +132,18 @@
         %span.item-box-container__message-container__form__submit__text
           コメントする
   %ul.item-box-container__nav-item
-    %li.item-box-container__nav-item__prev
-      = link_to '#', class: 'item-box-container__nav-item__prev__link' do
-        = icon('fas', 'angle-left', class: 'item-box-container__nav-item__prev__link__icon')
-        %span.item-box-container__nav-item__prev__link__text
-          前の商品名
-    %litem-box-container__nav-item__next
-      = link_to '#', class: 'item-box-container__nav-item__next__link' do
-        %span.item-box-container__nav-item__next__link__text
-          次の商品名
-        = icon('fas', 'angle-right', class: 'item-box-container__nav-item__next__link__icon')
+    - if  @previousItem.present?
+      %li.item-box-container__nav-item__prev
+        = link_to item_path(@previousItem.id), class: 'item-box-container__nav-item__prev__link' do
+          = icon('fas', 'angle-left', class: 'item-box-container__nav-item__prev__link__icon')
+          %span.item-box-container__nav-item__prev__link__text
+            = @previousItem.name
+    - if  @nextItem.present?
+      %li.item-box-container__nav-item__next
+        = link_to item_path(@nextItem.id), class: 'item-box-container__nav-item__next__link' do
+          %span.item-box-container__nav-item__next__link__text
+            = @nextItem.name
+          = icon('fas', 'angle-right', class: 'item-box-container__nav-item__next__link__icon')
   .item-box-container__social-media
     %ul.item-box-container__social-media__list
       %li.item-box-container__social-media__list__facebook

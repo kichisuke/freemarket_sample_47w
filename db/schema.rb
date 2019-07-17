@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20190629095129) do
     t.text     "text",                    limit: 65535
     t.integer  "condition",                                          null: false
     t.integer  "delivery_charge",                                    null: false
+    t.integer  "delivery_method",                                    null: false
     t.integer  "prefecture_id",                                      null: false
     t.integer  "estimated_shipping_date",                            null: false
     t.integer  "category_id"
