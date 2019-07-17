@@ -1,5 +1,5 @@
 .wrapper
-  .wrapper__main
+  .wrapper__main#new_item
     = form_for @item do |f|
       .wrapper__main__head
         %h2 商品の情報を入力
@@ -8,13 +8,29 @@
           出品画像
           %span.form-require 必須
         %p 最大10枚までアップロードできます
-        .wrapper__main__image__drop-box
-          = f.fields_for :item_images do |image|
-            = image.file_field :url, multiple: true, name: 'item_images[image][]'
-          %p ドラッグアンドドロップ
-          %p またはクリックしてファイルをアップロード
-        - if @image_error.present?
-          p.error= @image_error
+        = f.fields_for :item_images, @item.item_images.first do |image|
+          .item__image__upload
+            #preview
+            .item__image__upload__input-container
+              = image.label :image, for: "upload-image", class: "item__image__upload__input-container__image-label" do
+                .input-area
+                  = image.file_field :url, id: "upload-image", class: "upload-image", 'data-image': 0
+                .item__image__upload__input-container__description
+                  .item__image__upload__input-container__description__text
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+          .item__image__upload2
+            #preview2
+            .item__image__upload2__input-container2
+              = image.label :image, for: "upload-image", class: "item__image__upload2__input-container2__image-label" do
+                .input-area
+                  = image.file_field :url, id: "upload-image", class: "upload-image", 'data-image': 0
+                .item__image__upload2__input-container2__description
+                  .item__image__upload2__input-container2__description__text
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
       .wrapper__main__item
         .wrapper__main__item__name
           %h3
@@ -37,7 +53,6 @@
             #parent-category
               .wrapper__main__list__select__wrap
                 = f.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "parent-form"
-
                 %i.fas.fa-chevron-down
             #child-category
             #grandchild-category
@@ -57,7 +72,6 @@
               = f.text_field :brand_id, placeholder: '例）シャネル', class: 'item-registration__form__input', id: 'brand_search'
               %ul.brand_search_result
               = f.hidden_field :brand_id, class: "brand_search_result__id"
-
           .wrapper__main__list__select__bottom
             %p
               商品の状態
@@ -99,13 +113,7 @@
             .wrapper__main__list__select__wrap
               =f.select :estimated_shipping_date , Item.estimated_shipping_dates_i18n.invert, {}
               %i.fas.fa-chevron-down
-          .wrapper__main__list__select__bottom
-            %p
-              sales_status
-              %span.form-require 必須
-            .wrapper__main__list__select__wrap
-              =f.select :sales_status , Item.sales_statuses_i18n.invert, {}
-              %i.fas.fa-chevron-down
+              =f.hidden_field :sales_status, value: "exhibition"
       .wrapper__main__list__price.clearfix
         .wrapper__main__list__name
           %h
@@ -118,13 +126,13 @@
               %span.form-require 必須
             %p.children
               ¥
-              = f.text_field :price, autofocus: true, placeholder: "例）300"
+              = f.text_field :price, autofocus: true, placeholder: "例）300", id: 'item-price'
           .wrapper__main__list__select__center
             %p 販売手数料(10%)
-            %a.children -
+            %a.children#commission -
           .wrapper__main__list__select__bottom
             %p 販売利益
-            %a.children -
+            %a.children#profit -
       .wrapper__main__bottom.clearfix
         .wrapper__main__bottom__text
           %a.blue 禁止されている出品、行為
