@@ -6,8 +6,8 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :item_images
   has_many :likes
   has_many :comments
-  #belongs_to :saler, class_name: "User", foreign_key: 'saler_id'
-  #belongs_to :buyer, class_name: "User", foreign_key: 'buyer_id', optional: true
+  belongs_to :saler, class_name: "User", foreign_key: 'saler_id'
+  belongs_to :buyer, class_name: "User", foreign_key: 'buyer_id', optional: true
 
   enum condition: { brand_new: 0, near_unused: 1, low_damage: 2, mid_damage: 3, high_damage: 4, bad: 5 }
   enum delivery_charge: { postage_included: 0, cash_on_delivery: 1 }
