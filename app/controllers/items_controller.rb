@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new]
+  before_action :set_item, only: [:show]
 
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
