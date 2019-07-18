@@ -1,6 +1,6 @@
 .signup-container
   .registration-header
-    = render partial: 'registration-header'
+    = render partial: 'shared/registration-header'
     .progress-bar
       %ol
         %li.through
@@ -81,5 +81,5 @@
             = link_to 'カード背面の番号とは？', '#', class: 'link-default'
         %button{type: 'submit', class: 'registration-form__btn'}
           次へ進む
-  = render partial: 'login-footer'
+  = render partial: 'shared/login-footer'
 
