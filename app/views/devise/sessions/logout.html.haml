@@ -15,11 +15,10 @@
           ログアウト
 
   .contents.clearfix
-    = render partial: "mypage-side"
+    = render partial: "shared/mypage-side"
     .mypage
       .mypage__logout
-        = link_to '#', class: 'mypage__logout__btn' do
-          ログアウト
+        = link_to 'ログアウト', destroy_user_session_path, method: :DELETE, class: 'mypage__logout__btn'
 
   = render 'shared/banner'
   = render 'shared/footer'
