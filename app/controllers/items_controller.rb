@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
+  before_action :move_to_login, only: [:new]
 
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
@@ -64,5 +65,9 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def move_to_login
+    redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
   end
 end
