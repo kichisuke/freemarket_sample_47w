@@ -7,6 +7,11 @@ crumb :mypage do
   parent :root
 end
 
+crumb :item do
+  link "#{Item.find(request.url.split("/")[4]).name}", items_path
+  parent :root
+end
+
 crumb :profile do
   link "プロフィール", mypage_profile_path
   parent :mypage
