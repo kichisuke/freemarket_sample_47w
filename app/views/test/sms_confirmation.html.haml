@@ -1,6 +1,6 @@
 .signup-container
   .registration-header
-    = render partial: 'registration-header'
+    = render partial: 'shared/registration-header'
     .progress-bar
       %ol
         %li.through
@@ -38,4 +38,4 @@
             = link_to '#', class: 'link-default' do
               電話番号の確認が必要な理由
               = icon 'fas', 'chevron-right'
-  = render partial: 'login-footer'
+  = render partial: 'shared/login-footer'
