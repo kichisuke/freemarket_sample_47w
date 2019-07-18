@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20190714113606) do
     t.integer  "size"
     t.integer  "saler_id"
     t.integer  "buyer_id"
-    t.integer  "sales_status",                                       null: false
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree

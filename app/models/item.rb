@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :category
-  belongs_to :brand
+  belongs_to :brand, optional: true
   has_many :item_images
   has_many :likes
   has_many :comments

@@ -3,7 +3,12 @@ Rails.application.routes.draw do
                                     sessions: 'users/sessions'
                                   }
   root 'items#index'
-  resources :items
+  resources :items do
+    collection do
+      get :category_search
+      get :brand_search
+    end
+  end
 
   devise_scope :user do
     get 'mypage', to: 'users/sessions#mypage'

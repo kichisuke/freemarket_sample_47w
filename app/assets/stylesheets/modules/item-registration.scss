@@ -1,6 +1,6 @@
 .wrapper__main {
   width:700px;
-  height:2050px;
+  //height:2050px;
   margin:0 auto;
   background-color:white;
 
@@ -82,7 +82,7 @@
 
     &__item {
       width:620px;
-      height: 220px;
+      //height: 220px;
       padding: 40px 40px 20px;
       font-weight: bold;
       border-bottom:2px solid #f5f5f5;
@@ -113,10 +113,15 @@
         margin: 40px 0 0;
       }
 
+      &__wrap {
+        position: relative;
+      }
+
       &__wrap i {
         position: absolute;
-        right: 420px;
-        transform: translateY(-180%);
+        right: 16px;
+        top: 50%;
+        transform: translate(0, -50%);
         color: #888;
         font-size: 18px;
         z-index: 5;
@@ -147,7 +152,7 @@
 
     &__delivery {
       width:620px;
-      height: 300px;
+      //height: 300px;
       padding: 40px;
       font-weight: bold;
       border-bottom:2px solid #f5f5f5;
@@ -251,6 +256,12 @@
       height: 48px;
       margin-top: 40px;
       color:white;
+      
+      input {
+        background: none;
+        color: white;
+        border: none;
+      }
     }
     &__grey {
       background-color:#aaa;
@@ -279,4 +290,53 @@
   padding: 3px 4px;
   font-size: 12px;
   font-weight: bold;
+}
+
+.form-optional {
+  background-color: #ccc;
+  color:white;
+  padding:3px;
+  border-radius: 3px;
+  margin-left:3px;
+  padding: 3px 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.item-registration__form__input {
+  width: 368px;
+  margin: 8px 0 0;
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.brand_search_result {
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 280px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+  font-weight: normal;
+  &__list {
+    cursor: pointer;
+    padding: 16px 8px;
+    font-size: 14px;
+  }
+  &__list:hover {
+    background: #0099e8;
+    color: #fff;
+  }
 }
