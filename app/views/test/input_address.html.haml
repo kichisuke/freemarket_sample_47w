@@ -1,6 +1,6 @@
 .signup-container
   .registration-header
-    = render partial: 'registration-header'
+    = render partial: 'shared/registration-header'
     .progress-bar
       %ol
         %li.through
@@ -62,5 +62,5 @@
           %input{type: "text", name: 'phone_number', placeholder: '例) 09012345678', class: 'input-default'}
         %button{type: 'submit', class: 'registration-form__btn'}
           次へ進む
-  = render partial: 'login-footer'
+  = render partial: 'shared/login-footer'
 
