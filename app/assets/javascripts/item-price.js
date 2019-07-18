@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   if(document.getElementById("item-price") != null) {
     $('#item-price').on('input', function(e) {
       let price = $(e.currentTarget).val();
