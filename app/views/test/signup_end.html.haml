@@ -1,6 +1,6 @@
 .signup-container
   .registration-header
-    = render partial: 'registration-header'
+    = render partial: 'shared/registration-header'
     .progress-bar
       %ol
         %li.through
@@ -30,4 +30,4 @@
         %button{type: 'button', class: 'registration-form__btn'}
           メルカリを始める
   = render partial: 'shared/banner'
-  = render partial: 'login-footer'
+  = render partial: 'shared/login-footer'
