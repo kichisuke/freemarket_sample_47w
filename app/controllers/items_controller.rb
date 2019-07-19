@@ -20,7 +20,6 @@ class ItemsController < ApplicationController
     @categories = Category.eager_load(children: :children).where(parent_id: nil)
     @item = Item.new
     @item.item_images.build
-    @item.build_brand
   end
 
   def create
@@ -56,7 +55,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status, brand_attributes: [:id, :name]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status).merge(saler_id: current_user.id)
   end
 
   def new_image_params

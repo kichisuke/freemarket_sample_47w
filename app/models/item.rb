@@ -8,6 +8,10 @@ class Item < ApplicationRecord
   has_many :comments
   belongs_to :saler, class_name: "User", foreign_key: 'saler_id'
   belongs_to :buyer, class_name: "User", foreign_key: 'buyer_id', optional: true
+  with_options presence: true do
+    validates :name, :price, :text, :category_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status
+  end
+  validates :price, numericality: {greater_than_or_equal_to: 300,less_than_or_equal_to: 9_999_999}
 
   enum condition: { brand_new: 0, near_unused: 1, low_damage: 2, mid_damage: 3, high_damage: 4, bad: 5 }
   enum delivery_charge: { postage_included: 0, cash_on_delivery: 1 }
