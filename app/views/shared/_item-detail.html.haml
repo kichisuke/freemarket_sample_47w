@@ -39,7 +39,7 @@
             %th.item-detail__table__tr__th
               カテゴリー
             %td.item-detail__table__tr__td
-              - if @item.category.parent.parent.present?
+              - if @item.category.parent.present? && @item.category.parent.parent.present?
                 = link_to '#', class: 'item-detail__table__tr__td__category-link' do
                   = @item.category.parent.parent.name
               - if @item.category.parent.present?
