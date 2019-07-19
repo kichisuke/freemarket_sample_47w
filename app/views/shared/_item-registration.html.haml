@@ -127,7 +127,7 @@
               %span.form-require 必須
             %p.children
               ¥
-              = f.text_field :price, autofocus: true, placeholder: "例）300", id: 'item-price'
+              = f.text_field :price, autofocus: true, placeholder: "例）300", id: 'item-price', maxlength: "7"
           .wrapper__main__list__select__center
             %p 販売手数料(10%)
             %a.children#commission -
