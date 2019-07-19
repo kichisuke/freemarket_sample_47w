@@ -124,7 +124,7 @@
           = icon('fas', 'lock', class: 'item-box-container__item-box__buttons-container__right-button__link__lock-icon')
           %span.item-box-container__item-box__buttons-container__right-button__link__text
             あんしん・あんぜんへの取り組み
-  - if @item.saler_id == current_user.id
+  - if user_signed_in? && @item.saler_id == current_user.id
     .item-box-container__edit-container
       = link_to "#", class: 'item-box-container__edit-container__edit-item-btn' do
         .item-box-container__edit-container__edit-item-btn__text
