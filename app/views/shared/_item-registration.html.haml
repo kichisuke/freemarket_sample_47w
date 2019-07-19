@@ -1,6 +1,6 @@
 .wrapper
   .wrapper__main#new_item
-    = form_for @item do |f|
+    = form_for(@item, html: {autocomplete: 'off'} )do |f|
       .wrapper__main__head
         %h2 商品の情報を入力
       .wrapper__main__image
