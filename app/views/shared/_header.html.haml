@@ -44,27 +44,27 @@
                   ルイヴィトン
       .header-nav__right
         .nav-login
-          %ul.logined-list
-            %li.notification
-              = link_to '#', class: 'notification__link' do
-                = icon('far', 'bell', class: 'notification-icon')
-                お知らせ
-            %li.todo
-              = link_to '#', class: 'todo__link' do
-                = icon('fas', 'check', class: 'todo-icon')
-                やることリスト
-                .todo__count
-                  3
-            %li.myPage
-              = link_to '#', class: 'myPage__link' do
-                = image_tag 'member_photo_noimage_thumb.png', alt: 'my page', class: 'myPage-icon'
-                マイページ
-        /
-          if user_signed_in?文で分ける
-          %ul.nav-login__list
-            %li.register
-              = link_to '#', class: 'register__link' do
-                新規会員登録
-            %li.login
-              = link_to '#', class: 'login__link' do
-                ログイン
+          - if user_signed_in?
+            %ul.logined-list
+              %li.notification
+                = link_to '#', class: 'notification__link' do
+                  = icon('far', 'bell', class: 'notification-icon')
+                  お知らせ
+              %li.todo
+                = link_to '#', class: 'todo__link' do
+                  = icon('fas', 'check', class: 'todo-icon')
+                  やることリスト
+                  .todo__count
+                    3
+              %li.myPage
+                = link_to mypage_path, class: 'myPage__link' do
+                  = image_tag 'member_photo_noimage_thumb.png', alt: 'my page', class: 'myPage-icon'
+                  マイページ
+          - else
+            %ul.nav-login__list
+              %li.register
+                = link_to signup_path, class: 'register__link' do
+                  新規会員登録
+              %li.login
+                = link_to login_path, class: 'login__link' do
+                  ログイン
