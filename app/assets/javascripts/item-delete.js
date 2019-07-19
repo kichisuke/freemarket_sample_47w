@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   if(document.getElementById("overlay-open") != null){
     let open = document.getElementById("overlay-open");
     open.onclick = function () {
