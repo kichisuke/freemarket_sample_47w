@@ -22,9 +22,9 @@ class ItemsController < ApplicationController
     if @item.saler_id == current_user.id
       @item.destroy
       @item.item_images.destroy
-      redirect_to root_path、 notice: "削除しました"
+      redirect_to root_path, notice: "削除しました"
     else
-      redirect_to root_path、 notice: "削除できません"
+      redirect_to root_path, notice: "削除できません"
     end
   end
 
