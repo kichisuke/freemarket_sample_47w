@@ -9,8 +9,8 @@
         .top-form
           = form_tag(search_items_path, method: :get, class: 'header-inner__form' ) do
             %input{name: 'keyword', placeholder: 'キーワードから探す', class: 'serch-form', type: 'text', value: ''}
-            = icon('fas','search', class: 'serch-icon')
-            
+              = button_tag type: 'submit', class: 'serch-icon' do
+                %i.fa.fa-search
     .header-nav
       .header-nav__left
         %ul.nav-list

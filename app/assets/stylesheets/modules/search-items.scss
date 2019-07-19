@@ -32,7 +32,7 @@
         }
         &__box {
           margin: 0 auto;
-            
+
           &-item {
             margin: 0 20px 20px 0;
             width: 160px;
@@ -187,15 +187,18 @@
             top: -1px;
             margin: 0 4px 0 0;
             color: #888;
+            float: left;
             font-size: 16px;
             vertical-align: middle;
           }
 
           label {
             font-weight: 400;
+            padding: 0 0 0 28px;
+            display: block;
           }
         }
-        .checkbox-default:first-child {
+        .checkbox-default {
           margin: 16px 0 0;
         }
         .checkbox-default:nth-child(even) {
