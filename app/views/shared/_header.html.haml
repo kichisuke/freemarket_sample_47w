@@ -6,10 +6,11 @@
           = link_to '#' do
             = image_tag 'logo.png', alt: 'mercari', class: 'header-top__logo--size'
       .header-top__form
-        %form.top-form
-          = form_tag(items_search_path, method: :get ,class: 'header-inner__form' ) do
-            %input.serch-form{name: 'keyword', placeholder: 'キーワードから探す', type: 'search', value: ''}/
+        .top-form
+          = form_tag(search_items_path, method: :get, class: 'header-inner__form' ) do
+            %input{name: 'keyword', placeholder: 'キーワードから探す', class: 'serch-form', type: 'text', value: ''}
             = icon('fas','search', class: 'serch-icon')
+            
     .header-nav
       .header-nav__left
         %ul.nav-list

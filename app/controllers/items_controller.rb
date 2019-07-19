@@ -20,8 +20,6 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
-    # @radiesItem = Item.topItem(1)
-    # @mensItem = Item.topItem(2)
 
   end
 

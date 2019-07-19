@@ -1,25 +1,131 @@
-%section.pickup-container
-  %h2.pickup-container__head
-    kの検索結果
-  %section.pickup-items
-    %h3.pickup-items__head
-    .pickup-items__box
-      -# - @Items.each_with_index do |item, index|
-      -#   %section.pickup-items__box--item
-      -#     = link_to item_path(item.id), class: 'item-link' do
-      -#       .item-link__image-box
-      -#         = image_tag "#{@Items[index].item_images.first.url}", alt: 'item-name', class: 'item-image'
-      -#       .item-link__text
-      -#         %h3.item-link__text--header
-      -#           ="#{@Items[index].name}"
-      -#         .item-link__text--price
-      -#           .price
-      -#             ='¥ ' + number_with_delimiter("#{@Items[index].price}")
-      -#           .likes
-      -#             = icon('far', 'heart', class: 'likes__icon')
-      -#             %span.likes__rate
-      -#               10
-      -#             %p.item-link__text--tax
-      -#               (税込)
-      ssss
-
+.search-main
+  .search-container
+    .search-container__content
+      .search-items
+        .search-items__result
+          #{params[:keyword]}
+          %span.search-items__result-text
+          の検索結果
+        .search-items__result-number
+          #{@items.length}件表示
+        .search-items__box
+          -@items.each do |item|
+            .search-items__box-item
+              = link_to item_path(item), class: 'item-link' do
+                .search-items-link__image-box
+                  = image_tag item.item_images.first.url, alt: item.name, class: "search-items-link__image"
+                .search-items-link__text
+                  %h3.search-items-link__text--name
+                    = item.name
+                  .search-items-link__text--price
+                    .search-items-price
+                      ='¥' + number_with_delimiter(item.price)
+    .search-container__side
+      .search-extend-form
+        .search-sort
+          .form-group
+            .select-wrap
+              %i.fas.fa-chevron-down
+              %select.select-default
+                %option 並び替え
+                %option 価格の安い順
+                %option 価格の高い順
+                %option 出品の古い順
+                %option 出品の新しい順
+                %option いいね！の多い順
+        .search-dropdown-content
+          %h3.visible-large 詳細検索
+          .form-group
+            %label
+              = icon('fas','plus', class: 'fa-plus')
+              %span キーワードを追加する
+            %input.input-default{placeholder: "例）値下げ"}
+          .form-group
+            %label
+              = icon('fas','list', class: 'fa-list')
+              %span カテゴリーを選択する
+            .select-wrap
+              %i.fas.fa-chevron-down
+              %select.select-default
+                %option すべて
+          .form-group
+            %label
+              = icon('fas','tag', class: 'fa-tag')
+              %span ブランド名から探す
+            %input.input-default{placeholder: "例）シャネル"}
+          .form-group
+            %label
+              = icon('fas','expand', class: 'fa-expand')
+              %span サイズを指定する
+            .select-wrap
+              %i.fas.fa-chevron-down
+              %select.select-default
+                %option すべて
+          .form-group.search-price
+            %label
+              = icon('fas','coins', class: 'fa-coins')
+              %span 価格
+            .select-wrap
+              %i.fas.fa-chevron-down
+              %select.select-default
+                %option 選択してください
+            %input.input-default.min{placeholder: "¥ Min"}
+            %span  ~ 
+            %input.input-default.max{placeholder: "¥ Max"}
+          .form-group
+            %label
+              = icon('fas','star', class: 'fa-star')
+              %span 商品の状態
+            %div
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") すべて
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="item_condition_id[1]") 新品、未使用
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 未使用に近い
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 目立った傷や汚れなし
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") やや傷や汚れあり
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 傷や汚れあり
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 全体的に状態が悪い
+          .form-group
+            %label
+              = icon('fas','truck', class: 'fa-truck')
+              %span 配送料の負担
+            %div
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") すべて
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 着払い(購入者負担)
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 送料込み(出品者負担)
+          .form-group
+            %label
+              = icon('fas','shopping-cart', class: 'fa-shopping-cart')
+              %span 販売状況
+            %div
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") すべて
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 販売中
+              .checkbox-default
+                %input(type="checkbox")
+                %label(for="condition_all") 売り切れ
+          .search-extend-btn
+            %input.btn-default.btn-gray(type="reset" value="クリア")
+            %input.btn-default.btn-red(type="submit" value="完了")

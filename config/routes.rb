@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   resources :items do
-    collection{ get "search" }
+    collection do
+      get "search"
+    end
   end
-  get '/items/search', to:'items#search'
-
 
   devise_scope :user do
     get 'mypage', to: 'users/sessions#mypage'
