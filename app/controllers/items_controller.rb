@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :destroy]
   before_action :move_to_login, only: [:new]
 
   def index
@@ -21,8 +21,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @otherItems = Item.where(saler_id: @item.saler.id).where.not(id: params[:id]).limit(3)
-    @sameCategories = Item.where(category_id: @item.category.id).where.not(id: params[:id]).limit(3)
+    @otherItems = Item.where(saler_id: @item.saler_id).where.not(id: params[:id]).limit(3)
+    @sameCategories = Item.where(category_id: @item.category_id).where.not(id: params[:id]).limit(3)
     @previousItem = Item.where('id < ?', params[:id]).order('id DESC').first
     @nextItem = Item.where('id > ?', params[:id]).order('id ASC').first
   end
@@ -66,6 +66,16 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+  end
+
+  def destroy
+    if @item.saler_id == current_user.id
+      @item.destroy
+      @item.item_images.destroy
+      redirect_to root_path, notice: "削除しました"
+    else
+      redirect_to root_path, notice: "削除できません"
+    end
   end
 
   private
