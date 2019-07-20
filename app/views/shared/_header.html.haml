@@ -6,9 +6,11 @@
           = link_to root_path do
             = image_tag 'logo.png', alt: 'mercari', class: 'header-top__logo--size'
       .header-top__form
-        %form.top-form
-          %input.serch-form{name: 'keyword', placeholder: '何かお探しですか？', type: 'search', value: ''}
-          = icon('fas','search', class: 'serch-icon')
+        .top-form
+          = form_tag(search_items_path, method: :get, class: 'header-inner__form' ) do
+            %input{name: 'keyword', placeholder: 'キーワードから探す', class: 'serch-form', type: 'text', value: ''}
+              = button_tag type: 'submit', class: 'serch-icon' do
+                %i.fa.fa-search
     .header-nav
       .header-nav__left
         %ul.nav-list
