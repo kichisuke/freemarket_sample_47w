@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
     collection do
+      get :category_search
+      get :brand_search
       get "search"
     end
   end
