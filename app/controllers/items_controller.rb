@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index]
+  before_action :set_item, except: [:index, :search, :new]
 
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
@@ -27,6 +27,10 @@ class ItemsController < ApplicationController
   end
 
   def new
+  end
+
+  def search
+    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
   private
