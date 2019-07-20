@@ -1,11 +1,11 @@
 id,name,price,text,condition,delivery_charge,delivery_method,prefecture_id,estimated_shipping_date,category_id,brand_id,size,saler_id,buyer_id,sales_status,created_at,updated_at
-1,Champion(チャンピオン),12500,安いです,brand_new,postage_included,mercari,0,shipping1,1,1,xxs,1,,exhibition,2019-01-01,2019-01-01 00:00:00
-2,ニット,5000,美品です、オールシーズンOK☆,near_unused,postage_included,mercari,33,shipping1,2,4,m,1,,exhibition,2019-04-18,2019-04-18
-3,ジャケット男性用,7800,未使用品、早いもの勝ち。,brand_new,cash_on_delivery,yu_mail,0,shipping1,2,9,m,7,,exhibition,2019-05-14,2019-06-30
-4,ロングコート春用,35200,この価格でこの質は、他ではありえません。早いもの勝ちです！,near_unused,postage_included,mercari,23,shipping2,1,2,xs,2,,stop,2019-08-31,2019-09-30
-5,アロハラメンズシャツ,4200,希少品です、未使用。,brand_new,postage_included,letter_pack,14,shipping2,2,1,l,7,,exhibition,2018-01-01,2018-04-14
-6,シャツ,7777,使用感なく、お買い得です！,near_unused,postage_included,mercari,0,shipping1,2,5,m,8,,trading,2019-01-01,2019-01-03
-7,スウェット,3000,使用感ありますが、とても使いやすく安いです。,low_damage,cash_on_delivery,yu_mail,33,shipping1,1,3,m,5,,trading,2017-03-30,2018-04-22
-8,甚平,5200,これからの季節に！,brand_new,postage_included,mercari,19,shipping3,2,8,free_size,3,,exhibition,2018-11-14,2018-11-15
-9,オロビアンコ,12500,美品！早いもの勝ちです！,near_unused,postage_included,mercari,0,shipping3,1,2,m,6,,exhibition,2018-12-30,2019-01-01
-10,ステテコ(超高級),126800,世界に一つしかないステテコです。,brand_new,postage_included,letter_pack,0,shipping1,1,3,l,9,,exhibition,2019-04-22,2019-04-23
+1,Champion(チャンピオン),12500,安いです,brand_new,postage_included,mercari,1,shipping1,5,1,xxs,1,,exhibition,2019-01-01,2019-01-01 00:00:00
+2,ニット,5000,美品です、オールシーズンOK☆,near_unused,postage_included,mercari,33,shipping1,6,4,m,1,,exhibition,2019-04-18,2019-04-18
+3,ジャケット男性用,7800,未使用品、早いもの勝ち。,brand_new,cash_on_delivery,yu_mail,1,shipping1,6,9,m,7,,exhibition,2019-05-14,2019-06-30
+4,ロングコート春用,35200,この価格でこの質は、他ではありえません。早いもの勝ちです！,near_unused,postage_included,mercari,23,shipping2,5,2,xs,2,,stop,2019-08-31,2019-09-30
+5,アロハラメンズシャツ,4200,希少品です、未使用。,brand_new,postage_included,letter_pack,14,shipping2,6,1,l,7,,exhibition,2018-01-01,2018-04-14
+6,シャツ,7777,使用感なく、お買い得です！,near_unused,postage_included,mercari,1,shipping1,6,5,m,8,,trading,2019-01-01,2019-01-03
+7,スウェット,3000,使用感ありますが、とても使いやすく安いです。,low_damage,cash_on_delivery,yu_mail,33,shipping1,5,3,m,5,,trading,2017-03-30,2018-04-22
+8,甚平,5200,これからの季節に！,brand_new,postage_included,mercari,19,shipping3,6,8,free_size,3,,exhibition,2018-11-14,2018-11-15
+9,オロビアンコ,12500,美品！早いもの勝ちです！,near_unused,postage_included,mercari,1,shipping3,5,2,m,6,,exhibition,2018-12-30,2019-01-01
+10,ステテコ(超高級),126800,世界に一つしかないステテコです。,brand_new,postage_included,letter_pack,1,shipping1,5,3,l,9,,exhibition,2019-04-22,2019-04-23
