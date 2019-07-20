@@ -23,7 +23,12 @@ crumb :card do
 end
 
 crumb :identification do
-  link "支払い方法", mypage_identification_path
+  link "本人情報の登録", mypage_identification_path
+  parent :mypage
+end
+
+crumb :logout do
+  link "ログアウト", logout_path
   parent :mypage
 end
 
