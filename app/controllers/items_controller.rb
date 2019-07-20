@@ -3,9 +3,20 @@ class ItemsController < ApplicationController
 
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
-    @radiesItem = Item.topItem(1)
+    @radiesItem = pickup_category_items(1)
     #メンズカテゴリーの4アイテムを最新の上から4つ抽出
-    @mensItem = Item.topItem(2)
+    @mensItem = pickup_category_items(2)
+  end
+
+  def pickup_category_items(id)
+    # 引数で渡されたidの子カテゴリのidの配列を生成
+    child_category_ids = Category.find(id).children.ids
+    # 子カテゴリのidと合致する孫カテゴリのidの配列を生成
+    grand_child_category_ids = Category.where("parent_id IN (?)", child_category_ids).ids
+    # 孫カテゴリのidと合致するitemsの配列を生成
+    items = Item.where("category_id IN (?)", grand_child_category_ids)
+    # 最新の４件を取得
+    items.order("created_at DESC").limit(4)
   end
 
   def show
