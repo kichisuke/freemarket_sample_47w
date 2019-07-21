@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit]
   before_action :move_to_login, only: [:new]
 
   def index
@@ -76,6 +76,10 @@ class ItemsController < ApplicationController
     else
       redirect_to root_path, notice: "削除できません"
     end
+  end
+
+  def edit
+    
   end
 
   private
