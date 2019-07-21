@@ -1,14 +1,10 @@
 = render 'shared/header'
 
-.profile-header
+.breadcrumb
   %ul
     %li
-      = link_to "#", class: "profile-header__link" do
-        メルカリ
-        = icon 'fas', 'chevron-right', class: 'profile-header__link__icon'
-    %li
-      = link_to "#", class: "profile-header__link" do
-        = @item.name
+      - breadcrumb :item
+      = render "layouts/breadcrumbs"
 
 = render 'shared/item-detail'
 = render 'shared/other-items'

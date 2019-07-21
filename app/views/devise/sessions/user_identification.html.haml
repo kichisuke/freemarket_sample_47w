@@ -1,5 +1,10 @@
 .container
   = render 'shared/header'
+  .breadcrumb
+    %ul
+      %li
+        - breadcrumb :identification
+        = render "layouts/breadcrumbs"
   .contents.clearfix
     = render partial: "shared/mypage-side"
     .mypage
