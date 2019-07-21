@@ -79,7 +79,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    @categories = Category.eager_load(children: :children).where(parent_id: nil)
   end
 
   private
