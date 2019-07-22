@@ -96,12 +96,10 @@ class ItemsController < ApplicationController
     ids = @item.item_images.map{|image| image.id }
     exist_ids = registered_image_params[:ids].map(&:to_i)
     exist_ids.clear if exist_ids[0] == 0
-
     if (exist_ids.length != 0 || new_image_params[:images][0] != " ") && @item.update(item_params)
       unless ids.length == exist_ids.length
         delete_ids = ids - exist_ids
         delete_ids.each do |id|
-          binding.pry
           @item.item_images.find(id).destroy
         end
       end
