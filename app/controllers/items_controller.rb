@@ -120,6 +120,17 @@ class ItemsController < ApplicationController
 
   end
 
+  def parent_category_search(id)
+    # @itemのcategory_id（孫）のもつparent_id（子）を取得
+    grand_child_category_parent_id = Category.find(id).parent_id
+    # @itemのcategory_id（孫）のもつparent_id（子）と同じparent_id（子）をもつレコードを取得
+    grand_child_category_brother_ids = Category.where(parent_id: grand_child_category_parent_id)
+    # @itemのcategory_id（孫）のparent（子）のもつparent_id（親）を取得
+    child_category_parent_id = Category.find(id).parent.parent_id
+    # @itemのcategory_id（孫）のparent（子）のもつparent_id（親）と同じparent_id（親）をもつレコードを取得
+    child_category_brother_ids = Category.where(parent_id: child_category_parent_id)
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status).merge(saler_id: current_user.id)
