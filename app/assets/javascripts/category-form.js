@@ -80,6 +80,7 @@ $(document).on('turbolinks:load', function() {
   $('#grandchild-category').on('change', '#grandchild-form', function() {
     $('.hidden').css({'display': 'block'});
   });
+  //editページ用サイズフォームの表示
   $('#grandchild-category').on('change', '#grandchild-form', function() {
     $('.edit-hidden').css({'display': 'block'});
   });
