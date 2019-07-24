@@ -8,7 +8,7 @@
           = link_to "#", class: "mypage-link" do
             = image_tag "member_photo_noimage.png", class: "mypage__user__link__icon"
             %h3.mypage__user__link__name 
-              = @user.nickname
+              = current_user.nickname
             .mypage__user__link__number
               .mypage__user__link__number__rate 評価
               .mypage__user__link__number__count 0

@@ -1,7 +1,7 @@
 .mypage-side
   %ul.mypage-side__lists
     %li.mypage-side__lists__link.mypage-list-link.list-active
-      = link_to "マイページ", "#", calss: "mypage-link"
+      = link_to "マイページ", mypage_path, calss: "mypage-link"
       = icon 'fas', 'chevron-right', class: "mypage-side__lists__link__go"
     %li.mypage-side__lists__link.mypage-list-link
       = link_to "お知らせ", "#", class: "mypage-link"
@@ -53,7 +53,7 @@
   %h3.mypage-side__head 設定
   %ul.mypage-side__lists
     %li.mypage-side__lists__link.mypage-list-link
-      = link_to "プロフィール", "#", class: "mypage-link"
+      = link_to "プロフィール", mypage_profile_path, class: "mypage-link"
       = icon 'fas', 'chevron-right', class: "mypage-side__lists__link__go"
     %li.mypage-side__lists__link.mypage-list-link
       = link_to "発送元・お届け先住所変更", "#", class: "mypage-link"

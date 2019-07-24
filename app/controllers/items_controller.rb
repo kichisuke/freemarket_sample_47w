@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:purchase, :pay, :done]
+  before_action :set_item, only: [:show, :purchase, :pay, :done]
 
   require "payjp"
 
