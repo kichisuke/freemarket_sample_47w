@@ -24,13 +24,13 @@
         .purchase__confirmation__body__inner
           .purchase__confirmation__user__head.bold 配送先
           .purchase__confirmation__user__body
-            = @user.address.postal_code
+            = current_user.address.postal_code
             %br/
-            = @user.address.prefecture.name
-            = @user.address.city
-            = @user.address.street_address
-            = @user.address.building
+            = current_user.address.prefecture.name
+            = current_user.address.city
+            = current_user.address.street_address
+            = current_user.address.building
             %br/
-            = @user.profile.family_name
-            = @user.profile.first_name
+            = current_user.profile.family_name
+            = current_user.profile.first_name
     = render "shared/purchase-footer"
