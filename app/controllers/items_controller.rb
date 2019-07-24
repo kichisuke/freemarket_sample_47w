@@ -125,18 +125,20 @@ class ItemsController < ApplicationController
 
   end
 
+  # 孫カテゴリーの兄弟要素を取得
   def grand_child_category_brother_search(id)
-    # @itemのcategory_id（孫）のもつparent_id（子）を取得
+    # @itemのcategory_id（孫）から見たparent_id（子id）を取得
     grand_child_category_parent_id = Category.find(id).parent_id
-    # @itemのcategory_id（孫）のもつparent_id（子）と同じparent_id（子）をもつレコードを取得
+    # @itemのcategory_id（孫）から見たparent_id（子id）と同じparent_id（子id）をもつレコードを取得
     grand_child_category_brother_ids = Category.where(parent_id: grand_child_category_parent_id)
     return grand_child_category_brother_ids
   end
 
+  # 子カテゴリーの兄弟要素を取得
   def child_category_brother_search(id)
-    # @itemのcategory_id（孫）のparent（子）のもつparent_id（親）を取得
+    # @itemのcategory_id（孫）から見たparent（子id）のもつparent_id（親）を取得
     child_category_parent_id = Category.find(id).parent.parent_id
-    # @itemのcategory_id（孫）のparent（子）のもつparent_id（親）と同じparent_id（親）をもつレコードを取得
+    # @itemのcategory_id（孫）から見たparent（子）のもつparent_id（親）と同じparent_id（親）をもつレコードを取得
     child_category_brother_ids = Category.where(parent_id: child_category_parent_id)
   end
 
