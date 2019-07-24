@@ -84,7 +84,6 @@ class ItemsController < ApplicationController
     @registered_category = @item.category.parent.parent.id
     @registered_child_category = @item.category.parent.id
     @child_category_brother = child_category_brother_search(@item.category_id)
-    @registered_grand_child_category = @item.category_id
     @grand_child_category_brother = grand_child_category_brother_search(@item.category_id)
 
     require 'base64'

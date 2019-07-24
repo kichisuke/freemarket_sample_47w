@@ -60,7 +60,7 @@
                 %i.fas.fa-chevron-down
             #grandchild-category
               .wrapper__main__list__select__wrap.grandchild-form
-                = f.collection_select :category_id, @grand_child_category_brother, :id, :name, { selected: @registered_grand_child_category }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "grandchild-form"
+                = f.collection_select :category_id, @grand_child_category_brother, :id, :name, { selected: @item.category_id }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "grandchild-form"
                 %i.fas.fa-chevron-down
           .wrapper__main__list__select__center.edit-hidden
             %p
