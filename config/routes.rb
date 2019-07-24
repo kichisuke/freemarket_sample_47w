@@ -22,3 +22,4 @@ Rails.application.routes.draw do
     post 'signup_create', to: 'users/registrations#signup_create'
     get 'signup_end', to: 'users/registrations#signup_end'
   end
+end
