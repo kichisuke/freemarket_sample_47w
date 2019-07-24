@@ -199,19 +199,26 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @user = User.find(1)
+    @card = Creditcard.where(user_id: current_user.id).first
+    if @card.present?
+      Payjp.api_key = 'sk_test_5807e2b2840ba0fcf414ec61'
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+      @card_brand = @card_information.brand
+    end
   end
 
   def pay
-    @user = User.find(1)
-    @item.buyer_id = @user.id
+    card = Creditcard.where(user_id: current_user.id).first
+    Payjp.api_key = 'sk_test_5807e2b2840ba0fcf414ec61'
+    Payjp::Charge.create(customer: card.customer_id, amount: @item.price, currency: 'jpy')
+    @item.buyer_id = current_user.id
     @item.sales_status = 2
     @item.save
     redirect_to action: 'done'
   end
 
   def done
-    @user = User.find(1)
   end
 
   private
