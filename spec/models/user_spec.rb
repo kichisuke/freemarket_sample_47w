@@ -48,5 +48,11 @@ describe User do
       another_user.valid?
       expect(another_user.errors[:email]).to include("はすでに存在します")
     end
+
+    it "is invalid with email that is incorrect value" do
+      user = build(:user, email: "aaa.ggg")
+      user.valid?
+      expect(user.errors[:email]).to include("指定した値で入力してください")
+    end
   end
 end
