@@ -52,10 +52,16 @@
               %span.form-require 必須
             #parent-category
               .wrapper__main__list__select__wrap
-                = f.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "parent-form"
+                = f.collection_select :category_id, @categories, :id, :name, { selected: @registered_category }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "parent-form"
                 %i.fas.fa-chevron-down
             #child-category
+              .wrapper__main__list__select__wrap.child-form
+                = f.collection_select :category_id, @child_category_brother, :id, :name, { selected: @registered_child_category }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "child-form"
+                %i.fas.fa-chevron-down
             #grandchild-category
+              .wrapper__main__list__select__wrap.grandchild-form
+                = f.collection_select :category_id, @grand_child_category_brother, :id, :name, { selected: @registered_grand_child_category }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "grandchild-form"
+                %i.fas.fa-chevron-down
 
           .wrapper__main__list__select__center.hidden
             %p

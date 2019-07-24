@@ -82,6 +82,11 @@ class ItemsController < ApplicationController
     @categories = Category.eager_load(children: :children).where(parent_id: nil)
     gon.item = @item
     gon.item_images = @item.item_images
+    @registered_category = @item.category.parent.parent.id
+    @registered_child_category = @item.category.parent.id
+    @child_category_brother = child_category_brother_search(@item.category_id)
+    @registered_grand_child_category = @item.category_id
+    @grand_child_category_brother = grand_child_category_brother_search(@item.category_id)
 
     require 'base64'
 
@@ -120,11 +125,15 @@ class ItemsController < ApplicationController
 
   end
 
-  def parent_category_search(id)
+  def grand_child_category_brother_search(id)
     # @itemのcategory_id（孫）のもつparent_id（子）を取得
     grand_child_category_parent_id = Category.find(id).parent_id
     # @itemのcategory_id（孫）のもつparent_id（子）と同じparent_id（子）をもつレコードを取得
     grand_child_category_brother_ids = Category.where(parent_id: grand_child_category_parent_id)
+    return grand_child_category_brother_ids
+  end
+
+  def child_category_brother_search(id)
     # @itemのcategory_id（孫）のparent（子）のもつparent_id（親）を取得
     child_category_parent_id = Category.find(id).parent.parent_id
     # @itemのcategory_id（孫）のparent（子）のもつparent_id（親）と同じparent_id（親）をもつレコードを取得
