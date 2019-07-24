@@ -34,7 +34,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @categories = Category.all
     @item = Item.new(item_params)
     if new_image_params[:images][0].present? && @item.save
       new_image_params[:images].each do |url|
@@ -89,11 +88,24 @@ class ItemsController < ApplicationController
     @grand_child_category_brother = grand_child_category_brother_search(@item.category_id)
 
     require 'base64'
-
+    require 'aws-sdk'
     gon.item_images_binary_datas = []
-    @item.item_images.each do |image|
-      binary_data = File.read(image.url.file.file)
-      gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
+
+    if Rails.env.production?
+      client = Aws::S3::Client.new(
+                             region: 'ap-northeast-1',
+                             access_key_id: Rails.application.secrets.aws_access_key_id,
+                             secret_access_key: Rails.application.secrets.aws_secret_access_key,
+                             )
+      @item.item_images.each do |image|
+        binary_data = client.get_object(bucket: 'mercari47w', key: image.image_url.file.path).body.read
+        gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
+      end
+    else
+      @item.item_images.each do |image|
+        binary_data = File.read(image.url.file.file)
+        gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
+      end
     end
   end
 
