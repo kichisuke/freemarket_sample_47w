@@ -62,20 +62,19 @@
               .wrapper__main__list__select__wrap.grandchild-form
                 = f.collection_select :category_id, @grand_child_category_brother, :id, :name, { selected: @registered_grand_child_category }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "grandchild-form"
                 %i.fas.fa-chevron-down
-
-          .wrapper__main__list__select__center.hidden
+          .wrapper__main__list__select__center.edit-hidden
             %p
               サイズ
               %span.form-require 必須
             .wrapper__main__list__select__wrap
               =f.select :size, Item.sizes_i18n.invert, {}
               %i.fas.fa-chevron-down
-          .wrapper__main__list__select__center.hidden
+          .wrapper__main__list__select__center
             %p
               ブランド
               %span.form-optional 任意
             .wrapper__main__list__select__wrap
-              = f.text_field :brand_id, placeholder: '例）シャネル', class: 'item-registration__form__input', id: 'brand_search'
+              = f.text_field :brand_id, placeholder: '例）シャネル', class: 'item-registration__form__input', id: 'brand_search', value: @item.brand.name
               %ul.brand_search_result
               = f.hidden_field :brand_id, class: "brand_search_result__id"
 
