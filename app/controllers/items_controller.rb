@@ -85,6 +85,11 @@ class ItemsController < ApplicationController
     @registered_child_category = @item.category.parent.id
     @child_category_brother = child_category_brother_search(@item.category_id)
     @grand_child_category_brother = grand_child_category_brother_search(@item.category_id)
+    if @item.brand.present?
+      @registered_brand = @item.brand.name
+    else
+      @registered_brand = ""
+    end
 
     require 'base64'
     require 'aws-sdk'
