@@ -28,8 +28,4 @@ Rails.application.routes.draw do
     post 'signup_create', to: 'users/registrations#signup_create'
     get 'signup_end', to: 'users/registrations#signup_end'
   end
-
-  #下記は一旦残しておく
-  get 'test/sell', to: 'test#sell'
-  get 'detail', to: 'test#detail'
 end
