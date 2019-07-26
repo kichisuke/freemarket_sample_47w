@@ -159,45 +159,6 @@ class ItemsController < ApplicationController
     child_category_brother_ids = Category.where(parent_id: child_category_parent_id)
   end
 
-  def pay
-    @user = User.find(1)
-    @item.buyer_id = @user.id
-    @item.sales_status = 2
-    @item.save
-    redirect_to action: 'done'
-  end
-
-  def done
-    @user = User.find(1)
-  end
-
-  private
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
-  private
-  def item_params
-    params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status).merge(saler_id: current_user.id)
-  end
-
-  def new_image_params
-    params.require(:new_images).permit({images: []})
-  end
-
-  def registered_image_params
-    params.require(:registered_images_ids).permit({ids: []})
-  end
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
-  def move_to_login
-    redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
-  end
-
   def purchase
     @card = Creditcard.where(user_id: current_user.id).first
     if @card.present?
@@ -222,8 +183,23 @@ class ItemsController < ApplicationController
   end
 
   private
+  def item_params
+    params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status).merge(saler_id: current_user.id)
+  end
+
+  def new_image_params
+    params.require(:new_images).permit({images: []})
+  end
+
+  def registered_image_params
+    params.require(:registered_images_ids).permit({ids: []})
+  end
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def move_to_login
+    redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
   end
 end
