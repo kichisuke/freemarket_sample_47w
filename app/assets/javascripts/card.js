@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function() {
   var form = $("#card-form");
 
   Payjp.setPublicKey('pk_test_2cf03f0c1b9560e918e7ce5d');
-  console.log(1)
   $("#card-form").on("click", "#submit-button", function(e) {
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
@@ -14,8 +13,6 @@ $(document).on('turbolinks:load', function() {
     };
     console.log(card)
     Payjp.createToken(card, function(status, response) {
-      console.log(response)
-      // debugger;
       if (status == 200) {
         $(".number").removeAttr("name");
         $(".cvc").removeAttr("name");
@@ -24,7 +21,6 @@ $(document).on('turbolinks:load', function() {
 
         var token = response.id;
         form.append($('<input type="hidden" name="payjp-token" class="payjp-token" />').val(token));
-        console.log(token)
         form.get(0).submit();
       }
       else {
