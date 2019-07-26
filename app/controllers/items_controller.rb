@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit, :update, :purchase, :pay, :done]
-  before_action :move_to_login, only: [:new]
+  before_action :move_to_login, only: [:new, :purchase]
 
   require "payjp"
 
