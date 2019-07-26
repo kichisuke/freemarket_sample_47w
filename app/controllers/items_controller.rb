@@ -104,12 +104,6 @@ class ItemsController < ApplicationController
   end
 
   private
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
-  private
   def item_params
     params.require(:item).permit(:name, :price, :text, :category_id, :brand_id, :size, :condition, :delivery_charge, :delivery_method, :prefecture_id, :estimated_shipping_date, :sales_status).merge(saler_id: current_user.id)
   end
@@ -126,25 +120,4 @@ class ItemsController < ApplicationController
     redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
   end
 
-  def purchase
-    @user = User.find(1)
-  end
-
-  def pay
-    @user = User.find(1)
-    @item.buyer_id = @user.id
-    @item.sales_status = 2
-    @item.save
-    redirect_to action: 'done'
-  end
-
-  def done
-    @user = User.find(1)
-  end
-
-  private
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
 end
