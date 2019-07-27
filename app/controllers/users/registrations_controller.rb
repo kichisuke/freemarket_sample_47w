@@ -41,11 +41,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def signup_create
+    require 'payjp'
     @address = Address.new(session[:address])
-    @credit = Creditcard.new(token: params[:payjp_token], user_id: current_user.id)
-    if @address.save && @credit.save
+
+    Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
+    customer = Payjp::Customer.create(description: 'test', card: params[:payjp_token])
+    @credit = Creditcard.new(token: params[:payjp_token], user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+    if @address.save! && @credit.save!
       session[:address] = nil
-      session[:payjp_token] = nil
       redirect_to signup_end_path
     else
       redirect_to input_address_path

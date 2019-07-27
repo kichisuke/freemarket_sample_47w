@@ -1,0 +1,68 @@
+.signup-container
+  .registration-header
+    = render partial: 'shared/purchase-header'
+  .registration-main
+    %h2.registration-main__head--payment.bold
+      支払い方法
+    .registration-main__inner
+      .form.registration-form
+        = form_tag(creditcards_path, method: :POST, id: 'card-form', name: "inputForm") do
+          .registration-form__group
+            %label カード番号
+            %span.require 必須
+            %input{type: 'text', name: 'number', maxlength: '16', placeholder: '半角数字のみ',id: 'card-number', class: 'input-default number', required: true}
+          .registration-form__credit-img
+            = image_tag 'credit_card/visa.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+            = image_tag 'credit_card/master_card.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+            = image_tag 'credit_card/saison_card.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+            = image_tag 'credit_card/jcb.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+            = image_tag 'credit_card/american_express.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+            = image_tag 'credit_card/diners_club.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+            = image_tag 'credit_card/discover.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
+          .registration-form__group
+            %label 有効期限
+            %span.require 必須
+            .registration-form__select
+              .registration-form__select__wrap.card-expire-select
+                %select{name: 'exp_month', id: 'card_expire_mm', class: 'select exp_month', required: true}
+                  %option{value: ""} --
+                  %option{value: "1"} 1
+                  %option{value: "2"} 2
+                  %option{value: "3"} 3
+                  %option{value: "4"} 4
+                  %option{value: "5"} 5
+                  %option{value: "6"} 6
+                  %option{value: "7"} 7
+                  %option{value: "8"} 8
+                  %option{value: "9"} 9
+                  %option{value: "10"} 10
+                  %option{value: "11"} 11
+                  %option{value: "12"} 12
+                = icon 'fas', 'chevron-down'
+              %span.date 月
+              .registration-form__select__wrap.card-expire-select
+                %select{name: 'exp_year', id: 'card_expire_yy', class: 'select exp_year', required: true}
+                  %option{value: ""} --
+                  %option{value: "2019"} 2019
+                  %option{value: "2020"} 2020
+                  %option{value: "2021"} 2021
+                  %option{value: "2022"} 2022
+                  %option{value: "2023"} 2023
+                  %option{value: "2024"} 2024
+                  %option{value: "2025"} 2025
+                  %option{value: "2026"} 2026
+                  %option{value: "2027"} 2027
+                  %option{value: "2028"} 2028
+                  %option{value: "2029"} 2029
+                  %option{value: "2030"} 2030
+                = icon 'fas', 'chevron-down'
+              %span.date 年
+          .registration-form__group
+            %label セキュリティーコード
+            %span.require 必須
+            %input{type: 'text', name: 'cvc', maxlength: '4', placeholder: 'カード背面4桁もしくは3桁の番号', id: 'cvc', class: 'input-default cvc', required: true}
+            %p.registration-form__text__right
+              = icon 'fas', 'question-circle'
+              = link_to 'カード背面の番号とは？', '#', class: 'link-default'
+          %input{type: 'submit', id: 'submit-button', class: 'registration-form__btn', value: '次へ進む'}
+  = render partial: 'shared/purchase-footer'

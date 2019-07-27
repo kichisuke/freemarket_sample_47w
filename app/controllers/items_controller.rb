@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy, :edit, :update]
-  before_action :move_to_login, only: [:new]
+  before_action :set_item, only: [:show, :destroy, :edit, :update, :purchase, :pay, :done]
+  before_action :move_to_login, only: [:new, :purchase]
+
+  require "payjp"
 
   def index
     #レディースカテゴリーの4アイテムを最新の上から4つ抽出
@@ -137,7 +139,6 @@ class ItemsController < ApplicationController
       flash[:alert] = '未入力項目があります'
       redirect_back(fallback_location: root_path)
     end
-
   end
 
   # 孫カテゴリーの兄弟要素を取得
@@ -155,6 +156,29 @@ class ItemsController < ApplicationController
     child_category_parent_id = Category.find(id).parent.parent_id
     # @itemのcategory_id（孫）から見たparent（子）のもつparent_id（親）と同じparent_id（親）をもつレコードを取得
     child_category_brother_ids = Category.where(parent_id: child_category_parent_id)
+  end
+
+  def purchase
+    @card = Creditcard.where(user_id: current_user.id).first
+    if @card.present?
+      Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+      @card_brand = @card_information.brand
+    end
+  end
+
+  def pay
+    card = Creditcard.where(user_id: current_user.id).first
+    Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
+    Payjp::Charge.create(customer: card.customer_id, amount: @item.price, currency: 'jpy')
+    @item.buyer_id = current_user.id
+    @item.sales_status = 2
+    @item.save
+    redirect_to action: 'done'
+  end
+
+  def done
   end
 
   private
@@ -177,4 +201,5 @@ class ItemsController < ApplicationController
   def move_to_login
     redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
   end
+
 end
