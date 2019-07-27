@@ -32,7 +32,7 @@ h3{
   background: #fff;
 }
 
-.profile-header{
+.breadcrumb {
   position: relative;
   border-top: 1px solid #eee;
   background: #fff;
@@ -42,11 +42,9 @@ h3{
     padding: 16px 0
     }
   li{
-    display: inline-block;
-    font-size: 14px;
     line-height: 1.2;
   }
-  li:last-child{
+  span{
     font-weight: 600;
   }
     &__link__icon{
