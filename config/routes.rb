@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations',
-                                    sessions: 'users/sessions'
+                                    sessions: 'users/sessions',
+                                    omniauth_callbacks: 'users/omniauth_callbacks'
                                   }
   root 'items#index'
   resources :items do
@@ -28,8 +29,4 @@ Rails.application.routes.draw do
     post 'signup_create', to: 'users/registrations#signup_create'
     get 'signup_end', to: 'users/registrations#signup_end'
   end
-
-  #下記は一旦残しておく
-  get 'test/sell', to: 'test#sell'
-  get 'detail', to: 'test#detail'
 end
