@@ -19,4 +19,16 @@ class CreditcardsController < ApplicationController
     end
   end
 
+  def destroy
+    Payjp.api_key = 'sk_test_5807e2b2840ba0fcf414ec61'
+    @card = Creditcard.where(user_id: current_user.id).first
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    customer.delete
+    if @card.destroy
+      redirect_to mypage_card_path, notice: "削除しました"
+    else
+      redirect_to mypage_card_path, alert: "削除できませんでした"
+    end
+  end
+
 end
