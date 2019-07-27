@@ -101,7 +101,7 @@ class ItemsController < ApplicationController
                              secret_access_key: Rails.application.secrets.aws_secret_access_key,
                              )
       @item.item_images.each do |image|
-        binary_data = client.get_object(bucket: 'mercari47w', key: image.image_url.file.path).body.read
+        binary_data = client.get_object(bucket: 'mercari47w', key: image.url.file.path).body.read
         gon.item_images_binary_datas << Base64.strict_encode64(binary_data)
       end
     else
