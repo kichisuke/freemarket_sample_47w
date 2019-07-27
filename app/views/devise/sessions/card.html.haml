@@ -127,8 +127,8 @@
                     - exp_month = @card_information.exp_month.to_s
                     - exp_year = @card_information.exp_year.to_s.slice(2,3)
                     = exp_month + " / " + exp_year
-                  %button{class: "content-inner__main__button", href: '#'}
-                    削除する
+                  %div
+                    = link_to "削除する", creditcard_path(@card), method: :delete, class: "content-inner__main__button"
           - else
             .content-inner__main__add
               .content-inner__main__add__btn
