@@ -22,11 +22,9 @@
       .mypage__tabs
         %ul.mypage__tabs__menu.tabs
           %li.mypage__tabs__menu__news.tab-news.tab-active
-            %h3
-              .mypage-link お知らせ
+            .mypage-link.bold お知らせ
           %li.mypage__tabs__menu__todo-list.tab-news
-            %h3
-              .mypage-link やることリスト
+            .mypage-link.bold やることリスト
         .mypage__tabs__contents
           %ul.tab-news-content.tab-show
             %li.mypage__tabs__contents__news
@@ -57,14 +55,12 @@
           %ul.tab-news-content
             %li.mypage__tabs__contents__todo.not-found 現在、やることリストはありません
       .mypage__buy
-        %h3.mypage__buy__title 購入した商品
+        .mypage__buy__title.bold 購入した商品
         %ul.mypage__buy__menu.tabs
           %li.mypage__buy__menu__now.tab-buy.tab-active
-            %h3
-              .mypage-link 取引中
+            .mypage-link.bold 取引中
           %li.mypage__buy__menu__past.tab-buy
-            %h3
-              .mypage-link 過去の取引
+            .mypage-link.bold 過去の取引
         .mypage__tabs__contents
           %ul.tab-buy-content.tab-show
             - if @tradings.present?
