@@ -91,7 +91,6 @@ class ItemsController < ApplicationController
       @registered_brand = ""
     end
 
-    require 'base64'
     require 'aws-sdk'
     gon.item_images_binary_datas = []
 
