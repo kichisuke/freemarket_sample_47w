@@ -126,6 +126,8 @@ li.current-page {
   background-color: $white;
   &__head {
     @include registration-head(32px, 16px);
+    font-size: 22px;
+    font-weight: bold;
   }
   &__inner {
     padding: 40px 16px;

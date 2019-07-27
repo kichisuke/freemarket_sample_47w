@@ -27,11 +27,13 @@
           .registration-form__group
             = f.label :nickname, 'ニックネーム'
             %span.require 必須
-            = f.text_field :nickname, placeholder: '例)メルカリ太郎', class: 'input-default', required: true
+            = f.text_field :nickname, value: @sns_user.nickname, placeholder: '例)メルカリ太郎', class: 'input-default', required: true
           .registration-form__group
             = f.label :email, 'メールアドレス'
             %span.require 必須
-            = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: 'input-default', required: true
+            = f.email_field :email, value: @sns_user.email, placeholder: 'PC・携帯どちらでも可', class: 'input-default', required: true
+          = f.hidden_field :uid, value: @sns_user.uid
+          = f.hidden_field :provider, value: @sns_user.provider
           .registration-form__group
             = f.label :password, 'パスワード'
             %span.require 必須
