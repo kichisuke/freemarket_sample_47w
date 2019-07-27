@@ -15,5 +15,18 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: "指定した値で入力してください" }
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+
+  def self.find_for_oauth(auth)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
+    unless user
+      user = User.new(
+        nickname:     auth.info.name,
+        email:        auth.info.email,
+        uid:          auth.uid,
+        provider:     auth.provider
+      )
+    end
+    user
+  end
 end
