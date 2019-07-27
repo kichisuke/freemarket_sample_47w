@@ -5,5 +5,5 @@ class Address < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :city, presence: true
   validates :street_address, presence: true
-  validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "10桁または11桁の数字のみでご入力ください" }, allow_blank: true
+  validates :phone_number, allow_nil: true, format: { with: /\A\d{10,11}\z/, message: "10桁または11桁の数字のみでご入力ください" }
 end

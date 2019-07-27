@@ -1,5 +1,5 @@
 .wrapper
-  .wrapper__main#new_item
+  .wrapper__main#edit_item
     = form_for(@item, html: {autocomplete: 'off'} )do |f|
       .wrapper__main__head
         %h2 商品の情報を入力
@@ -52,24 +52,29 @@
               %span.form-require 必須
             #parent-category
               .wrapper__main__list__select__wrap
-                = f.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "parent-form"
+                = f.collection_select :category_id, @categories, :id, :name, { selected: @registered_category }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "parent-form"
                 %i.fas.fa-chevron-down
             #child-category
+              .wrapper__main__list__select__wrap.child-form
+                = f.collection_select :category_id, @child_category_brother, :id, :name, { selected: @registered_child_category }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "child-form"
+                %i.fas.fa-chevron-down
             #grandchild-category
-
-          .wrapper__main__list__select__center.hidden
+              .wrapper__main__list__select__wrap.grandchild-form
+                = f.collection_select :category_id, @grand_child_category_brother, :id, :name, { selected: @item.category_id }, autofocus: true, class: 'item-registration__form__group__box__select__body', id: "grandchild-form"
+                %i.fas.fa-chevron-down
+          .wrapper__main__list__select__center.edit-hidden
             %p
               サイズ
               %span.form-require 必須
             .wrapper__main__list__select__wrap
               =f.select :size, Item.sizes_i18n.invert, {}
               %i.fas.fa-chevron-down
-          .wrapper__main__list__select__center.hidden
+          .wrapper__main__list__select__center
             %p
               ブランド
               %span.form-optional 任意
             .wrapper__main__list__select__wrap
-              = f.text_field :brand_id, placeholder: '例）シャネル', class: 'item-registration__form__input', id: 'brand_search'
+              = f.text_field :brand_id, placeholder: '例）シャネル', class: 'item-registration__form__input', id: 'brand_search', value: @registered_brand
               %ul.brand_search_result
               = f.hidden_field :brand_id, class: "brand_search_result__id"
 
@@ -147,6 +152,6 @@
           %a また、出品を持ちまして
           %a.blue 加盟店規約
           %a に同意したことになります。
-        %button.wrapper__main__bottom__red.new_item
+        %button.wrapper__main__bottom__red.edit_item
           =f.submit "出品する"
         %button.wrapper__main__bottom__grey もどる
