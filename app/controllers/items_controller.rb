@@ -201,4 +201,5 @@ class ItemsController < ApplicationController
   def move_to_login
     redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
   end
+
 end
