@@ -1,8 +1,18 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   def signup
+    session[:sns_user] = nil
   end
 
   def registration
+    if session[:sns_user].present?
+      @sns_user = User.new(nickname: session[:sns_user]["nickname"],
+                       email: session[:sns_user]["email"],
+                       uid: session[:sns_user]["uid"],
+                       provider: session[:sns_user]["provider"])
+      session[:sns_user] = nil
+    else
+      @sns_user = User.new
+    end
   end
 
   def sms_confirmation
@@ -15,6 +25,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.profile = @user.build_profile(session[:profile])
     if @user.save
       sign_up(@user, current_user)
+      session[:user] = nil
+      session[:profile] = nil
       redirect_to input_address_path
     else
       redirect_to registration_path
@@ -32,6 +44,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @address = Address.new(session[:address])
     @credit = Creditcard.new(token: params[:payjp_token], user_id: current_user.id)
     if @address.save && @credit.save
+      session[:address] = nil
+      session[:payjp_token] = nil
       redirect_to signup_end_path
     else
       redirect_to input_address_path
@@ -43,7 +57,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
   def user_params
-    params.require(:session).permit(:nickname, :email, :password, :password_confirmation)
+    params.require(:session).permit(:nickname, :email, :password, :password_confirmation, :uid, :provider)
   end
 
   def profile_params
