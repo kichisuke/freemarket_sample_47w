@@ -139,7 +139,16 @@ class ItemsController < ApplicationController
       flash[:alert] = '未入力項目があります'
       redirect_back(fallback_location: root_path)
     end
+  end
 
+  def purchase
+    @card = Creditcard.where(user_id: current_user.id).first
+    if @card.present?
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+      @card_brand = @card_information.brand
+    end
   end
 
   # 孫カテゴリーの兄弟要素を取得
@@ -149,6 +158,19 @@ class ItemsController < ApplicationController
     # @itemのcategory_id（孫）から見たparent_id（子id）と同じparent_id（子id）をもつレコードを取得
     grand_child_category_brother_ids = Category.where(parent_id: grand_child_category_parent_id)
     return grand_child_category_brother_ids
+  end
+
+  def pay
+    card = Creditcard.where(user_id: current_user.id).first
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp::Charge.create(customer: card.customer_id, amount: @item.price, currency: 'jpy')
+    @item.buyer_id = current_user.id
+    @item.sales_status = 2
+    @item.save
+    redirect_to action: 'done'
+  end
+
+  def done
   end
 
   # 子カテゴリーの兄弟要素を取得
