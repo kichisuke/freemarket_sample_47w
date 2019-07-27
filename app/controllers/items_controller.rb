@@ -141,6 +141,23 @@ class ItemsController < ApplicationController
     end
   end
 
+  # 孫カテゴリーの兄弟要素を取得
+  def grand_child_category_brother_search(id)
+    # @itemのcategory_id（孫）から見たparent_id（子id）を取得
+    grand_child_category_parent_id = Category.find(id).parent_id
+    # @itemのcategory_id（孫）から見たparent_id（子id）と同じparent_id（子id）をもつレコードを取得
+    grand_child_category_brother_ids = Category.where(parent_id: grand_child_category_parent_id)
+    return grand_child_category_brother_ids
+  end
+
+  # 子カテゴリーの兄弟要素を取得
+  def child_category_brother_search(id)
+    # @itemのcategory_id（孫）から見たparent（子id）のもつparent_id（親）を取得
+    child_category_parent_id = Category.find(id).parent.parent_id
+    # @itemのcategory_id（孫）から見たparent（子）のもつparent_id（親）と同じparent_id（親）をもつレコードを取得
+    child_category_brother_ids = Category.where(parent_id: child_category_parent_id)
+  end
+
   def purchase
     @card = Creditcard.where(user_id: current_user.id).first
     if @card.present?
@@ -149,15 +166,6 @@ class ItemsController < ApplicationController
       @card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @card_information.brand
     end
-  end
-
-  # 孫カテゴリーの兄弟要素を取得
-  def grand_child_category_brother_search(id)
-    # @itemのcategory_id（孫）から見たparent_id（子id）を取得
-    grand_child_category_parent_id = Category.find(id).parent_id
-    # @itemのcategory_id（孫）から見たparent_id（子id）と同じparent_id（子id）をもつレコードを取得
-    grand_child_category_brother_ids = Category.where(parent_id: grand_child_category_parent_id)
-    return grand_child_category_brother_ids
   end
 
   def pay
@@ -171,14 +179,6 @@ class ItemsController < ApplicationController
   end
 
   def done
-  end
-
-  # 子カテゴリーの兄弟要素を取得
-  def child_category_brother_search(id)
-    # @itemのcategory_id（孫）から見たparent（子id）のもつparent_id（親）を取得
-    child_category_parent_id = Category.find(id).parent.parent_id
-    # @itemのcategory_id（孫）から見たparent（子）のもつparent_id（親）と同じparent_id（親）をもつレコードを取得
-    child_category_brother_ids = Category.where(parent_id: child_category_parent_id)
   end
 
   private
