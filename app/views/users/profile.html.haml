@@ -9,7 +9,7 @@
     .list-side
       %ul.list-side__menu
         %li
-          = link_to "#", class: "list-side__menu__item" do
+          = link_to mypage_path, class: "list-side__menu__item" do
             マイページ
             = icon 'fas', 'chevron-right', class: 'icon-menu'
         %li
@@ -79,7 +79,7 @@
         設定
       %ul.list-side__menu
         %li
-          = link_to "#", class: "list-side__menu__item__active" do
+          = link_to mypage_profile_path, class: "list-side__menu__item__active" do
             プロフィール
             = icon 'fas', 'chevron-right', class: 'icon-menu__active'
         %li
@@ -87,7 +87,7 @@
             発送元・お届け先住所変更
             = icon 'fas', 'chevron-right', class: 'icon-menu'
         %li
-          = link_to "#", class: "list-side__menu__item" do
+          = link_to mypage_card_path, class: "list-side__menu__item" do
             支払い方法
             = icon 'fas', 'chevron-right', class: 'icon-menu'
         %li
@@ -114,9 +114,10 @@
           %input{type: "hidden"}
           .profile-header
             = image_tag 'member_photo_noimage_thumb.png', alt: 'my_icon', height: '60', width: '60', class: 'my_icon-img'
-            %input{type: "text", value: "名前",class: "profile-header__input"}
+            %input{type: "text", value: current_user.nickname,class: "profile-header__input"}
           .profile-content
             %textarea{name: "introduction", class: "profile-content__textarea"}
+              = current_user.profile.profile_text
             %input{type:"hidden"}
             %button{type:"submit" ,class:"profile-content__button"}変更する
   .sell-button

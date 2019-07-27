@@ -13,6 +13,15 @@
     width: 700px;
     margin: 0 auto;
     background: #fff;
+    &__done {
+      background: #fff6de;
+      padding: 32px 16px;
+      font-size: 22px;
+      &__child {
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
     &__head {
       padding: 32px 16px;
       font-size: 22px;
@@ -121,8 +130,24 @@
       margin: 8px 0 0;
     }
   }
+  &__error-text {
+    color: #ea352d
+  }
+  &__error-btn {
+    margin: 8px 0 0;
+    border: 1px solid #888;
+    background: #888;
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+  }
 }
 
 .bold {
   font-weight: bold;
+}
+.red-icon {
+  color: red;
 }
