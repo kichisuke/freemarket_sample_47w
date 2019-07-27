@@ -31,7 +31,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def signup_create
     require 'payjp'
     @address = Address.new(session[:address])
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key =   "sk_test_5807e2b2840ba0fcf414ec61"
     customer = Payjp::Customer.create(description: 'test', card: params[:payjp_token])
     @credit = Creditcard.new(token: params[:payjp_token], user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
     if @address.save && @credit.save
