@@ -161,7 +161,7 @@ class ItemsController < ApplicationController
   def purchase
     @card = Creditcard.where(user_id: current_user.id).first
     if @card.present?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @card_information.brand
@@ -170,7 +170,7 @@ class ItemsController < ApplicationController
 
   def pay
     card = Creditcard.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
     Payjp::Charge.create(customer: card.customer_id, amount: @item.price, currency: 'jpy')
     @item.buyer_id = current_user.id
     @item.sales_status = 2

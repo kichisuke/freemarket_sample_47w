@@ -4,7 +4,7 @@ class CreditcardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
     if params['payjp-token'].blank?
       redirect_to new_creditcard_path
     else
@@ -19,7 +19,7 @@ class CreditcardsController < ApplicationController
   end
 
   def destroy
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
     @card = Creditcard.where(user_id: current_user.id).first
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
