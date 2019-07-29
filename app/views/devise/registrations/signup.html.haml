@@ -8,10 +8,10 @@
         = link_to registration_path, class: 'signup__mail-btn' do
           = icon 'far', 'envelope', class: 'icon-mail'
           メールアドレスで登録
-        %button.signup__facebook-btn
+        = link_to user_facebook_omniauth_authorize_path, class: 'signup__facebook-btn' do
           = icon 'fab', 'facebook-square', class: 'icon-facebook'
           Facebookで登録
-        %button.signup__google-btn
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'signup__google-btn' do
           = image_tag 'google-icon.png', class: 'icon-google'
           Googleで登録
   = render partial: 'shared/login-footer'

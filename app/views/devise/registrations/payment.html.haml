@@ -27,7 +27,7 @@
           .registration-form__group
             %label カード番号
             %span.require 必須
-            %input{type: 'text', name: 'number', maxlength: '16', placeholder: '半角数字のみ',id: 'card-number', class: 'input-default', required: true, pattern: '/\A[0-9]+\z/'}
+            %input{type: 'text', name: 'number', maxlength: '16', placeholder: '半角数字のみ',id: 'card-number', class: 'input-default'}
           .registration-form__credit-img
             = image_tag 'credit_card/visa.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
             = image_tag 'credit_card/master_card.png', alt: 'credit_card', class: 'registration-form__credit-img__size'
