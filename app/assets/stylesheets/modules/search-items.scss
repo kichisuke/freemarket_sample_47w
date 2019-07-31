@@ -6,7 +6,7 @@
     position: relative;
     margin: 40px auto 0;
     width: 1020px;
-    height: 1500px;
+    height: 1700px;
     padding-top: 40px;
 
     &__content {
@@ -176,13 +176,20 @@
             text-align: center;
             padding-top: 20px;
           } 
+          .group-price span {
+            display: inline-block;
+            width: 10%;
+            font-size: 14px;
+            text-align: center;
+            padding-top: 20px;
+          }
         }
-        .checkbox-default {
+        .check-box__choice {
           display: inline-block;
           width: 48%;
           vertical-align: middle;
 
-          input {
+          .check_box {
             position: relative;
             top: -1px;
             margin: 0 4px 0 0;
@@ -192,16 +199,16 @@
             vertical-align: middle;
           }
 
-          label {
+          .label {
             font-weight: 400;
             padding: 0 0 0 28px;
             display: block;
           }
         }
-        .checkbox-default {
+        .condition__check-box__choice {
           margin: 16px 0 0;
         }
-        .checkbox-default:nth-child(even) {
+        .condition__check-box__choice:nth-child(even) {
           margin: 16px 0 0;
         }
         .search-extend-btn {

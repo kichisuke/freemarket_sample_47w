@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @radiesItem = pickup_category_items(1)
     #メンズカテゴリーの4アイテムを最新の上から4つ抽出
     @mensItem = pickup_category_items(2)
+    @q = Item.ransack(params[:q])
   end
 
   def pickup_category_items(id)
@@ -65,7 +66,13 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @categories = Category.eager_load(children: :children).where(parent_id: nil)
+    @brands = Brand.where('name LIKE(?)', "%#{params[:keyword]}%").limit(10)
+    @condition_list = Item.condition_check_list
+    @delivery_charge_list = Item.delivery_charge_check_list
+    @sales_status_list = Item.sales_status_check_list
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
   end
 
   def destroy
