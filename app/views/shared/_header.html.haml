@@ -7,10 +7,10 @@
             = image_tag 'logo.png', alt: 'mercari', class: 'header-top__logo--size'
       .header-top__form
         .top-form
-          = form_tag(search_items_path, method: :get, class: 'header-inner__form' ) do
-            %input{name: 'keyword', placeholder: 'キーワードから探す', class: 'serch-form', type: 'text', value: ''}
-              = button_tag type: 'submit', class: 'serch-icon' do
-                %i.fa.fa-search
+          = search_form_for @q, class: "header-inner__form", url:search_items_path do |f|
+            = f.search_field :name_cont,class:"serch-form"
+            = button_tag type: 'submit', class: 'serch-icon' do
+              %i.fa.fa-search
     .header-nav
       .header-nav__left
         %ul.nav-list
