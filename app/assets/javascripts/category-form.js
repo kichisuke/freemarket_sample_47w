@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
   function buildChildForm() {
     var html = `<div class="wrapper__main__list__select__wrap child-form">
-                  <select class="item-registration__form__group__box__select__body" id="child-form" name="item[category_id]">
+                  <select class="item-registration__form__group__box__select__body select-default" id="child-form" name="item[category_id]">
                     <option value>---</option>
                   </select>
                   <i class="fas fa-chevron-down"></i>
@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function() {
 
   function buildGrandChildForm() {
     var html = `<div class="wrapper__main__list__select__wrap grandchild-form">
-                  <select class="item-registration__form__group__box__select__body" id="grandchild-form" name="item[category_id]">
+                  <select class="item-registration__form__group__box__select__body select-default" id="grandchild-form" name="item[category_id]">
                     <option value>---</option>
                   </select>
                   <i class="fas fa-chevron-down"></i>
