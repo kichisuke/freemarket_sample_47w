@@ -15,7 +15,7 @@
                 = otherItem.name
               .item-link__text--price
                 .price
-                  ='¥ ' + number_with_delimiter("#{@item.price}")
+                  ='¥ ' + number_with_delimiter("#{otherItem.price}")
                 .likes
                   = icon('far', 'heart', class: 'likes__icon')
                   %span.likes__rate
@@ -40,7 +40,7 @@
                 = sameCategories.name
               .item-link__text--price
                 .price
-                  ='¥ ' + number_with_delimiter("#{@item.price}")
+                  ='¥ ' + number_with_delimiter("#{sameCategories.price}")
                 .likes
                   = icon('far', 'heart', class: 'likes__icon')
                   %span.likes__rate
