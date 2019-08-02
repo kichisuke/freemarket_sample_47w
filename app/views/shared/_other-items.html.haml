@@ -1,49 +1,51 @@
-%section.other-items-container
-  %section.other-items
-    %h3.other-items__head
-      = link_to '#', class: 'other-items__head--link' do
-        = @item.saler.nickname
-        のその他の出品
-    .other-items__box
-      - @otherItems.each do |otherItem|
-        %section.other-items__box--item
-          = link_to item_path(otherItem.id), class: 'item-link' do
-            .item-link__image-box
-              = image_tag "#{otherItem.item_images.first.url}", alt: 'item-name', class: 'item-image'
-            .item-link__text
-              %h3.item-link__text--header
-                = otherItem.name
-              .item-link__text--price
-                .price
-                  ='¥ ' + number_with_delimiter("#{otherItem.price}")
-                .likes
-                  = icon('far', 'heart', class: 'likes__icon')
-                  %span.likes__rate
-                    10
-              %p.item-link__text--tax
-                (税込)
+- if @otherItems.present?
+  %section.other-items-container
+    %section.other-items
+      %h3.other-items__head
+        = link_to '#', class: 'other-items__head--link' do
+          = @item.saler.nickname
+          のその他の出品
+      .other-items__box
+        - @otherItems.each do |otherItem|
+          %section.other-items__box--item
+            = link_to item_path(otherItem.id), class: 'item-link' do
+              .item-link__image-box
+                = image_tag "#{otherItem.item_images.first.url}", alt: 'item-name', class: 'item-image'
+              .item-link__text
+                %h3.item-link__text--header
+                  = otherItem.name
+                .item-link__text--price
+                  .price
+                    ='¥ ' + number_with_delimiter("#{otherItem.price}")
+                  .likes
+                    = icon('far', 'heart', class: 'likes__icon')
+                    %span.likes__rate
+                      10
+                %p.item-link__text--tax
+                  (税込)
 
-%section.other-items-container
-  %section.other-items
-    %h3.other-items__head
-      = link_to '#', class: 'other-items__head--link' do
-        = @item.category.name
-        のその他の出品
-    .other-items__box
-      - @sameCategories.each do |sameCategories|
-        %section.other-items__box--item
-          = link_to item_path(sameCategories.id), class: 'item-link' do
-            .item-link__image-box
-              = image_tag "#{sameCategories.item_images.first.url}", alt: 'item-name', class: 'item-image'
-            .item-link__text
-              %h3.item-link__text--header
-                = sameCategories.name
-              .item-link__text--price
-                .price
-                  ='¥ ' + number_with_delimiter("#{sameCategories.price}")
-                .likes
-                  = icon('far', 'heart', class: 'likes__icon')
-                  %span.likes__rate
-                    10
-              %p.item-link__text--tax
-                (税込)
+- if @sameCategories.present?
+  %section.other-items-container
+    %section.other-items
+      %h3.other-items__head
+        = link_to '#', class: 'other-items__head--link' do
+          = @item.category.name
+          のその他の出品
+      .other-items__box
+        - @sameCategories.each do |sameCategories|
+          %section.other-items__box--item
+            = link_to item_path(sameCategories.id), class: 'item-link' do
+              .item-link__image-box
+                = image_tag "#{sameCategories.item_images.first.url}", alt: 'item-name', class: 'item-image'
+              .item-link__text
+                %h3.item-link__text--header
+                  = sameCategories.name
+                .item-link__text--price
+                  .price
+                    ='¥ ' + number_with_delimiter("#{sameCategories.price}")
+                  .likes
+                    = icon('far', 'heart', class: 'likes__icon')
+                    %span.likes__rate
+                      10
+                %p.item-link__text--tax
+                  (税込)
