@@ -34,14 +34,15 @@
             = f.email_field :email, value: @sns_user.email, placeholder: 'PC・携帯どちらでも可', class: 'input-default', required: true
           = f.hidden_field :uid, value: @sns_user.uid
           = f.hidden_field :provider, value: @sns_user.provider
-          .registration-form__group
-            = f.label :password, 'パスワード'
-            %span.require 必須
-            = f.password_field :password, placeholder: '6文字以上', class: 'input-default', required: true, minlength: '6'
-          .registration-form__group
-            = f.label :password_confirmation, 'パスワード(確認)'
-            %span.require 必須
-            = f.password_field :password_confirmation, placeholder: '6文字以上', class: 'input-default', required: true, minlength: '6'
+          - unless @sns_user.uid && @sns_user.provider
+            .registration-form__group
+              = f.label :password, 'パスワード'
+              %span.require 必須
+              = f.password_field :password, placeholder: '6文字以上', class: 'input-default', required: true, minlength: '6'
+            .registration-form__group
+              = f.label :password_confirmation, 'パスワード(確認)'
+              %span.require 必須
+              = f.password_field :password_confirmation, placeholder: '6文字以上', class: 'input-default', required: true, minlength: '6'
           .registration-form__group
             .registration-form__group__confirmation
               %h3
