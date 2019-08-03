@@ -32,6 +32,7 @@ $(document).on('turbolinks:load', function() {
     $('.child-form').remove();
     $('.grandchild-form').remove();
     $('.hidden').css({'display': 'none'});
+    $('.edit-hidden').css({'display': 'none'});
 
     $.ajax({
       url: '/items/category_search',
@@ -78,5 +79,9 @@ $(document).on('turbolinks:load', function() {
   //サイズフォームの表示
   $('#grandchild-category').on('change', '#grandchild-form', function() {
     $('.hidden').css({'display': 'block'});
+  });
+  //editページ用サイズフォームの表示
+  $('#grandchild-category').on('change', '#grandchild-form', function() {
+    $('.edit-hidden').css({'display': 'block'});
   });
 });
