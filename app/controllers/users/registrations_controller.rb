@@ -7,8 +7,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if session[:sns_user].present?
       @sns_user = User.new(nickname: session[:sns_user]["nickname"],
                        email: session[:sns_user]["email"],
+                       password: Devise.friendly_token[0, 20],
                        uid: session[:sns_user]["uid"],
                        provider: session[:sns_user]["provider"])
+      session[:sns_password] = @sns_user.password
       session[:sns_user] = nil
     else
       @sns_user = User.new
@@ -22,7 +24,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(session[:user])
+    if session[:sns_password]
+      @user.password = @user.password_confirmation = session[:sns_password]
+      session[:sns_password] = nil
+    end
+
     @user.profile = @user.build_profile(session[:profile])
+
     if @user.save
       sign_up(@user, current_user)
       session[:user] = nil
