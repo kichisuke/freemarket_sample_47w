@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy, :edit, :update, :purchase, :pay, :done]
-  before_action :move_to_login, only: [:new, :purchase]
+  before_action :set_item, only: [:show, :destroy, :edit, :update, :purchase, :pay, :done, :access_denied]
+  before_action :move_to_login, only: [:new, :purchase, :edit, :update, :destroy]
+  before_action :access_denied, only: [:edit, :update, :destroy]
 
   require "payjp"
 
@@ -200,6 +201,10 @@ class ItemsController < ApplicationController
 
   def move_to_login
     redirect_to controller: 'users/sessions', action: 'new' unless user_signed_in?
+  end
+
+  def access_denied
+    redirect_to root_path if @item.saler_id != current_user.id
   end
 
 end
