@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :edit, :update, :purchase, :pay, :done, :access_denied]
-  before_action :move_to_login, only: [:new, :purchase, :edit, :update, :destroy]
+  before_action :move_to_login, only: [:new, :purchase, :edit, :update, :destroy, :pay, :done]
   before_action :access_denied, only: [:edit, :update, :destroy]
 
   require "payjp"
@@ -160,26 +160,37 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    @card = Creditcard.where(user_id: current_user.id).first
-    if @card.present?
-      Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      @card_information = customer.cards.retrieve(@card.card_id)
-      @card_brand = @card_information.brand
+    if @item.saler_id == current_user.id || @item.sales_status != "exhibition"
+      redirect_to action: 'show'
+    else
+      @card = Creditcard.where(user_id: current_user.id).first
+      if @card.present?
+        Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
+        customer = Payjp::Customer.retrieve(@card.customer_id)
+        @card_information = customer.cards.retrieve(@card.card_id)
+        @card_brand = @card_information.brand
+      end
     end
   end
 
   def pay
-    card = Creditcard.where(user_id: current_user.id).first
-    Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
-    Payjp::Charge.create(customer: card.customer_id, amount: @item.price, currency: 'jpy')
-    @item.buyer_id = current_user.id
-    @item.sales_status = 2
-    @item.save
-    redirect_to action: 'done'
+    if @item.saler_id == current_user.id || @item.sales_status != "exhibition"
+      redirect_to action: 'show'
+    else
+      card = Creditcard.where(user_id: current_user.id).first
+      Payjp.api_key = "sk_test_5807e2b2840ba0fcf414ec61"
+      Payjp::Charge.create(customer: card.customer_id, amount: @item.price, currency: 'jpy')
+      @item.buyer_id = current_user.id
+      @item.sales_status = 2
+      @item.save
+      redirect_to action: 'done'
+    end
   end
 
   def done
+    unless @item.buyer_id == current_user.id || @item.sales_status == 2
+      redirect_to action: 'show'
+    end
   end
 
   private
