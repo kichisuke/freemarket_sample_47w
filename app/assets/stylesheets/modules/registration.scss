@@ -252,6 +252,7 @@ li.current-page {
 .registration-main {
   &__head--adress {
     @include registration-head(10px, 24px);
+    font-weight: bold;
   }
 }
 
@@ -264,7 +265,8 @@ li.current-page {
 //payment
 .registration-main {
   &__head--payment {
-    @include registration-head(10px, 24px)
+    @include registration-head(10px, 24px);
+    font-weight: bold;
   }
 }
 .registration-form__credit-img {
