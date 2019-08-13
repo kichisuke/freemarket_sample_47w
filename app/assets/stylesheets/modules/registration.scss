@@ -241,6 +241,7 @@ li.current-page {
 .registration-main {
   &__head--sms {
     @include registration-head(10px, 24px);
+    font-weight: bold;
   }
   &__inner {
     padding: 64px;
